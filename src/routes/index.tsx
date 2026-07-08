@@ -57,23 +57,22 @@ function SectionLabel({ title }: { index?: string; title: string }) {
 
 function ProblemSection() {
   const items = [
-    "Ljudi vas pronađu na Google Mapsu, ali onda nemaju gdje jasno vidjeti usluge, cijene, radove i način kontakta.",
-    "Facebook i Instagram pomažu, ali nisu zamjena za web stranicu koju vi posjedujete i koju Google može indeksirati.",
-    "Kada konkurencija ima urednu stranicu, izgleda ozbiljnije i češće dobije poziv.",
+    "Klijenti vas pronađu na Google Mapsu, ali nemaju jedno mjesto na kojem mogu pregledati usluge, cijene, radove i način kontakta.",
+    "Društvene mreže pokrivaju dio komunikacije, ali nisu zamjena za web stranicu koju posjedujete i koju Google indeksira.",
+    "Uredna web stranica utječe na dojam ozbiljnosti i može biti razlika između poziva i preskakanja.",
   ];
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="01" title="Problem" />
+        <SectionLabel index="01" title="Kontekst" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Imate Google recenzije, ali nemate{" "}
+                Google recenzije postoje.{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  stranicu koja pretvara
-                </span>{" "}
-                posjetitelje u upite.
+                  Web stranica često ne.
+                </span>
               </h2>
             </Reveal>
           </div>
