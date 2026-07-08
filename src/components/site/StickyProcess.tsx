@@ -16,7 +16,7 @@ const steps = [
   {
     n: "03",
     t: "Izrada i objava",
-    d: "Nakon dogovorenog opsega i uplate prema paketu krećemo u izradu. Prvi preview obično je spreman za tjedan dana, a završetak je najčešće oko mjesec dana, ovisno o materijalima i feedbacku.",
+    d: "Nakon dogovorenog opsega i uplate prema paketu krećemo u izradu. Prvi pregled obično je spreman za tjedan dana, a završetak je najčešće oko mjesec dana, ovisno o materijalima i povratnim informacijama.",
   },
 ];
 

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Odgovori na pitanja o izradi web stranice, domeni, plaćanju, održavanju, materijalima, rokovima i Managed paketu.",
+          "Odgovori na pitanja o izradi web stranice, domeni, plaćanju, održavanju, materijalima, rokovima i paketu Održavano.",
       },
       { property: "og:title", content: "Česta pitanja, Sator Digital" },
       {

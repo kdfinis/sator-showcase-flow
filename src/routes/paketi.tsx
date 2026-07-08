@@ -17,13 +17,13 @@ export const Route = createFileRoute("/paketi")({
       {
         name: "description",
         content:
-          "Tri jasna paketa za izradu web stranice. Managed mjesečno, Owner jednokratno i Independence premium predaja. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa za izradu web stranice. Paket Održavano mjesečno i paket Vlasništvo jednokratno. Domena na vaše ime i jasna cijena.",
       },
       { property: "og:title", content: "Paketi i cijene, Sator Digital" },
       {
         property: "og:description",
         content:
-          "Tri jasna paketa za izradu web stranice. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa za izradu web stranice. Domena na vaše ime i jasna cijena.",
       },
     ],
   }),
@@ -48,7 +48,7 @@ function PageHero() {
     <section className="pt-14 md:pt-24 pb-20 bg-[color:var(--bone)]">
       <div className="container-wide">
         <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-          <span>Paketi — Ed. 01</span>
+          <span>Paketi — Izdanje 01</span>
           <span className="num">Cijene</span>
         </div>
         <Reveal>
@@ -182,7 +182,7 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
           className={`border-b pb-4 mb-14 ${isDark ? "border-[color:var(--bone)]/25" : "border-[color:var(--line)]"}`}
         >
           <span className={`eyebrow ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
-            Paket · {String(index + 1).padStart(2, "0")} / 03
+            Paket · {String(index + 1).padStart(2, "0")} / 02
           </span>
           <span className={`num text-xs ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
             {pkg.priceShort}
@@ -322,10 +322,9 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
 
 function PaymentTerms() {
   const terms = [
-    "Managed se pokreće nakon uplate setup iznosa. Mjesečna naknada počinje prema dogovorenom datumu i traje najmanje 12 mjeseci.",
-    "Owner se plaća u dvije faze: 50 posto prije početka rada i 50 posto prije objave ili predaje.",
-    "Independence se plaća u tri faze: 50 posto prije početka, 30 posto nakon odobrenog smjera, 20 posto prije finalne predaje.",
-    "Rokovi ovise o tome da klijent na vrijeme dostavi materijale i feedback. Ako materijali kasne, pomiče se i rok objave.",
+    "Paket Održavano pokreće se nakon uplate početne naknade. Mjesečna naknada počinje prema dogovorenom datumu i traje najmanje 12 mjeseci.",
+    "Paket Vlasništvo plaća se u dvije faze: 50 posto prije početka rada i 50 posto prije objave ili predaje.",
+    "Rokovi ovise o tome da klijent na vrijeme dostavi materijale i povratne informacije. Ako materijali kasne, pomiče se i rok objave.",
   ];
   return (
     <section className="py-24 md:py-32 bg-[color:var(--bone)]">

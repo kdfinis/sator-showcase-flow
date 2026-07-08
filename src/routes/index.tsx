@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi preview za tjedan dana.",
+          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi pregled za tjedan dana.",
       },
       { property: "og:title", content: "Sator Digital, web stranice za obrte u Hrvatskoj" },
       {
@@ -205,10 +205,9 @@ function PackagesPreview() {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           <PackageCard pkg={PACKAGES[0]} index={0} emphasis="primary" compact />
           <PackageCard pkg={PACKAGES[1]} index={1} emphasis="balanced" compact />
-          <PackageCard pkg={PACKAGES[2]} index={2} emphasis="normal" compact />
         </div>
 
         <Reveal className="mt-16 border-t border-[color:var(--line)] pt-8 max-w-3xl">
