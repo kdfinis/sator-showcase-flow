@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivatnostRouteImport } from './routes/privatnost'
+import { Route as PaketiRouteImport } from './routes/paketi'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as HvalaRouteImport } from './routes/hvala'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivatnostRoute = PrivatnostRouteImport.update({
+  id: '/privatnost',
+  path: '/privatnost',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaketiRoute = PaketiRouteImport.update({
+  id: '/paketi',
+  path: '/paketi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HvalaRoute = HvalaRouteImport.update({
+  id: '/hvala',
+  path: '/hvala',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
+  '/hvala': typeof HvalaRoute
+  '/kontakt': typeof KontaktRoute
+  '/paketi': typeof PaketiRoute
+  '/privatnost': typeof PrivatnostRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
+  '/hvala': typeof HvalaRoute
+  '/kontakt': typeof KontaktRoute
+  '/paketi': typeof PaketiRoute
+  '/privatnost': typeof PrivatnostRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/faq': typeof FaqRoute
+  '/hvala': typeof HvalaRoute
+  '/kontakt': typeof KontaktRoute
+  '/paketi': typeof PaketiRoute
+  '/privatnost': typeof PrivatnostRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/faq'
+    | '/hvala'
+    | '/kontakt'
+    | '/paketi'
+    | '/privatnost'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/faq'
+    | '/hvala'
+    | '/kontakt'
+    | '/paketi'
+    | '/privatnost'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/faq'
+    | '/hvala'
+    | '/kontakt'
+    | '/paketi'
+    | '/privatnost'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FaqRoute: typeof FaqRoute
+  HvalaRoute: typeof HvalaRoute
+  KontaktRoute: typeof KontaktRoute
+  PaketiRoute: typeof PaketiRoute
+  PrivatnostRoute: typeof PrivatnostRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privatnost': {
+      id: '/privatnost'
+      path: '/privatnost'
+      fullPath: '/privatnost'
+      preLoaderRoute: typeof PrivatnostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paketi': {
+      id: '/paketi'
+      path: '/paketi'
+      fullPath: '/paketi'
+      preLoaderRoute: typeof PaketiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hvala': {
+      id: '/hvala'
+      path: '/hvala'
+      fullPath: '/hvala'
+      preLoaderRoute: typeof HvalaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +177,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FaqRoute: FaqRoute,
+  HvalaRoute: HvalaRoute,
+  KontaktRoute: KontaktRoute,
+  PaketiRoute: PaketiRoute,
+  PrivatnostRoute: PrivatnostRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
