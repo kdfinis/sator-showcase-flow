@@ -420,13 +420,13 @@ function BottomCTA() {
       <div className="container-wide">
         <div className="eyebrow opacity-70 mb-10">Sljedeći korak</div>
         <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium max-w-3xl">
-          Niste sigurni koji paket?{" "}
+          Preporuka paketa prema{" "}
           <span className="text-[color:var(--brand)] font-medium">
-            Javite se.
+            vašem opsegu.
           </span>
         </h2>
         <p className="mt-8 max-w-xl text-lg text-[color:var(--bone)]/80">
-          Nazovite ili pošaljite kratku poruku, javimo se s prijedlogom.
+          Pošaljite kratak opis projekta ili nazovite. Predlažemo odgovarajući paket i sljedeće korake.
         </p>
         <div className="mt-10">
           <CTAGroup />
