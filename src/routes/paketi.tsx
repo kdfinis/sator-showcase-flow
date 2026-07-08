@@ -39,6 +39,8 @@ function Paketi() {
       <AllPackagesInclude />
       <PackagesList />
       <PriceDrivers />
+      <ExtendedServicesSection />
+      <PartnerServicesSection />
       <PaymentTerms />
       <BottomCTA />
     </SiteLayout>
