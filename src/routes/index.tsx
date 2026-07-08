@@ -346,15 +346,15 @@ function FAQTeaser() {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.05]">
-                Kratki odgovori{" "}
+                Odgovori na{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  bez tehničke buke.
+                  najčešća pitanja.
                 </span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-6 text-[color:var(--ink)]/75 max-w-sm">
-                Ako želite najbrži odgovor, nazovite ili pošaljite WhatsApp.
+                Za pitanja izvan ovog popisa dostupni smo telefonom, e-poštom i WhatsAppom.
               </p>
             </Reveal>
             <Reveal delay={0.2} className="mt-8">
