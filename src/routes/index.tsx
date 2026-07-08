@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi preview za tjedan dana.",
+          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi pregled za tjedan dana.",
       },
       { property: "og:title", content: "Sator Digital, web stranice za obrte u Hrvatskoj" },
       {

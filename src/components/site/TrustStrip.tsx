@@ -2,7 +2,7 @@ const items = [
   "Demo smjera prije finalne odluke",
   "Domena na vaše ime",
   "Jasna cijena prije početka",
-  "Prvi preview ~7 dana",
+  "Prvi pregled ~7 dana",
   "Bez skrivenih stavki",
   "Fokus na upite, ne na tehniku",
 ];
