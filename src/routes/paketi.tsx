@@ -17,13 +17,13 @@ export const Route = createFileRoute("/paketi")({
       {
         name: "description",
         content:
-          "Tri jasna paketa za izradu web stranice. Managed mjesečno, Owner jednokratno i Independence premium predaja. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa za izradu web stranice. Paket Održavano mjesečno i paket Vlasništvo jednokratno. Domena na vaše ime i jasna cijena.",
       },
       { property: "og:title", content: "Paketi i cijene, Sator Digital" },
       {
         property: "og:description",
         content:
-          "Tri jasna paketa za izradu web stranice. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa za izradu web stranice. Domena na vaše ime i jasna cijena.",
       },
     ],
   }),
