@@ -1,10 +1,10 @@
 const items = [
-  "Demo smjera prije finalne odluke",
-  "Domena na vaše ime",
-  "Jasna cijena prije početka",
-  "Prvi pregled ~7 dana",
+  "Prijedlog smjera prije početka rada",
+  "Domena registrirana na naručitelja",
+  "Cijena i opseg potvrđeni unaprijed",
+  "Prvi pregled u okvirno sedam dana",
   "Bez skrivenih stavki",
-  "Fokus na upite, ne na tehniku",
+  "Mobilna optimizacija i osnovni SEO",
 ];
 
 /** Endless editorial marquee — no icons, just text and hairlines. */
