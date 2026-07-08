@@ -91,11 +91,10 @@ function PositioningNote() {
             Napomena o poziciji
           </div>
           <p className="text-[17px] leading-relaxed text-[color:var(--ink)]/85">
-            Sator Digital nije najjeftinija opcija na tržištu. Jeftina web
-            stranica može izgledati privlačno na početku, ali problem nastaje
-            kod strukture, sadržaja, vlasništva, podrške i odgovornosti nakon
-            objave. Ovdje plaćate jasnu isporuku, uređen proces i web koji je
-            napravljen da pomogne klijentu da vas kontaktira.
+            Sator Digital ne pozicionira se kao najjeftinija opcija na
+            tržištu. Cijena obuhvaća definiran proces, dokumentiran opseg,
+            registraciju domene na naručitelja te podršku nakon objave prema
+            odabranom paketu.
           </p>
         </Reveal>
       </div>
