@@ -1,4 +1,3 @@
-import { Check, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { TiltCard } from "./TiltCard";
 import { CTAButton } from "./CTA";
@@ -7,59 +6,58 @@ import { cn } from "@/lib/utils";
 
 export function PackageCard({
   pkg,
+  index,
   emphasis = "normal",
   compact = false,
 }: {
   pkg: Pkg;
+  index: number;
   emphasis?: "normal" | "primary" | "balanced";
   compact?: boolean;
 }) {
-  const isPrimary = emphasis === "primary";
+  const isDark = emphasis === "primary";
   const isBalanced = emphasis === "balanced";
 
   return (
     <TiltCard className="h-full">
       <motion.div
         className={cn(
-          "relative h-full rounded-[20px] p-6 md:p-7 flex flex-col",
-          "bg-white border transition-colors",
-          isPrimary
-            ? "border-[color:var(--pink)] shadow-[0_30px_60px_-30px_rgba(232,62,140,0.45)]"
-            : "border-[color:var(--border-blush)]",
+          "relative h-full p-8 md:p-10 flex flex-col border transition-colors",
+          isDark
+            ? "bg-[color:var(--ink)] text-[color:var(--bone)] border-[color:var(--ink)]"
+            : "bg-[color:var(--bone)] text-[color:var(--ink)] border-[color:var(--line)]",
         )}
       >
-        {isBalanced && (
-          <div className="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full bg-[color:var(--pink)] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-            <Sparkles className="h-3 w-3" /> Balansirano
-          </div>
-        )}
-        <div className="flex items-baseline justify-between gap-2 mb-1">
-          <h3 className="text-xl font-bold text-[color:var(--plum)]">
-            {pkg.name}
-          </h3>
-          <span
-            className={cn(
-              "text-sm font-semibold",
-              isPrimary ? "text-[color:var(--pink)]" : "text-[color:var(--mauve)]",
-            )}
-          >
-            {pkg.priceShort}
+        <div className="flex items-baseline justify-between">
+          <span className={cn("num text-xs", isDark ? "text-[color:var(--bone)]/60" : "text-[color:var(--muted-text)]")}>
+            {String(index + 1).padStart(2, "0")} / 03
           </span>
+          {isBalanced && (
+            <span className="eyebrow text-[color:var(--brand)]">Balansirano</span>
+          )}
         </div>
-        <p className="text-sm text-[color:var(--plum)]/80 font-medium">
-          {compact ? pkg.priceHome : pkg.priceHome}
-        </p>
-        <p className="mt-3 text-sm leading-relaxed text-[color:var(--mauve)]">
+
+        <h3 className="mt-8 text-3xl md:text-4xl tracking-[-0.03em] font-medium">
+          {pkg.name}
+        </h3>
+
+        <div className={cn("mt-6 text-sm", isDark ? "text-[color:var(--bone)]/75" : "text-[color:var(--muted-text)]")}>
+          {pkg.priceHome}
+        </div>
+
+        <p className={cn("mt-6 text-[15px] leading-relaxed max-w-sm", isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85")}>
           {pkg.bestFor}
         </p>
 
         {!compact && (
           <>
-            <div className="my-5 h-px bg-[color:var(--border-blush)]" />
-            <ul className="space-y-2.5 text-sm text-[color:var(--plum)]/90">
+            <div className={cn("my-8 h-px", isDark ? "bg-[color:var(--bone)]/20" : "bg-[color:var(--line)]")} />
+            <ul className="space-y-3 text-[14px]">
               {pkg.includes.map((i) => (
-                <li key={i} className="flex gap-2.5">
-                  <Check className="h-4 w-4 mt-0.5 flex-none text-[color:var(--pink)]" />
+                <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
+                  <span className={cn("num pt-1 text-[10px]", isDark ? "text-[color:var(--bone)]/50" : "text-[color:var(--muted-text)]")}>
+                    —
+                  </span>
                   <span>{i}</span>
                 </li>
               ))}
@@ -68,13 +66,16 @@ export function PackageCard({
         )}
 
         <div className="flex-1" />
-        <div className="pt-6">
+        <div className="pt-10">
           <CTAButton
             to="/kontakt"
-            variant={isPrimary ? "primary" : "secondary"}
-            className="w-full"
+            variant={isDark ? "secondary" : "primary"}
+            className={cn(
+              "w-full justify-between",
+              isDark && "border-[color:var(--bone)] text-[color:var(--bone)] hover:bg-[color:var(--bone)] hover:text-[color:var(--ink)]",
+            )}
           >
-            Zatraži paket
+            Zatraži {pkg.name}
           </CTAButton>
         </div>
       </motion.div>
