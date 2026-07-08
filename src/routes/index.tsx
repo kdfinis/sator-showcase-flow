@@ -115,12 +115,11 @@ function OutcomeSection() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-xl text-[17px] leading-relaxed text-[color:var(--ink)]/85">
-                Radimo brze, jasne i mobilne web stranice za obrte i male firme.
-                Cilj je da kupac u deset sekundi shvati tko ste, što nudite i
-                kako vas može kontaktirati. Bez kompliciranja, bez tehničkih
-                priča i bez prebacivanja posla na vas. Sekundarno pomažemo i s
-                grafičkim dizajnom i osnovnom digitalizacijom, ali web je uvijek
-                glavni fokus.
+                Izrađujemo brze, čitljive i mobilne web stranice za obrte i
+                male firme. Cilj je da posjetitelj u kratkom vremenu razumije
+                tko ste, što nudite i kako vas može kontaktirati. Uz web,
+                pokrivamo i osnovni grafički dizajn te pripremu materijala kada
+                je to potrebno.
               </p>
             </Reveal>
           </div>
