@@ -311,7 +311,7 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
                     : ""
                 }
               >
-                Zatraži {pkg.name}
+                Zatraži ponudu
               </CTAButton>
             </div>
           </div>
