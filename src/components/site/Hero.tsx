@@ -1,18 +1,11 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Phone,
-  MessageCircle,
-  Globe,
-  Sparkles,
-  ShieldCheck,
-  Clock,
-} from "lucide-react";
 import { CTAGroup } from "./CTA";
-import { TrustStrip } from "./TrustStrip";
 import { Reveal } from "./Reveal";
+import { ImagePlaceholder } from "./ImagePlaceholder";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
+/** Editorial hero — no icons, image placeholders, oversized display type. */
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -20,200 +13,120 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const blobY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const blobY2 = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const bentoRot = useTransform(scrollYProgress, [0, 1], [0, -6]);
+  const imgY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const stripX = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden pt-16 md:pt-24 pb-20 md:pb-28"
-      style={{
-        background:
-          "linear-gradient(180deg, #ffffff 0%, #fff8fb 55%, #fce4f0 100%)",
-      }}
+      className="relative overflow-hidden bg-[color:var(--bone)] pt-14 md:pt-24 pb-24"
     >
-      {/* animated blush glows */}
-      <motion.div
-        style={reduced ? undefined : { y: blobY }}
-        aria-hidden
-        className="blob w-[520px] h-[520px] -top-40 -left-32 bg-[color:var(--pale-pink)]"
-      />
-      <motion.div
-        style={reduced ? undefined : { y: blobY2 }}
-        aria-hidden
-        className="blob w-[420px] h-[420px] top-20 -right-20 bg-[#ffc9de]"
-      />
+      <div className="container-wide relative">
+        {/* Meta strip */}
+        <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
+          <span className="num">HR — MMXXVI</span>
+          <span className="hidden md:inline">Split · Hrvatska · BiH</span>
+          <span className="num">Ed. 01</span>
+        </div>
 
-      <div className="container-x relative">
-        <div className="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-14 items-center">
-          <div>
+        <div className="pt-14 md:pt-20 grid gap-14 md:grid-cols-12 md:gap-x-8">
+          <div className="md:col-span-8">
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border-blush)] bg-white/70 backdrop-blur px-3 py-1.5 text-xs font-semibold text-[color:var(--plum)]/80">
-                <Sparkles className="h-3.5 w-3.5 text-[color:var(--pink)]" />
-                Sator Digital · Web za lokalne firme
+              <div className="eyebrow text-[color:var(--muted-text)] mb-8">
+                Web ateljea za lokalne firme
               </div>
             </Reveal>
 
-            <h1 className="mt-5 text-[38px] leading-[1.05] md:text-[56px] md:leading-[1.03] font-extrabold tracking-tight text-[color:var(--plum)]">
-              <RevealWords text="Web stranice za lokalne firme koje žele" />{" "}
-              <span className="relative inline-block">
-                <span className="text-gradient-pink">više upita s Googlea</span>
-                <motion.span
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
-                  className="absolute -bottom-1 left-0 h-[6px] w-full origin-left rounded-full bg-[color:var(--pink)]/25"
-                />
+            <h1 className="text-[42px] leading-[0.98] md:text-[92px] md:leading-[0.96] tracking-[-0.045em] font-medium text-[color:var(--ink)]">
+              <RevealWords text="Web stranice za lokalne" />
+              <br />
+              <RevealWords text="firme koje žele" delay={0.15} />
+              <br />
+              <span className="italic text-[color:var(--brand)] font-light">
+                <RevealWords text="više upita s Googlea" delay={0.3} />
               </span>
             </h1>
+          </div>
 
+          <div className="md:col-span-4 md:pt-6 flex flex-col justify-between gap-10">
             <Reveal delay={0.15}>
-              <p className="mt-6 text-[17px] md:text-lg leading-relaxed text-[color:var(--plum)]/75 max-w-xl">
-                Prvi preview najčešće u roku od tjedan dana, a završena stranica
-                najčešće kroz oko mjesec dana. Radimo za obrte i male firme u
-                Hrvatskoj i BiH.
+              <p className="text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
+                Prvi preview najčešće u roku od tjedan dana, a završena
+                stranica najčešće kroz oko mjesec dana. Radimo za obrte i male
+                firme u Hrvatskoj i BiH.
               </p>
             </Reveal>
-
-            <Reveal delay={0.25} className="mt-8">
+            <Reveal delay={0.3}>
               <CTAGroup />
             </Reveal>
+          </div>
+        </div>
 
-            <Reveal delay={0.35} className="mt-6">
-              <p className="text-sm text-[color:var(--plum)]/70 max-w-md">
+        {/* Editorial spread — image placeholders */}
+        <div className="mt-20 md:mt-28 grid gap-4 md:grid-cols-12 md:gap-6">
+          <motion.div
+            style={reduced ? undefined : { y: imgY }}
+            className="md:col-span-8"
+          >
+            <ImagePlaceholder
+              ratio="16/9"
+              index="01"
+              label="Studio · portret rada"
+              tone="ink"
+            />
+          </motion.div>
+          <div className="md:col-span-4 flex flex-col gap-4 md:gap-6">
+            <ImagePlaceholder
+              ratio="4/3"
+              index="02"
+              label="Detalj · tipografija"
+              tone="paper"
+            />
+            <div className="border border-[color:var(--line)] p-6 flex-1 flex flex-col justify-between bg-[color:var(--paper)]">
+              <div className="eyebrow text-[color:var(--muted-text)]">
+                Napomena — 01
+              </div>
+              <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--ink)]/85">
                 Demo smjera prije finalne odluke. Domena na vaše ime. Jasna
                 cijena prije početka rada.
               </p>
-              <p className="mt-1 text-sm text-[color:var(--mauve)]">
-                Brz kontakt telefonom ili WhatsAppom. Fokus na upite, ne na
-                tehničke pojmove.
-              </p>
-            </Reveal>
-          </div>
-
-          {/* Bento cluster with 3D depth */}
-          <motion.div
-            style={reduced ? undefined : { rotate: bentoRot }}
-            className="perspective-1200 relative"
-          >
-            <div className="relative grid grid-cols-6 grid-rows-6 gap-3 h-[440px] md:h-[520px]">
-              <BentoCard
-                className="col-span-4 row-span-3 bg-white"
-                delay={0.1}
-                depth={20}
-              >
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[color:var(--pink)]">
-                  <Globe className="h-3.5 w-3.5" /> Vaš web
-                </div>
-                <div className="mt-3 text-2xl font-extrabold text-[color:var(--plum)] leading-tight">
-                  Jasno, brzo, mobilno.
-                </div>
-                <div className="mt-2 text-sm text-[color:var(--mauve)] leading-relaxed">
-                  Struktura koja u 10 sekundi kaže tko ste i kako vas kontaktirati.
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {["Poziv", "WhatsApp", "Forma"].map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full bg-[color:var(--blush)] border border-[color:var(--border-blush)] px-2.5 py-1 text-[11px] font-semibold text-[color:var(--plum)]"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </BentoCard>
-
-              <BentoCard
-                className="col-span-2 row-span-3 bg-[color:var(--pink)] text-white"
-                delay={0.2}
-                depth={40}
-              >
-                <Phone className="h-5 w-5" />
-                <div className="mt-auto">
-                  <div className="text-xs uppercase tracking-widest opacity-80 font-bold">
-                    Klik za poziv
-                  </div>
-                  <div className="text-lg font-bold leading-tight mt-1">
-                    Direktan put do upita
-                  </div>
-                </div>
-              </BentoCard>
-
-              <BentoCard
-                className="col-span-3 row-span-3 bg-[color:var(--pale-pink)]"
-                delay={0.3}
-                depth={10}
-              >
-                <ShieldCheck className="h-5 w-5 text-[color:var(--pink)]" />
-                <div className="mt-auto">
-                  <div className="text-xs uppercase tracking-widest text-[color:var(--pink)] font-bold">
-                    Vlasništvo
-                  </div>
-                  <div className="mt-1 text-lg font-bold text-[color:var(--plum)] leading-tight">
-                    Domena na vaše ime
-                  </div>
-                </div>
-              </BentoCard>
-
-              <BentoCard
-                className="col-span-3 row-span-3 bg-white"
-                delay={0.4}
-                depth={30}
-              >
-                <Clock className="h-5 w-5 text-[color:var(--pink)]" />
-                <div className="mt-auto">
-                  <div className="text-xs uppercase tracking-widest text-[color:var(--pink)] font-bold">
-                    Prvi preview
-                  </div>
-                  <div className="mt-1 text-lg font-bold text-[color:var(--plum)] leading-tight">
-                    ~ tjedan dana
-                  </div>
-                  <div className="mt-1 text-xs text-[color:var(--mauve)]">
-                    Kontrolna točka prije finalne izrade
-                  </div>
-                </div>
-              </BentoCard>
+              <div className="mt-6 eyebrow text-[color:var(--muted-text)]">
+                Brz kontakt — Telefon · WhatsApp
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        <div className="mt-14 md:mt-20">
-          <TrustStrip />
-        </div>
+        {/* Micro index */}
+        <motion.div
+          style={reduced ? undefined : { x: stripX }}
+          className="mt-16 grid grid-cols-4 gap-4 md:gap-8 border-t border-[color:var(--line)] pt-8"
+        >
+          {[
+            { k: "Preview", v: "~ 7 dana" },
+            { k: "Isporuka", v: "~ 30 dana" },
+            { k: "Vlasništvo", v: "Domena vaša" },
+            { k: "Cijena", v: "Prije početka" },
+          ].map((s, i) => (
+            <div key={s.k} className="flex flex-col">
+              <span className="num text-[10px] tracking-widest text-[color:var(--muted-text)]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="mt-3 eyebrow text-[color:var(--muted-text)]">
+                {s.k}
+              </span>
+              <span className="mt-1 text-lg md:text-2xl tracking-[-0.02em] font-medium">
+                {s.v}
+              </span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function BentoCard({
-  children,
-  className,
-  delay = 0,
-  depth = 20,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  depth?: number;
-}) {
-  const reduced = useReducedMotion();
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20, rotateX: reduced ? 0 : 8 }}
-      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ delay, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
-      whileHover={reduced ? undefined : { y: -4, rotateX: -2, rotateY: 2 }}
-      style={{ transformStyle: "preserve-3d", transform: `translateZ(${depth}px)` }}
-      className={`rounded-[20px] border border-[color:var(--border-blush)] p-4 md:p-5 flex flex-col shadow-[0_20px_50px_-30px_rgba(232,62,140,0.35)] ${className ?? ""}`}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-function RevealWords({ text }: { text: string }) {
+function RevealWords({ text, delay = 0 }: { text: string; delay?: number }) {
   const reduced = useReducedMotion();
   const words = text.split(" ");
   return (
@@ -221,10 +134,10 @@ function RevealWords({ text }: { text: string }) {
       {words.map((w, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0, y: 12, filter: reduced ? "none" : "blur(6px)" }}
+          initial={{ opacity: 0, y: 20, filter: reduced ? "none" : "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.05 + i * 0.04, duration: 0.55 }}
-          className="inline-block mr-[0.25em]"
+          transition={{ delay: delay + 0.05 + i * 0.05, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
+          className="inline-block mr-[0.22em]"
         >
           {w}
         </motion.span>
