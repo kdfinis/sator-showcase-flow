@@ -13,17 +13,17 @@ import {
 export const Route = createFileRoute("/paketi")({
   head: () => ({
     meta: [
-      { title: "Paketi i cijene, Sator Digital" },
+      { title: "Paketi i cijene izrade web stranica — Sator Digital" },
       {
         name: "description",
         content:
-          "Dva jasna paketa za izradu web stranice. Paket Održavano mjesečno i paket Vlasništvo jednokratno. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa za izradu web stranica za obrte i male firme. Paket Održavano od 79 EUR mjesečno uz početnu naknadu, ili paket Vlasništvo od 2.490 EUR jednokratno. Domena na vaše ime, mobilna optimizacija, osnovni SEO setup.",
       },
-      { property: "og:title", content: "Paketi i cijene, Sator Digital" },
+      { property: "og:title", content: "Paketi i cijene izrade web stranica — Sator Digital" },
       {
         property: "og:description",
         content:
-          "Dva jasna paketa za izradu web stranice. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa. Vidljiva cijena, jasan opseg, domena na vaše ime.",
       },
     ],
   }),
