@@ -107,9 +107,9 @@ function OutcomeSection() {
           <div className="md:col-span-7">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Ne prodajemo samo web.{" "}
+                Web stranice s{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  Gradimo online prisutnost koja donosi upite.
+                  jasnom strukturom i mjerljivim opsegom.
                 </span>
               </h2>
             </Reveal>
