@@ -66,6 +66,20 @@ export const PACKAGES: Pkg[] = [
   },
 ];
 
+export const ALL_INCLUDE = [
+  "Osnovnu strukturu stranice prema dogovorenom opsegu",
+  "Prilagodbu za mobilne uređaje",
+  "Poziv jednim dodirom",
+  "WhatsApp ili kontakt put ako ga želite koristiti",
+  "Kontakt obrazac koji šalje upite na email",
+  "Osnovnu optimizaciju za tražilice",
+  "Osnovno mjerenje posjeta",
+  "Tehničku pripremu za objavu",
+  "Jasnu predaju prema pravilima paketa",
+  "Domenu na vaše ime",
+];
+
+
 /** Prošireni opseg — usluge koje Sator Digital izvodi izvan standardnog paketa, kao zasebnu ponudu. */
 export const EXTENDED_SERVICES: { title: string; desc: string }[] = [
   {
