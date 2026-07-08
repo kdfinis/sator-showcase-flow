@@ -184,9 +184,9 @@ function PackagesPreview() {
         <div className="flex items-end justify-between mb-14 gap-6">
           <Reveal>
             <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02] max-w-3xl">
-              Dva jasna puta.{" "}
+              Dva formata suradnje.{" "}
               <span className="text-[color:var(--brand)] font-medium">
-                Bez skrivenih stavki.
+                Definiran opseg i cijena.
               </span>
             </h2>
           </Reveal>
