@@ -63,7 +63,7 @@ function PageHero() {
         <div className="mt-16 grid gap-10 md:grid-cols-12">
           <Reveal delay={0.1} className="md:col-span-7">
             <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.01em] text-[color:var(--ink)]/85 font-light">
-              Tri jasna puta. Bez skrivenih stavki. Domena na vaše ime.
+              Dva jasna puta. Bez skrivenih stavki. Domena na vaše ime.
             </p>
             <p className="mt-8 text-[16px] leading-relaxed text-[color:var(--ink)]/75 max-w-2xl">
               Ako vam je cilj dobiti više upita i izgledati ozbiljnije na
