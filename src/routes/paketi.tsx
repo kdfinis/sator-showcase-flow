@@ -182,7 +182,7 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
           className={`border-b pb-4 mb-14 ${isDark ? "border-[color:var(--bone)]/25" : "border-[color:var(--line)]"}`}
         >
           <span className={`eyebrow ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
-            Paket · {String(index + 1).padStart(2, "0")} / 03
+            Paket · {String(index + 1).padStart(2, "0")} / 02
           </span>
           <span className={`num text-xs ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
             {pkg.priceShort}
