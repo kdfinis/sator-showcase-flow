@@ -47,17 +47,10 @@ function Home() {
   );
 }
 
-function SectionLabel({
-  index,
-  title,
-}: {
-  index: string;
-  title: string;
-}) {
+function SectionLabel({ title }: { index?: string; title: string }) {
   return (
-    <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+    <div className="border-b border-[color:var(--line)] pb-4 mb-14">
       <span className="eyebrow text-[color:var(--brand-2)]">{title}</span>
-      <span className="num text-xs text-[color:var(--muted-text)]">{index}</span>
     </div>
   );
 }
