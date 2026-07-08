@@ -34,17 +34,17 @@ export function Hero() {
           <div className="md:col-span-8">
             <Reveal>
               <div className="eyebrow text-[color:var(--muted-text)] mb-8">
-                Web ateljea za lokalne firme
+                Studio za izradu web stranica
               </div>
             </Reveal>
 
             <h1 className="text-[42px] leading-[0.98] md:text-[92px] md:leading-[0.96] tracking-[-0.045em] font-medium text-[color:var(--ink)]">
-              <RevealWords text="Web stranice za lokalne" />
+              <RevealWords text="Izrada web stranica" />
               <br />
-              <RevealWords text="firme koje žele" delay={0.15} />
+              <RevealWords text="za obrte i male" delay={0.15} />
               <br />
               <span className="text-[color:var(--brand)] font-medium">
-                <RevealWords text="više upita s Googlea" delay={0.3} />
+                <RevealWords text="firme u Hrvatskoj" delay={0.3} />
               </span>
             </h1>
           </div>
