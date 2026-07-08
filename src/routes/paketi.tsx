@@ -37,6 +37,7 @@ function Paketi() {
       <PositioningNote />
       <AllPackagesInclude />
       <PackagesList />
+      <PriceDrivers />
       <PaymentTerms />
       <BottomCTA />
     </SiteLayout>
