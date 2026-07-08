@@ -31,7 +31,7 @@ function FAQ() {
       <section className="pt-14 md:pt-24 pb-14 bg-[color:var(--bone)]">
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-            <span>FAQ — Ed. 01</span>
+            <span>FAQ — Izdanje 01</span>
             <span className="num">Pitanja</span>
           </div>
           <div className="mt-14 grid gap-14 md:grid-cols-12">
@@ -45,8 +45,8 @@ function FAQ() {
             </Reveal>
             <Reveal delay={0.1} className="md:col-span-5 md:pt-4">
               <p className="text-lg leading-relaxed text-[color:var(--ink)]/80 max-w-md">
-                Ovdje su najčešća pitanja prije početka. Ako želite najbrži
-                odgovor, nazovite ili pošaljite WhatsApp.
+                Popis najčešćih pitanja prije početka suradnje. Za pitanja
+                izvan popisa dostupni smo telefonom, e-poštom i WhatsAppom.
               </p>
               <div className="mt-8">
                 <CTAGroup />
