@@ -20,7 +20,6 @@ const steps = [
   },
 ];
 
-/** Sticky "story moment" — steps advance as user scrolls through a tall wrapper. */
 export function StickyProcess() {
   const wrap = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -28,32 +27,31 @@ export function StickyProcess() {
     target: wrap,
     offset: ["start start", "end end"],
   });
-  const active = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], [0, 1, 2, 2]);
+  const progress = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], [0, 1, 2, 2]);
 
   return (
-    <section
-      className="relative"
-      style={{ background: "linear-gradient(180deg,#fff3f8,#ffffff)" }}
-    >
-      <div ref={wrap} className="container-x relative" style={{ height: reduced ? "auto" : "220vh" }}>
-        <div className="sticky top-24 py-16 md:py-24">
-          <div className="max-w-2xl mb-10">
-            <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)]">
-              Kako radimo
-            </div>
-            <h2 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--plum)]">
-              Tri koraka.{" "}
-              <span className="text-gradient-pink">Bez tehničke buke.</span>
-            </h2>
-            <p className="mt-4 text-[color:var(--plum)]/75 text-lg max-w-xl">
-              Ako nemate tekst i fotke spremne, krenemo s minimumom i vodimo vas
-              kroz najkraći put do objave.
-            </p>
+    <section className="bg-[color:var(--ink)] text-[color:var(--bone)]">
+      <div ref={wrap} className="container-wide" style={{ height: reduced ? "auto" : "260vh" }}>
+        <div className="sticky top-0 min-h-screen flex flex-col justify-center py-24">
+          <div className="flex items-baseline justify-between border-b border-[color:var(--bone)]/20 pb-6 mb-16">
+            <div className="eyebrow opacity-70">Kako radimo — Proces</div>
+            <div className="num text-xs opacity-70">03 · Etape</div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-5 perspective-1200">
+          <h2 className="text-4xl md:text-7xl tracking-[-0.04em] font-medium max-w-3xl">
+            Tri koraka.{" "}
+            <span className="italic text-[color:var(--brand)] font-light">
+              Bez tehničke buke.
+            </span>
+          </h2>
+          <p className="mt-6 max-w-xl text-[color:var(--bone)]/75 text-lg">
+            Ako nemate tekst i fotke spremne, krenemo s minimumom i vodimo vas
+            kroz najkraći put do objave.
+          </p>
+
+          <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-10 perspective-1200">
             {steps.map((s, i) => (
-              <StepCard key={s.n} step={s} index={i} progress={active} reduced={reduced} />
+              <StepCard key={s.n} step={s} index={i} progress={progress} reduced={reduced} />
             ))}
           </div>
         </div>
@@ -73,26 +71,25 @@ function StepCard({
   progress: import("framer-motion").MotionValue<number>;
   reduced: boolean;
 }) {
-  const opacity = useTransform(progress, (v) => (reduced ? 1 : v >= index ? 1 : 0.35));
-  const y = useTransform(progress, (v) => (reduced ? 0 : v >= index ? 0 : 20));
-  const rotate = useTransform(progress, (v) => (reduced ? 0 : v >= index ? 0 : 4));
+  const opacity = useTransform(progress, (v) => (reduced ? 1 : v >= index ? 1 : 0.25));
+  const y = useTransform(progress, (v) => (reduced ? 0 : v >= index ? 0 : 24));
+  const rotate = useTransform(progress, (v) => (reduced ? 0 : v >= index ? 0 : 6));
+
   return (
     <motion.div
       style={{ opacity, y, rotateX: rotate, transformStyle: "preserve-3d" }}
-      className="rounded-[20px] bg-white border border-[color:var(--border-blush)] p-6 md:p-7 shadow-[0_25px_60px_-40px_rgba(42,16,35,0.35)]"
+      className="border-t border-[color:var(--bone)]/30 pt-6"
     >
       <div className="flex items-baseline justify-between">
-        <span className="text-4xl font-black text-[color:var(--pink)]/30">
+        <span className="num text-6xl md:text-7xl font-light text-[color:var(--bone)]/25">
           {step.n}
         </span>
-        <span className="text-xs font-bold uppercase tracking-widest text-[color:var(--mauve)]">
-          Korak
-        </span>
+        <span className="eyebrow text-[color:var(--bone)]/50">Korak</span>
       </div>
-      <h3 className="mt-3 text-xl font-bold text-[color:var(--plum)]">
+      <h3 className="mt-6 text-2xl md:text-3xl tracking-[-0.03em] font-medium">
         {step.t}
       </h3>
-      <p className="mt-2 text-[15px] leading-relaxed text-[color:var(--plum)]/75">
+      <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--bone)]/75">
         {step.d}
       </p>
     </motion.div>
