@@ -41,6 +41,8 @@
   --color-line: var(--line);
   --color-muted-text: var(--muted-text);
   --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
 }
 
 :root {
