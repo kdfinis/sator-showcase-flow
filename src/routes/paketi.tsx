@@ -321,6 +321,68 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
   );
 }
 
+function PriceDrivers() {
+  const chips = [
+    "Broj podstranica",
+    "Opseg sadržaja",
+    "Struktura ponude",
+    "Broj jezika",
+    "Kontakt forma",
+    "Google karta",
+    "WhatsApp integracija",
+    "Rezervacijski upit",
+    "Galerija radova",
+    "Blog ili novosti",
+    "Napredni SEO setup",
+    "Složenije integracije",
+  ];
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--paper)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
+            Što utječe na cijenu
+          </span>
+        </div>
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Cijena{" "}
+                <span className="text-[color:var(--brand)] font-medium">
+                  ovisi o opsegu
+                </span>
+                .
+              </h2>
+            </Reveal>
+          </div>
+          <div className="md:col-span-7">
+            <Reveal>
+              <div className="flex flex-wrap gap-2">
+                {chips.map((c) => (
+                  <span
+                    key={c}
+                    className="text-[13px] tracking-[0.02em] px-3 py-2 border border-[color:var(--line)] text-[color:var(--ink)]/85 bg-[color:var(--bone)]"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-2xl">
+                Paketi pokrivaju standardnu web stranicu s jasnim opsegom.
+                Za složenije projekte, portale, rezervacijske sustave i
+                internetske trgovine radi se posebna ponuda prema opsegu.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PaymentTerms() {
   const terms = [
     "Paket Održavano pokreće se nakon uplate početne naknade. Mjesečna naknada počinje prema dogovorenom datumu i traje najmanje 12 mjeseci.",
