@@ -6,7 +6,8 @@ import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
 import {
   PACKAGES,
   ALL_INCLUDE,
-  NOT_INCLUDED_GLOBAL,
+  EXTENDED_SERVICES,
+  PARTNER_SERVICES,
   type Pkg,
 } from "@/lib/data";
 
@@ -123,7 +124,7 @@ function AllPackagesInclude() {
               </h2>
             </Reveal>
           </div>
-          <div className="md:col-span-7 grid gap-12 md:grid-cols-2">
+          <div className="md:col-span-7">
             <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
               {ALL_INCLUDE.map((i, idx) => (
                 <RevealItem key={i}>
@@ -136,20 +137,6 @@ function AllPackagesInclude() {
                 </RevealItem>
               ))}
             </RevealGroup>
-            <div>
-              <div className="eyebrow text-[color:var(--muted-text)] mb-4">
-                Nije uključeno osim ako je navedeno
-              </div>
-              <RevealGroup className="space-y-2">
-                {NOT_INCLUDED_GLOBAL.map((i) => (
-                  <RevealItem key={i}>
-                    <div className="text-[14px] leading-relaxed text-[color:var(--ink)]/60 line-through decoration-[color:var(--line)]">
-                      {i}
-                    </div>
-                  </RevealItem>
-                ))}
-              </RevealGroup>
-            </div>
           </div>
         </div>
       </div>
@@ -261,23 +248,6 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
               </div>
             ))}
 
-            {pkg.notIncluded && (
-              <div className="mt-10">
-                <div className={`eyebrow mb-4 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
-                  Nije uključeno
-                </div>
-                <ul className="space-y-2">
-                  {pkg.notIncluded.map((it) => (
-                    <li
-                      key={it}
-                      className={`text-[14px] line-through ${isDark ? "text-[color:var(--bone)]/50 decoration-[color:var(--bone)]/20" : "text-[color:var(--ink)]/55 decoration-[color:var(--line)]"}`}
-                    >
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
 
             {pkg.policy && (
               <div className={`mt-10 border-l-2 border-[color:var(--brand)] pl-6 py-2`}>
