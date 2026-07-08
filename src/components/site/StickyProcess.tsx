@@ -5,18 +5,18 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 const steps = [
   {
     n: "01",
-    t: "Kratki poziv",
-    d: "U desetak minuta razumijemo što radite, imate li postojeći web, koji je cilj stranice i koji paket ima najviše smisla.",
+    t: "Uvodni razgovor",
+    d: "Kratki poziv za razumijevanje djelatnosti, postojeće stranice ako postoji, cilja projekta i odgovarajućeg paketa.",
   },
   {
     n: "02",
-    t: "Preview smjera",
-    d: "Pripremimo smjer strukture i dizajna kako biste vidjeli u kojem smjeru idemo prije finalne izrade. Preview nije gotova stranica, nego kontrolna točka za sigurniju odluku.",
+    t: "Prijedlog smjera",
+    d: "Priprema smjera strukture i vizualnog rješenja kao kontrolne točke prije početka izrade. Ne predstavlja finalni proizvod.",
   },
   {
     n: "03",
     t: "Izrada i objava",
-    d: "Nakon dogovorenog opsega i uplate prema paketu krećemo u izradu. Prvi pregled obično je spreman za tjedan dana, a završetak je najčešće oko mjesec dana, ovisno o materijalima i povratnim informacijama.",
+    d: "Nakon potvrđenog opsega i uplate prema paketu započinje izrada. Prvi pregled uobičajeno je dostupan u roku od sedam dana, s objavom u pravilu unutar mjesec dana ovisno o dostavi materijala.",
   },
 ];
 
@@ -39,14 +39,14 @@ export function StickyProcess() {
           </div>
 
           <h2 className="text-4xl md:text-7xl tracking-[-0.04em] font-medium max-w-3xl">
-            Tri koraka.{" "}
+            Proces u{" "}
             <span className="text-[color:var(--brand)] font-medium">
-              Bez tehničke buke.
+              tri koraka.
             </span>
           </h2>
           <p className="mt-6 max-w-xl text-[color:var(--bone)]/75 text-lg">
-            Ako nemate tekst i fotke spremne, krenemo s minimumom i vodimo vas
-            kroz najkraći put do objave.
+            Ako materijali nisu potpuni, krećemo s minimumom i dopunjavamo
+            tijekom rada prema dogovorenom rasporedu.
           </p>
 
           <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-10 perspective-1200">

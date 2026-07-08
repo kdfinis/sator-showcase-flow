@@ -63,13 +63,14 @@ function PageHero() {
         <div className="mt-16 grid gap-10 md:grid-cols-12">
           <Reveal delay={0.1} className="md:col-span-7">
             <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.01em] text-[color:var(--ink)]/85 font-light">
-              Dva jasna puta. Bez skrivenih stavki. Domena na vaše ime.
+              Dva formata suradnje. Definiran opseg, cijena i uvjeti. Domena
+              registrirana na naručitelja.
             </p>
             <p className="mt-8 text-[16px] leading-relaxed text-[color:var(--ink)]/75 max-w-2xl">
-              Ako vam je cilj dobiti više upita i izgledati ozbiljnije na
-              Googleu, najvažnije je da web bude jasan, brz i da ima jednostavan
-              put do poziva ili poruke. Paketi su složeni tako da odmah znate
-              što dobivate, što je dodatno i koji je sljedeći korak.
+              Paketi su strukturirani tako da su opseg, isporuka i sljedeći
+              korak jasni prije početka rada. Standardni opseg pokriva
+              prezentacijsku stranicu s osnovnim SEO postavkama, mobilnu
+              optimizaciju i kontakt kanale.
             </p>
           </Reveal>
           <div className="md:col-span-5">
@@ -90,11 +91,10 @@ function PositioningNote() {
             Napomena o poziciji
           </div>
           <p className="text-[17px] leading-relaxed text-[color:var(--ink)]/85">
-            Sator Digital nije najjeftinija opcija na tržištu. Jeftina web
-            stranica može izgledati privlačno na početku, ali problem nastaje
-            kod strukture, sadržaja, vlasništva, podrške i odgovornosti nakon
-            objave. Ovdje plaćate jasnu isporuku, uređen proces i web koji je
-            napravljen da pomogne klijentu da vas kontaktira.
+            Sator Digital ne pozicionira se kao najjeftinija opcija na
+            tržištu. Cijena obuhvaća definiran proces, dokumentiran opseg,
+            registraciju domene na naručitelja te podršku nakon objave prema
+            odabranom paketu.
           </p>
         </Reveal>
       </div>
@@ -115,9 +115,9 @@ function AllPackagesInclude() {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
-                Osnove koje{" "}
+                Zajedničke{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  uvijek dobivate
+                  stavke svih paketa
                 </span>
                 .
               </h2>
@@ -420,13 +420,13 @@ function BottomCTA() {
       <div className="container-wide">
         <div className="eyebrow opacity-70 mb-10">Sljedeći korak</div>
         <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium max-w-3xl">
-          Niste sigurni koji paket?{" "}
+          Preporuka paketa prema{" "}
           <span className="text-[color:var(--brand)] font-medium">
-            Javite se.
+            vašem opsegu.
           </span>
         </h2>
         <p className="mt-8 max-w-xl text-lg text-[color:var(--bone)]/80">
-          Nazovite ili pošaljite kratku poruku, javimo se s prijedlogom.
+          Pošaljite kratak opis projekta ili nazovite. Predlažemo odgovarajući paket i sljedeće korake.
         </p>
         <div className="mt-10">
           <CTAGroup />

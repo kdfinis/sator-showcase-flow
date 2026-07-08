@@ -57,23 +57,22 @@ function SectionLabel({ title }: { index?: string; title: string }) {
 
 function ProblemSection() {
   const items = [
-    "Ljudi vas pronađu na Google Mapsu, ali onda nemaju gdje jasno vidjeti usluge, cijene, radove i način kontakta.",
-    "Facebook i Instagram pomažu, ali nisu zamjena za web stranicu koju vi posjedujete i koju Google može indeksirati.",
-    "Kada konkurencija ima urednu stranicu, izgleda ozbiljnije i češće dobije poziv.",
+    "Klijenti vas pronađu na Google Mapsu, ali nemaju jedno mjesto na kojem mogu pregledati usluge, cijene, radove i način kontakta.",
+    "Društvene mreže pokrivaju dio komunikacije, ali nisu zamjena za web stranicu koju posjedujete i koju Google indeksira.",
+    "Uredna web stranica utječe na dojam ozbiljnosti i može biti razlika između poziva i preskakanja.",
   ];
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="01" title="Problem" />
+        <SectionLabel index="01" title="Kontekst" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Imate Google recenzije, ali nemate{" "}
+                Google recenzije postoje.{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  stranicu koja pretvara
-                </span>{" "}
-                posjetitelje u upite.
+                  Web stranica često ne.
+                </span>
               </h2>
             </Reveal>
           </div>
@@ -108,20 +107,19 @@ function OutcomeSection() {
           <div className="md:col-span-7">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Ne prodajemo samo web.{" "}
+                Web stranice s{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  Gradimo online prisutnost koja donosi upite.
+                  jasnom strukturom i mjerljivim opsegom.
                 </span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-xl text-[17px] leading-relaxed text-[color:var(--ink)]/85">
-                Radimo brze, jasne i mobilne web stranice za obrte i male firme.
-                Cilj je da kupac u deset sekundi shvati tko ste, što nudite i
-                kako vas može kontaktirati. Bez kompliciranja, bez tehničkih
-                priča i bez prebacivanja posla na vas. Sekundarno pomažemo i s
-                grafičkim dizajnom i osnovnom digitalizacijom, ali web je uvijek
-                glavni fokus.
+                Izrađujemo brze, čitljive i mobilne web stranice za obrte i
+                male firme. Cilj je da posjetitelj u kratkom vremenu razumije
+                tko ste, što nudite i kako vas može kontaktirati. Uz web,
+                pokrivamo i osnovni grafički dizajn te pripremu materijala kada
+                je to potrebno.
               </p>
             </Reveal>
           </div>
@@ -150,9 +148,9 @@ function WhoSection() {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Kome ovo{" "}
+                Za koga je{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  najviše koristi
+                  ovaj format
                 </span>
                 .
               </h2>
@@ -186,9 +184,9 @@ function PackagesPreview() {
         <div className="flex items-end justify-between mb-14 gap-6">
           <Reveal>
             <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02] max-w-3xl">
-              Dva jasna puta.{" "}
+              Dva formata suradnje.{" "}
               <span className="text-[color:var(--brand)] font-medium">
-                Bez skrivenih stavki.
+                Definiran opseg i cijena.
               </span>
             </h2>
           </Reveal>
@@ -244,11 +242,10 @@ function PackagesPreview() {
             Napomena o cijeni
           </div>
           <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
-            Sator Digital nije najjeftinija opcija na tržištu. Razlika je u
-            procesu, jasnoći, vlasništvu, podršci i odgovornosti nakon objave.
-            Cilj nije samo da stranica postoji, nego da izgleda ozbiljno, radi
-            na mobitelu i vodi posjetitelja prema pozivu, WhatsAppu ili upitu.
-            Za složenije projekte radi se posebna ponuda.
+            Sator Digital ne pozicionira se kao najjeftinija opcija na
+            tržištu. Razlika se očituje u procesu, dokumentaciji, vlasništvu
+            nad domenom te podršci nakon objave. Za opsežnije projekte
+            izrađuje se posebna ponuda prema specifikaciji.
           </p>
         </Reveal>
       </div>
@@ -349,15 +346,15 @@ function FAQTeaser() {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.05]">
-                Kratki odgovori{" "}
+                Odgovori na{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  bez tehničke buke.
+                  najčešća pitanja.
                 </span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-6 text-[color:var(--ink)]/75 max-w-sm">
-                Ako želite najbrži odgovor, nazovite ili pošaljite WhatsApp.
+                Za pitanja izvan ovog popisa dostupni smo telefonom, e-poštom i WhatsAppom.
               </p>
             </Reveal>
             <Reveal delay={0.2} className="mt-8">
@@ -390,17 +387,16 @@ function FinalCTA() {
         </div>
         <Reveal>
           <h2 className="text-5xl md:text-8xl tracking-[-0.04em] font-medium leading-[0.98] max-w-4xl">
-            Želite da vas kupci{" "}
+            Razmatrate izradu ili{" "}
             <span className="text-[color:var(--brand)] font-medium">
-              lakše pronađu
-            </span>{" "}
-            i jave se?
+              redizajn web stranice?
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-10 max-w-xl text-lg text-[color:var(--bone)]/80">
-            Pošaljite naziv firme, grad i recite imate li web stranicu danas.
-            Predložit ćemo najpraktičniji sljedeći korak.
+            Pošaljite naziv firme, grad i informaciju o postojećoj stranici.
+            Vraćamo se s prijedlogom sljedećeg koraka.
           </p>
         </Reveal>
         <Reveal delay={0.2} className="mt-12">

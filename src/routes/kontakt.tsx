@@ -68,7 +68,7 @@ function Kontakt() {
       <section className="pt-14 md:pt-24 pb-14 bg-[color:var(--bone)]">
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-            <span>Kontakt — Ed. 01</span>
+            <span>Kontakt — Izdanje 01</span>
             <span className="num">Kontakt</span>
           </div>
 
@@ -83,8 +83,8 @@ function Kontakt() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-8 text-xl md:text-2xl leading-relaxed font-light max-w-2xl text-[color:var(--ink)]/85">
-                  Najbrže je nazvati ili poslati WhatsApp. Ako vam je lakše,
-                  pošaljite upit kroz formu.
+                  Dostupni smo telefonom, e-poštom i WhatsAppom. Za pisani
+                  upit koristite obrazac u nastavku.
                 </p>
               </Reveal>
             </div>
@@ -114,15 +114,15 @@ function Kontakt() {
           <div className="grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-4">
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-sm">
-                Pregledamo poruku i{" "}
+                Postupak nakon{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  javimo se.
+                  primljenog upita.
                 </span>
               </h2>
               <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
-                Pregledamo poruku i javimo se s nekoliko kratkih pitanja ili
-                prijedlogom za kratak poziv. Cilj je brzo shvatiti što vam
-                treba, imate li postojeći web i koji paket ima najviše smisla.
+                Nakon zaprimanja upita slijedi kratka razmjena poruka ili
+                termin za poziv. Cilj razgovora je razumjeti djelatnost,
+                postojeću stranicu ako postoji i odabir prikladnog paketa.
               </p>
             </Reveal>
             <div className="md:col-span-8">
