@@ -68,7 +68,7 @@ function Kontakt() {
       <section className="pt-14 md:pt-24 pb-14 bg-[color:var(--bone)]">
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-            <span>Kontakt — Ed. 01</span>
+            <span>Kontakt — Izdanje 01</span>
             <span className="num">Kontakt</span>
           </div>
 
@@ -83,8 +83,8 @@ function Kontakt() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-8 text-xl md:text-2xl leading-relaxed font-light max-w-2xl text-[color:var(--ink)]/85">
-                  Najbrže je nazvati ili poslati WhatsApp. Ako vam je lakše,
-                  pošaljite upit kroz formu.
+                  Dostupni smo telefonom, e-poštom i WhatsAppom. Za pisani
+                  upit koristite obrazac u nastavku.
                 </p>
               </Reveal>
             </div>
