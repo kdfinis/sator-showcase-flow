@@ -1,30 +1,28 @@
-import { motion } from "framer-motion";
-import { Reveal } from "./Reveal";
-
-const pills = [
+const items = [
   "Demo smjera prije finalne odluke",
   "Domena na vaše ime",
   "Jasna cijena prije početka",
   "Prvi preview ~7 dana",
+  "Bez skrivenih stavki",
   "Fokus na upite, ne na tehniku",
 ];
 
+/** Endless editorial marquee — no icons, just text and hairlines. */
 export function TrustStrip() {
+  const doubled = [...items, ...items];
   return (
-    <Reveal className="flex flex-wrap justify-center gap-2">
-      {pills.map((p, i) => (
-        <motion.span
-          key={p}
-          initial={{ opacity: 0, y: 6 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: i * 0.06, duration: 0.5 }}
-          className="inline-flex items-center rounded-full border border-[color:var(--border-blush)] bg-white/70 backdrop-blur px-3.5 py-1.5 text-xs md:text-[13px] font-medium text-[color:var(--plum)]/85"
-        >
-          <span className="mr-2 h-1.5 w-1.5 rounded-full bg-[color:var(--pink)]" />
-          {p}
-        </motion.span>
-      ))}
-    </Reveal>
+    <div className="relative overflow-hidden border-y border-[color:var(--line)] bg-[color:var(--bone)]">
+      <div className="marquee-track flex whitespace-nowrap py-4">
+        {doubled.map((t, i) => (
+          <span
+            key={i}
+            className="inline-flex items-center gap-6 pr-10 text-[11px] tracking-[0.22em] uppercase text-[color:var(--ink)]/80 font-medium"
+          >
+            <span>{t}</span>
+            <span className="h-1 w-1 bg-[color:var(--brand)]" />
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
