@@ -15,9 +15,9 @@ import {
   NAV_LINKS,
 } from "@/lib/site";
 
-const Placeholder = ({ v }: { v: string }) =>
+const P = ({ v }: { v: string }) =>
   isPlaceholder(v) ? (
-    <span className="text-[color:var(--mauve)] italic">{v}</span>
+    <span className="italic opacity-60">{v}</span>
   ) : (
     <span>{v}</span>
   );
@@ -27,90 +27,84 @@ export function Footer() {
     isPlaceholder(LEGAL_NAME) || isPlaceholder(OIB) || isPlaceholder(ADDRESS);
 
   return (
-    <footer className="mt-24 bg-[color:var(--plum)] text-white/90">
-      <div className="container-x py-16 grid gap-12 md:grid-cols-4">
-        <div className="md:col-span-2 max-w-md">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-[10px] bg-[color:var(--pink)] text-white font-black">
-              S
-            </span>
-            <span className="text-lg font-bold tracking-tight">
-              {SITE_NAME}
-            </span>
+    <footer className="mt-32 bg-[color:var(--ink)] text-[color:var(--bone)]">
+      <div className="container-wide pt-24 pb-10">
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <div className="eyebrow opacity-60">Sator — Digital</div>
+            <p className="mt-6 text-2xl md:text-3xl leading-[1.15] tracking-[-0.02em] max-w-xl font-light">
+              Web stranice za lokalne firme koje ljudi traže na Googleu.
+              Sekundarno grafički dizajn i osnovna digitalizacija poslovanja.
+            </p>
           </div>
-          <p className="text-sm leading-relaxed text-white/70">
-            Sator Digital izrađuje jasne web stranice za lokalne firme koje
-            ljudi traže na Googleu. Sekundarno nudimo grafički dizajn i osnovnu
-            digitalizaciju poslovanja.
-          </p>
-        </div>
 
-        <div>
-          <h4 className="text-xs uppercase tracking-widest text-[color:var(--pink)] mb-4 font-bold">
-            Navigacija
-          </h4>
-          <ul className="space-y-2 text-sm">
-            {NAV_LINKS.map((l) => (
-              <li key={l.to}>
-                <Link to={l.to} className="hover:text-white text-white/70">
-                  {l.label}
+          <div className="md:col-span-3">
+            <div className="eyebrow opacity-60 mb-6">Navigacija</div>
+            <ul className="space-y-3">
+              {NAV_LINKS.map((l) => (
+                <li key={l.to}>
+                  <Link
+                    to={l.to}
+                    className="text-[15px] hover:text-[color:var(--brand)] transition-colors"
+                  >
+                    {l.label} <span className="opacity-40">→</span>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  to="/privatnost"
+                  className="text-[15px] hover:text-[color:var(--brand)] transition-colors"
+                >
+                  Privatnost <span className="opacity-40">→</span>
                 </Link>
               </li>
-            ))}
-            <li>
-              <Link to="/privatnost" className="hover:text-white text-white/70">
-                Politika privatnosti
-              </Link>
-            </li>
-          </ul>
+            </ul>
+          </div>
+
+          <div className="md:col-span-3">
+            <div className="eyebrow opacity-60 mb-6">Kontakt</div>
+            <ul className="space-y-3 text-[15px]">
+              <li>
+                <a href={telHref()} className="hover:text-[color:var(--brand)]">
+                  <P v={PHONE_DISPLAY} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={waHref()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[color:var(--brand)]"
+                >
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href={mailHref()} className="hover:text-[color:var(--brand)] break-all">
+                  <P v={EMAIL} />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h4 className="text-xs uppercase tracking-widest text-[color:var(--pink)] mb-4 font-bold">
-            Kontakt
-          </h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href={telHref()} className="hover:text-white text-white/70">
-                <Placeholder v={PHONE_DISPLAY} />
-              </a>
-            </li>
-            <li>
-              <a
-                href={waHref()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white text-white/70"
-              >
-                <Placeholder v={WHATSAPP_URL} />
-              </a>
-            </li>
-            <li>
-              <a href={mailHref()} className="hover:text-white text-white/70">
-                <Placeholder v={EMAIL} />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="container-x py-6 text-xs text-white/60 grid gap-3 md:grid-cols-2">
-          <div className="space-y-1">
+        <div className="mt-24 pt-8 border-t border-[color:var(--bone)]/15 grid gap-6 md:grid-cols-2 text-xs opacity-70">
+          <div className="space-y-1 num">
             <div>
-              <Placeholder v={LEGAL_NAME} /> · OIB: <Placeholder v={OIB} />
+              <P v={LEGAL_NAME} /> · OIB <P v={OIB} />
             </div>
             <div>
-              <Placeholder v={ADDRESS} /> · <Placeholder v={VAT_STATUS} />
+              <P v={ADDRESS} /> · <P v={VAT_STATUS} />
             </div>
             {legalPending && (
-              <div className="text-[color:var(--pink)]/90 mt-2">
+              <div className="text-[color:var(--brand)] mt-2 not-italic">
                 Pravni podaci bit će ažurirani prije finalne objave stranice.
               </div>
             )}
           </div>
           <div className="md:text-right">
-            © {new Date().getFullYear()} {SITE_NAME}. Sva prava pridržana.
+            © {new Date().getFullYear()} {SITE_NAME}
           </div>
         </div>
       </div>

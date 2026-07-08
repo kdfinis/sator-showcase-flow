@@ -3,10 +3,12 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const inputCls =
-  "w-full rounded-[12px] border border-[color:var(--border-blush)] bg-white px-4 py-3 text-[15px] text-[color:var(--plum)] placeholder-[color:var(--mauve)]/70 transition focus:outline-none focus:border-[color:var(--pink)] focus:ring-4 focus:ring-[color:var(--pink)]/15";
+  "w-full bg-transparent border-0 border-b border-[color:var(--line)] px-0 py-3 text-[15px] text-[color:var(--ink)] placeholder-[color:var(--muted-text)]/70 transition focus:outline-none focus:border-[color:var(--ink)]";
 
 const labelCls =
-  "block text-sm font-semibold text-[color:var(--plum)] mb-1.5";
+  "block eyebrow text-[color:var(--muted-text)] mb-2";
+
+const selectCls = cn(inputCls, "appearance-none pr-6 bg-[color:var(--bone)]");
 
 export function ContactForm() {
   const navigate = useNavigate();
@@ -35,43 +37,47 @@ export function ContactForm() {
       id="kontakt-form"
       onSubmit={onSubmit}
       noValidate
-      className="card-soft p-6 md:p-8 space-y-5 scroll-mt-24"
+      className="scroll-mt-24"
     >
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="eyebrow text-[color:var(--muted-text)] mb-8">
+        Upit — 01
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2">
         <div>
           <label htmlFor="ime" className={labelCls}>
-            Ime i prezime *
+            01 · Ime i prezime *
           </label>
           <input id="ime" name="ime" required className={inputCls} />
         </div>
         <div>
           <label htmlFor="firma" className={labelCls}>
-            Naziv firme *
+            02 · Naziv firme *
           </label>
           <input id="firma" name="firma" required className={inputCls} />
         </div>
         <div>
           <label htmlFor="grad" className={labelCls}>
-            Grad *
+            03 · Grad *
           </label>
           <input id="grad" name="grad" required className={inputCls} />
         </div>
         <div>
           <label htmlFor="kontakt" className={labelCls}>
-            Telefon ili email *
+            04 · Telefon ili email *
           </label>
           <input id="kontakt" name="kontakt" required className={inputCls} />
         </div>
         <div className="md:col-span-2">
           <label htmlFor="webStanje" className={labelCls}>
-            Imate li web danas? *
+            05 · Imate li web danas? *
           </label>
           <select
             id="webStanje"
             name="webStanje"
             required
             defaultValue=""
-            className={inputCls}
+            className={selectCls}
           >
             <option value="" disabled>
               Odaberite
@@ -84,7 +90,7 @@ export function ContactForm() {
         </div>
         <div className="md:col-span-2">
           <label htmlFor="poruka" className={labelCls}>
-            Poruka *
+            06 · Poruka *
           </label>
           <textarea
             id="poruka"
@@ -95,15 +101,15 @@ export function ContactForm() {
           />
         </div>
 
-        <div className="md:col-span-2 pt-2">
-          <div className="text-xs font-semibold uppercase tracking-widest text-[color:var(--mauve)] mb-3">
+        <div className="md:col-span-2 pt-6 border-t border-[color:var(--line)]">
+          <div className="eyebrow text-[color:var(--muted-text)]">
             Neobavezno
           </div>
         </div>
 
         <div>
           <label htmlFor="maps" className={labelCls}>
-            Link na Google Maps profil
+            07 · Link na Google Maps profil
           </label>
           <input
             id="maps"
@@ -115,7 +121,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="soc" className={labelCls}>
-            Link na Facebook ili Instagram
+            08 · Link na Facebook ili Instagram
           </label>
           <input
             id="soc"
@@ -127,9 +133,9 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="rok" className={labelCls}>
-            Željeni rok
+            09 · Željeni rok
           </label>
-          <select id="rok" name="rok" defaultValue="" className={inputCls}>
+          <select id="rok" name="rok" defaultValue="" className={selectCls}>
             <option value="">Odaberite</option>
             <option>Što prije</option>
             <option>U sljedeća 2 tjedna</option>
@@ -139,9 +145,9 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="budzet" className={labelCls}>
-            Budžet okvirno
+            10 · Budžet okvirno
           </label>
-          <select id="budzet" name="budzet" defaultValue="" className={inputCls}>
+          <select id="budzet" name="budzet" defaultValue="" className={selectCls}>
             <option value="">Odaberite</option>
             <option>Do 1.000 EUR</option>
             <option>1.000 do 2.500 EUR</option>
@@ -152,12 +158,12 @@ export function ContactForm() {
         </div>
       </div>
 
-      <label className="flex items-start gap-3 text-sm text-[color:var(--plum)]/85 cursor-pointer">
+      <label className="mt-10 flex items-start gap-3 text-sm text-[color:var(--ink)]/80 cursor-pointer max-w-2xl">
         <input
           type="checkbox"
           name="consent"
           required
-          className="mt-1 h-4 w-4 accent-[color:var(--pink)]"
+          className="mt-1 h-4 w-4 accent-[color:var(--ink)]"
         />
         <span>
           Slanjem upita pristajem da me kontaktirate vezano uz ovaj zahtjev. Ne
@@ -166,18 +172,24 @@ export function ContactForm() {
       </label>
 
       {error && (
-        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div className="mt-6 border border-[color:var(--brand)] px-4 py-3 text-sm text-[color:var(--brand)]">
           {error}
         </div>
       )}
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full sm:w-auto inline-flex items-center justify-center rounded-[14px] bg-[color:var(--pink)] hover:bg-[color:var(--pink-hover)] text-white font-semibold px-6 py-3.5 transition disabled:opacity-70 shadow-[0_16px_36px_-18px_rgba(232,62,140,0.7)]"
-      >
-        {loading ? "Šaljem..." : "Pošalji upit"}
-      </button>
+      <div className="mt-10 flex flex-wrap items-center gap-6">
+        <button
+          type="submit"
+          disabled={loading}
+          className="group inline-flex items-center gap-3 bg-[color:var(--ink)] text-[color:var(--bone)] px-8 py-4 text-[13px] tracking-[0.14em] uppercase font-semibold transition-colors hover:bg-[color:var(--brand)] disabled:opacity-70"
+        >
+          <span>{loading ? "Šaljem" : "Pošalji upit"}</span>
+          <span className="transition-transform group-hover:translate-x-1">→</span>
+        </button>
+        <span className="text-xs text-[color:var(--muted-text)]">
+          Odgovor u pravilu u roku od 1 radnog dana.
+        </span>
+      </div>
     </form>
   );
 }
