@@ -22,12 +22,13 @@ export function Hero() {
       className="relative overflow-hidden bg-[color:var(--bone)] pt-14 md:pt-24 pb-24"
     >
       <div className="container-wide relative">
-        {/* Meta strip */}
-        <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-          <span className="num">HR — MMXXVI</span>
-          <span className="hidden md:inline">Split · Hrvatska</span>
-          <span className="num">Ed. 01</span>
-        </div>
+        {/* Wide image placeholder replaces the meta strip */}
+        <ImagePlaceholder
+          ratio="21/9"
+          label="Naslovni vizual"
+          tone="ink"
+          className="mb-4"
+        />
 
         <div className="pt-14 md:pt-20 grid gap-14 md:grid-cols-12 md:gap-x-8">
           <div className="md:col-span-8">
