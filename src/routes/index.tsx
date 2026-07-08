@@ -242,11 +242,10 @@ function PackagesPreview() {
             Napomena o cijeni
           </div>
           <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
-            Sator Digital nije najjeftinija opcija na tržištu. Razlika je u
-            procesu, jasnoći, vlasništvu, podršci i odgovornosti nakon objave.
-            Cilj nije samo da stranica postoji, nego da izgleda ozbiljno, radi
-            na mobitelu i vodi posjetitelja prema pozivu, WhatsAppu ili upitu.
-            Za složenije projekte radi se posebna ponuda.
+            Sator Digital ne pozicionira se kao najjeftinija opcija na
+            tržištu. Razlika se očituje u procesu, dokumentaciji, vlasništvu
+            nad domenom te podršci nakon objave. Za opsežnije projekte
+            izrađuje se posebna ponuda prema specifikaciji.
           </p>
         </Reveal>
       </div>
