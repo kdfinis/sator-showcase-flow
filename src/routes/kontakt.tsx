@@ -114,15 +114,15 @@ function Kontakt() {
           <div className="grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-4">
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-sm">
-                Pregledamo poruku i{" "}
+                Postupak nakon{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  javimo se.
+                  primljenog upita.
                 </span>
               </h2>
               <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
-                Pregledamo poruku i javimo se s nekoliko kratkih pitanja ili
-                prijedlogom za kratak poziv. Cilj je brzo shvatiti što vam
-                treba, imate li postojeći web i koji paket ima najviše smisla.
+                Nakon zaprimanja upita slijedi kratka razmjena poruka ili
+                termin za poziv. Cilj razgovora je razumjeti djelatnost,
+                postojeću stranicu ako postoji i odabir prikladnog paketa.
               </p>
             </Reveal>
             <div className="md:col-span-8">
