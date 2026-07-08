@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivatnostRouteImport } from './routes/privatnost'
 import { Route as PaketiRouteImport } from './routes/paketi'
 import { Route as KontaktRouteImport } from './routes/kontakt'
@@ -16,6 +17,11 @@ import { Route as HvalaRouteImport } from './routes/hvala'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivatnostRoute = PrivatnostRouteImport.update({
   id: '/privatnost',
   path: '/privatnost',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
   '/privatnost': typeof PrivatnostRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
   '/privatnost': typeof PrivatnostRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +79,27 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
   '/privatnost': typeof PrivatnostRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi' | '/privatnost'
+  fullPaths:
+    | '/'
+    | '/faq'
+    | '/hvala'
+    | '/kontakt'
+    | '/paketi'
+    | '/privatnost'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi' | '/privatnost'
+  to:
+    | '/'
+    | '/faq'
+    | '/hvala'
+    | '/kontakt'
+    | '/paketi'
+    | '/privatnost'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -85,6 +108,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/paketi'
     | '/privatnost'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,10 +118,18 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   PaketiRoute: typeof PaketiRoute
   PrivatnostRoute: typeof PrivatnostRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privatnost': {
       id: '/privatnost'
       path: '/privatnost'
@@ -150,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   PaketiRoute: PaketiRoute,
   PrivatnostRoute: PrivatnostRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
