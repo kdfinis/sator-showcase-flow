@@ -27,7 +27,7 @@ function Hvala() {
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
             <span>Potvrda — 200 OK</span>
-            <span className="num">§ Zaprimljeno</span>
+            <span className="num">Zaprimljeno</span>
           </div>
 
           <div className="mt-20 grid gap-16 md:grid-cols-12">
@@ -35,7 +35,7 @@ function Hvala() {
               <Reveal>
                 <h1 className="text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
                   Hvala.{" "}
-                  <span className="italic text-[color:var(--brand)] font-light">
+                  <span className="text-[color:var(--brand)] font-medium">
                     Upit je poslan.
                   </span>
                 </h1>

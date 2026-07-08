@@ -69,14 +69,14 @@ function Kontakt() {
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
             <span>Kontakt — Ed. 01</span>
-            <span className="num">§ Kontakt</span>
+            <span className="num">Kontakt</span>
           </div>
 
           <div className="mt-14 grid gap-14 md:grid-cols-12">
             <div className="md:col-span-7">
               <Reveal>
                 <h1 className="text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
-                  <span className="italic text-[color:var(--brand)] font-light">
+                  <span className="text-[color:var(--brand)] font-medium">
                     Kontakt
                   </span>
                 </h1>
@@ -110,13 +110,13 @@ function Kontakt() {
         <div className="container-wide">
           <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
             <span className="eyebrow text-[color:var(--muted-text)]">Što slijedi</span>
-            <span className="num text-xs text-[color:var(--muted-text)]">§ 02</span>
+            <span className="num text-xs text-[color:var(--muted-text)]">02</span>
           </div>
           <div className="grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-4">
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-sm">
                 Pregledamo poruku i{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   javimo se.
                 </span>
               </h2>

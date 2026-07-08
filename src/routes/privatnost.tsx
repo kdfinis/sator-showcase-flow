@@ -26,7 +26,7 @@ export const Route = createFileRoute("/privatnost")({
 
 function P({ v }: { v: string }) {
   return isPlaceholder(v) ? (
-    <span className="italic text-[color:var(--muted-text)]">{v}</span>
+    <span className="text-[color:var(--muted-text)]">{v}</span>
   ) : (
     <>{v}</>
   );
@@ -58,13 +58,13 @@ function Privacy() {
         <div className="container-wide max-w-3xl">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
             <span>Dokument — Ed. 01</span>
-            <span className="num">§ Privatnost</span>
+            <span className="num">Privatnost</span>
           </div>
 
           <Reveal>
             <h1 className="mt-14 text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
               Politika{" "}
-              <span className="italic text-[color:var(--brand)] font-light">
+              <span className="text-[color:var(--brand)] font-medium">
                 privatnosti
               </span>
             </h1>

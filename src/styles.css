@@ -41,19 +41,23 @@
   --color-line: var(--line);
   --color-muted-text: var(--muted-text);
   --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
 }
 
 :root {
   --radius: 4px;
 
-  /* Editorial / McKinsey-adjacent palette. Warm off-white + deep ink + one restrained accent. */
-  --ink: #0b1220;
-  --ink-soft: #182234;
-  --bone: #ede7db;
-  --paper: #e4dcc9;
-  --line: #cabf9f;
-  --muted-text: #6b6558;
-  --brand: #c24a1e; /* burnt sienna — used very sparingly */
+  /* Digital / high-contrast palette. Cool near-white surfaces + deep midnight ink + darker crimson + teal complement. */
+  --ink: #0a0f1c;
+  --ink-soft: #141b2d;
+  --bone: #eef1f6;
+  --paper: #dfe4ec;
+  --line: #b9c2d1;
+  --muted-text: #545c6e;
+  --brand: #6e1220;      /* dark crimson — restrained accent */
+  --brand-2: #0f6b7a;    /* deep teal — complementary */
+  --brand-3: #c9a24a;    /* muted brass — tertiary */
 
   --background: var(--bone);
   --foreground: var(--ink);

@@ -17,7 +17,7 @@ import {
 
 const P = ({ v }: { v: string }) =>
   isPlaceholder(v) ? (
-    <span className="italic opacity-60">{v}</span>
+    <span className="opacity-60">{v}</span>
   ) : (
     <span>{v}</span>
   );

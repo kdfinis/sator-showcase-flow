@@ -25,7 +25,7 @@ export function Hero() {
         {/* Meta strip */}
         <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
           <span className="num">HR — MMXXVI</span>
-          <span className="hidden md:inline">Split · Hrvatska · BiH</span>
+          <span className="hidden md:inline">Split · Hrvatska</span>
           <span className="num">Ed. 01</span>
         </div>
 
@@ -42,7 +42,7 @@ export function Hero() {
               <br />
               <RevealWords text="firme koje žele" delay={0.15} />
               <br />
-              <span className="italic text-[color:var(--brand)] font-light">
+              <span className="text-[color:var(--brand)] font-medium">
                 <RevealWords text="više upita s Googlea" delay={0.3} />
               </span>
             </h1>
@@ -53,7 +53,7 @@ export function Hero() {
               <p className="text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
                 Prvi preview najčešće u roku od tjedan dana, a završena
                 stranica najčešće kroz oko mjesec dana. Radimo za obrte i male
-                firme u Hrvatskoj i BiH.
+                firme u Hrvatskoj.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
