@@ -63,38 +63,53 @@ export const PACKAGES: Pkg[] = [
         ],
       },
     ],
-    notIncluded: [
-      "Trošak poslužitelja nakon predaje ako klijent koristi vlastiti",
-      "Velike izmjene dizajna",
-      "Napredna optimizacija za tražilice",
-      "Novi jezici",
-      "Oglasne kampanje",
-    ],
   },
 ];
 
-export const ALL_INCLUDE = [
-  "Osnovnu strukturu stranice prema dogovorenom opsegu",
-  "Prilagodbu za mobilne uređaje",
-  "Poziv jednim dodirom",
-  "WhatsApp ili kontakt put ako ga želite koristiti",
-  "Kontakt obrazac koji šalje upite na email",
-  "Osnovnu optimizaciju za tražilice",
-  "Osnovno mjerenje posjeta",
-  "Tehničku pripremu za objavu",
-  "Jasnu predaju prema pravilima paketa",
-  "Domenu na vaše ime",
+/** Prošireni opseg — usluge koje Sator Digital izvodi izvan standardnog paketa, kao zasebnu ponudu. */
+export const EXTENDED_SERVICES: { title: string; desc: string }[] = [
+  {
+    title: "Veći redizajn postojeće stranice",
+    desc: "Cjelovita revizija strukture, sadržaja i vizualnog identiteta izvan opsega paketa.",
+  },
+  {
+    title: "Dodatne podstranice i sekcije",
+    desc: "Proširenje opsega nakon zaključene prve isporuke prema novoj specifikaciji.",
+  },
+  {
+    title: "Dodatni jezici",
+    desc: "Priprema strukture i prijevoda za višejezičnu verziju stranice.",
+  },
+  {
+    title: "Napredna optimizacija za tražilice",
+    desc: "Dugoročni rad na sadržaju, tehničkom SEO-u i pozicioniranju izvan osnovnog setupa.",
+  },
+  {
+    title: "Složenije integracije",
+    desc: "Rezervacijski sustavi, internetske trgovine, CRM povezivanja i slična proširenja.",
+  },
 ];
 
-export const NOT_INCLUDED_GLOBAL = [
-  "Veliki redizajn",
-  "Nove stranice izvan dogovorenog opsega",
-  "Dodatni jezici (osim ako je uključeno)",
-  "Napredna i dugoročna optimizacija za tražilice",
-  "Oglasi na Googleu ili Meti",
-  "Složene integracije",
-  "Profesionalno fotografiranje",
+/** Vanjski stručnjaci — usluge koje ne izvodimo interno, ali povezujemo klijenta s provjerenim izvođačima. */
+export const PARTNER_SERVICES: { title: string; desc: string }[] = [
+  {
+    title: "Profesionalno fotografiranje",
+    desc: "Povezujemo vas s fotografima za interijere, proizvode, ugostiteljstvo i nekretnine.",
+  },
+  {
+    title: "Oglasne kampanje na Googleu i Meti",
+    desc: "Preporuka specijaliziranih agencija i freelancera za vođenje plaćenih kampanja.",
+  },
+  {
+    title: "Video produkcija i drone snimanje",
+    desc: "Povezivanje s produkcijskim timovima kada projekt zahtijeva video materijale.",
+  },
+  {
+    title: "Copywriting i prijevodi",
+    desc: "Preporuka autora i prevoditelja za opsežnije tekstove i višejezične verzije.",
+  },
 ];
+
 
 export const FAQ_ITEMS: { q: string; a: string }[] = [
   {
