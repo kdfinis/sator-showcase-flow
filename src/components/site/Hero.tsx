@@ -88,11 +88,11 @@ export function Hero() {
                 Napomena
               </div>
               <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--ink)]/85">
-                Demo smjera prije finalne odluke. Domena na vaše ime. Jasna
-                cijena prije početka rada.
+                Prijedlog smjera prije početka rada. Domena registrirana na
+                naručitelja. Cijena i opseg potvrđeni prije početka.
               </p>
               <div className="mt-6 eyebrow text-[color:var(--muted-text)]">
-                Brz kontakt — Telefon · WhatsApp
+                Kontakt — Telefon · WhatsApp
               </div>
             </div>
           </div>
