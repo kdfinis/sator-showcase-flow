@@ -35,7 +35,7 @@ export function StickyProcess() {
         <div className="sticky top-0 min-h-screen flex flex-col justify-center py-24">
           <div className="flex items-baseline justify-between border-b border-[color:var(--bone)]/20 pb-6 mb-16">
             <div className="eyebrow opacity-70">Kako radimo — Proces</div>
-            <div className="num text-xs opacity-70">03 · Etape</div>
+            <div className="num text-xs opacity-70">Etape</div>
           </div>
 
           <h2 className="text-4xl md:text-7xl tracking-[-0.04em] font-medium max-w-3xl">

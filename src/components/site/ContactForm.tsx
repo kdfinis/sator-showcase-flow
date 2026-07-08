@@ -40,37 +40,37 @@ export function ContactForm() {
       className="scroll-mt-24"
     >
       <div className="eyebrow text-[color:var(--muted-text)] mb-8">
-        Upit — 01
+        Upit
       </div>
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>
           <label htmlFor="ime" className={labelCls}>
-            01 · Ime i prezime *
+            Ime i prezime *
           </label>
           <input id="ime" name="ime" required className={inputCls} />
         </div>
         <div>
           <label htmlFor="firma" className={labelCls}>
-            02 · Naziv firme *
+            Naziv firme *
           </label>
           <input id="firma" name="firma" required className={inputCls} />
         </div>
         <div>
           <label htmlFor="grad" className={labelCls}>
-            03 · Grad *
+            Grad *
           </label>
           <input id="grad" name="grad" required className={inputCls} />
         </div>
         <div>
           <label htmlFor="kontakt" className={labelCls}>
-            04 · Telefon ili email *
+            Telefon ili email *
           </label>
           <input id="kontakt" name="kontakt" required className={inputCls} />
         </div>
         <div className="md:col-span-2">
           <label htmlFor="webStanje" className={labelCls}>
-            05 · Imate li web danas? *
+            Imate li web danas? *
           </label>
           <select
             id="webStanje"
@@ -90,7 +90,7 @@ export function ContactForm() {
         </div>
         <div className="md:col-span-2">
           <label htmlFor="poruka" className={labelCls}>
-            06 · Poruka *
+            Poruka *
           </label>
           <textarea
             id="poruka"
@@ -109,7 +109,7 @@ export function ContactForm() {
 
         <div>
           <label htmlFor="maps" className={labelCls}>
-            07 · Link na Google Maps profil
+            Link na Google Maps profil
           </label>
           <input
             id="maps"
@@ -121,7 +121,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="soc" className={labelCls}>
-            08 · Link na Facebook ili Instagram
+            Link na Facebook ili Instagram
           </label>
           <input
             id="soc"
@@ -133,7 +133,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="rok" className={labelCls}>
-            09 · Željeni rok
+            Željeni rok
           </label>
           <select id="rok" name="rok" defaultValue="" className={selectCls}>
             <option value="">Odaberite</option>
@@ -145,7 +145,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="budzet" className={labelCls}>
-            10 · Budžet okvirno
+            Budžet okvirno
           </label>
           <select id="budzet" name="budzet" defaultValue="" className={selectCls}>
             <option value="">Odaberite</option>

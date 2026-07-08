@@ -47,17 +47,10 @@ function Home() {
   );
 }
 
-function SectionLabel({
-  index,
-  title,
-}: {
-  index: string;
-  title: string;
-}) {
+function SectionLabel({ title }: { index?: string; title: string }) {
   return (
-    <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+    <div className="border-b border-[color:var(--line)] pb-4 mb-14">
       <span className="eyebrow text-[color:var(--brand-2)]">{title}</span>
-      <span className="num text-xs text-[color:var(--muted-text)]">{index}</span>
     </div>
   );
 }
@@ -336,9 +329,8 @@ function FinalCTA() {
   return (
     <section className="py-24 md:py-40 bg-[color:var(--ink)] text-[color:var(--bone)]">
       <div className="container-wide">
-        <div className="flex items-baseline justify-between border-b border-[color:var(--bone)]/25 pb-4 mb-16">
+        <div className="border-b border-[color:var(--bone)]/25 pb-4 mb-16">
           <span className="eyebrow opacity-70">Sljedeći korak</span>
-          <span className="num text-xs opacity-70">07</span>
         </div>
         <Reveal>
           <h2 className="text-5xl md:text-8xl tracking-[-0.04em] font-medium leading-[0.98] max-w-4xl">

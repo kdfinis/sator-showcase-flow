@@ -44,16 +44,13 @@ export function ImagePlaceholder({
           bg,
         )}
       >
-        <div className="absolute inset-0 flex items-end justify-between p-4">
-          <span className="eyebrow opacity-70">
-            {index !== undefined ? `Fig. ${String(index).padStart(2, "0")}` : "Fig."}
-          </span>
-          {label && (
-            <span className="eyebrow opacity-70 text-right max-w-[60%] truncate">
+        {label && (
+          <div className="absolute inset-x-0 bottom-0 flex justify-end p-4">
+            <span className="eyebrow opacity-70 text-right max-w-[70%] truncate">
               {label}
             </span>
-          )}
-        </div>
+          </div>
+        )}
         {/* corner ticks */}
         <span className="absolute top-2 left-2 h-3 w-3 border-l border-t border-current opacity-40" />
         <span className="absolute top-2 right-2 h-3 w-3 border-r border-t border-current opacity-40" />

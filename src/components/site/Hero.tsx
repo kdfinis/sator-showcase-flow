@@ -84,7 +84,7 @@ export function Hero() {
             />
             <div className="border border-[color:var(--line)] p-6 flex-1 flex flex-col justify-between bg-[color:var(--paper)]">
               <div className="eyebrow text-[color:var(--muted-text)]">
-                Napomena — 01
+                Napomena
               </div>
               <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--ink)]/85">
                 Demo smjera prije finalne odluke. Domena na vaše ime. Jasna

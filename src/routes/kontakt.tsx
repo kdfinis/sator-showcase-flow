@@ -108,9 +108,8 @@ function Kontakt() {
 
       <section className="py-24 md:py-32 bg-[color:var(--paper)]">
         <div className="container-wide">
-          <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+          <div className="border-b border-[color:var(--line)] pb-4 mb-14">
             <span className="eyebrow text-[color:var(--muted-text)]">Što slijedi</span>
-            <span className="num text-xs text-[color:var(--muted-text)]">02</span>
           </div>
           <div className="grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-4">
