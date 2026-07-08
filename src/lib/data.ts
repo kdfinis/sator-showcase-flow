@@ -7,7 +7,6 @@ export type Pkg = {
   includes: string[];
   extras?: { label: string; items: string[] }[];
   policy?: string;
-  policy?: string;
   handoff?: string;
 };
 
