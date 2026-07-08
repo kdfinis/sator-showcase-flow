@@ -63,13 +63,14 @@ function PageHero() {
         <div className="mt-16 grid gap-10 md:grid-cols-12">
           <Reveal delay={0.1} className="md:col-span-7">
             <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.01em] text-[color:var(--ink)]/85 font-light">
-              Dva jasna puta. Bez skrivenih stavki. Domena na vaše ime.
+              Dva formata suradnje. Definiran opseg, cijena i uvjeti. Domena
+              registrirana na naručitelja.
             </p>
             <p className="mt-8 text-[16px] leading-relaxed text-[color:var(--ink)]/75 max-w-2xl">
-              Ako vam je cilj dobiti više upita i izgledati ozbiljnije na
-              Googleu, najvažnije je da web bude jasan, brz i da ima jednostavan
-              put do poziva ili poruke. Paketi su složeni tako da odmah znate
-              što dobivate, što je dodatno i koji je sljedeći korak.
+              Paketi su strukturirani tako da su opseg, isporuka i sljedeći
+              korak jasni prije početka rada. Standardni opseg pokriva
+              prezentacijsku stranicu s osnovnim SEO postavkama, mobilnu
+              optimizaciju i kontakt kanale.
             </p>
           </Reveal>
           <div className="md:col-span-5">
