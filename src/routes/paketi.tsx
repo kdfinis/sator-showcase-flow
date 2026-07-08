@@ -386,6 +386,109 @@ function PaymentTerms() {
   );
 }
 
+function ExtendedServicesSection() {
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--paper)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
+            Prošireni opseg — zasebna ponuda
+          </span>
+        </div>
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Dodatne usluge{" "}
+                <span className="text-[color:var(--brand)] font-medium">
+                  izvan standardnog paketa
+                </span>
+                .
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-md">
+                Radovi navedeni u nastavku ne ulaze u standardni opseg paketa
+                Održavano i Vlasništvo. Izvode se kao zasebna ponuda prema
+                specifikaciji i procjeni opsega.
+              </p>
+            </Reveal>
+          </div>
+          <div className="md:col-span-7">
+            <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
+              {EXTENDED_SERVICES.map((s, i) => (
+                <RevealItem key={s.title}>
+                  <div className="grid grid-cols-[auto_1fr] gap-8 py-6">
+                    <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="text-[17px] tracking-[-0.01em] font-medium">
+                        {s.title}
+                      </div>
+                      <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--ink)]/75 max-w-xl">
+                        {s.desc}
+                      </p>
+                    </div>
+                  </div>
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PartnerServicesSection() {
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
+            Suradnja s vanjskim stručnjacima
+          </span>
+        </div>
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Povezujemo vas s{" "}
+                <span className="text-[color:var(--brand)] font-medium">
+                  provjerenim izvođačima
+                </span>
+                .
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-md">
+                Za usluge koje ne izvodimo interno, pomažemo u pronalasku
+                stručnjaka i uskladiti isporuku njihova rada s opsegom
+                projekta.
+              </p>
+            </Reveal>
+          </div>
+          <div className="md:col-span-7 grid gap-4 md:grid-cols-2">
+            {PARTNER_SERVICES.map((s) => (
+              <Reveal key={s.title}>
+                <div className="border border-[color:var(--line)] p-6 bg-[color:var(--paper)] h-full">
+                  <div className="text-[16px] tracking-[-0.01em] font-medium">
+                    {s.title}
+                  </div>
+                  <p className="mt-3 text-[14px] leading-relaxed text-[color:var(--ink)]/75">
+                    {s.desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BottomCTA() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--ink)] text-[color:var(--bone)]">
