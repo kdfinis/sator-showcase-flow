@@ -22,12 +22,13 @@ export function Hero() {
       className="relative overflow-hidden bg-[color:var(--bone)] pt-14 md:pt-24 pb-24"
     >
       <div className="container-wide relative">
-        {/* Meta strip */}
-        <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-          <span className="num">HR — MMXXVI</span>
-          <span className="hidden md:inline">Split · Hrvatska</span>
-          <span className="num">Ed. 01</span>
-        </div>
+        {/* Wide image placeholder replaces the meta strip */}
+        <ImagePlaceholder
+          ratio="21/9"
+          label="Naslovni vizual"
+          tone="ink"
+          className="mb-4"
+        />
 
         <div className="pt-14 md:pt-20 grid gap-14 md:grid-cols-12 md:gap-x-8">
           <div className="md:col-span-8">
@@ -103,7 +104,7 @@ export function Hero() {
           className="mt-16 grid grid-cols-4 gap-4 md:gap-8 border-t border-[color:var(--line)] pt-8"
         >
           {[
-            { k: "Preview", v: "~ 7 dana" },
+            { k: "Pregled", v: "~ 7 dana" },
             { k: "Isporuka", v: "~ 30 dana" },
             { k: "Vlasništvo", v: "Domena vaša" },
             { k: "Cijena", v: "Prije početka" },
