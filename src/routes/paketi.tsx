@@ -13,17 +13,17 @@ import {
 export const Route = createFileRoute("/paketi")({
   head: () => ({
     meta: [
-      { title: "Paketi i cijene, Sator Digital" },
+      { title: "Paketi i cijene izrade web stranica — Sator Digital" },
       {
         name: "description",
         content:
-          "Dva jasna paketa za izradu web stranice. Paket Održavano mjesečno i paket Vlasništvo jednokratno. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa za izradu web stranica za obrte i male firme. Paket Održavano od 79 EUR mjesečno uz početnu naknadu, ili paket Vlasništvo od 2.490 EUR jednokratno. Domena na vaše ime, mobilna optimizacija, osnovni SEO setup.",
       },
-      { property: "og:title", content: "Paketi i cijene, Sator Digital" },
+      { property: "og:title", content: "Paketi i cijene izrade web stranica — Sator Digital" },
       {
         property: "og:description",
         content:
-          "Dva jasna paketa za izradu web stranice. Domena na vaše ime i jasna cijena.",
+          "Dva jasna paketa. Vidljiva cijena, jasan opseg, domena na vaše ime.",
       },
     ],
   }),
@@ -37,6 +37,7 @@ function Paketi() {
       <PositioningNote />
       <AllPackagesInclude />
       <PackagesList />
+      <PriceDrivers />
       <PaymentTerms />
       <BottomCTA />
     </SiteLayout>
@@ -62,7 +63,7 @@ function PageHero() {
         <div className="mt-16 grid gap-10 md:grid-cols-12">
           <Reveal delay={0.1} className="md:col-span-7">
             <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.01em] text-[color:var(--ink)]/85 font-light">
-              Tri jasna puta. Bez skrivenih stavki. Domena na vaše ime.
+              Dva jasna puta. Bez skrivenih stavki. Domena na vaše ime.
             </p>
             <p className="mt-8 text-[16px] leading-relaxed text-[color:var(--ink)]/75 max-w-2xl">
               Ako vam je cilj dobiti više upita i izgledati ozbiljnije na
@@ -310,13 +311,75 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
                     : ""
                 }
               >
-                Zatraži {pkg.name}
+                Zatraži ponudu
               </CTAButton>
             </div>
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function PriceDrivers() {
+  const chips = [
+    "Broj podstranica",
+    "Opseg sadržaja",
+    "Struktura ponude",
+    "Broj jezika",
+    "Kontakt forma",
+    "Google karta",
+    "WhatsApp integracija",
+    "Rezervacijski upit",
+    "Galerija radova",
+    "Blog ili novosti",
+    "Napredni SEO setup",
+    "Složenije integracije",
+  ];
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--paper)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
+            Što utječe na cijenu
+          </span>
+        </div>
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Cijena{" "}
+                <span className="text-[color:var(--brand)] font-medium">
+                  ovisi o opsegu
+                </span>
+                .
+              </h2>
+            </Reveal>
+          </div>
+          <div className="md:col-span-7">
+            <Reveal>
+              <div className="flex flex-wrap gap-2">
+                {chips.map((c) => (
+                  <span
+                    key={c}
+                    className="text-[13px] tracking-[0.02em] px-3 py-2 border border-[color:var(--line)] text-[color:var(--ink)]/85 bg-[color:var(--bone)]"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-2xl">
+                Paketi pokrivaju standardnu web stranicu s jasnim opsegom.
+                Za složenije projekte, portale, rezervacijske sustave i
+                internetske trgovine radi se posebna ponuda prema opsegu.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

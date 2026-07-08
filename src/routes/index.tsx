@@ -13,16 +13,16 @@ import { PACKAGES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sator Digital, web stranice za obrte u Hrvatskoj" },
+      { title: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
       {
         name: "description",
         content:
-          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi pregled za tjedan dana.",
+          "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
       },
-      { property: "og:title", content: "Sator Digital, web stranice za obrte u Hrvatskoj" },
+      { property: "og:title", content: "Izrada web stranica za obrte i male firme — Sator Digital" },
       {
         property: "og:description",
-        content: "Web stranice za lokalne firme koje žele više upita s Googlea.",
+        content: "Standardna web stranica s jasnim opsegom i vidljivom cijenom. Za obrte i male firme u Hrvatskoj.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -186,7 +186,7 @@ function PackagesPreview() {
         <div className="flex items-end justify-between mb-14 gap-6">
           <Reveal>
             <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02] max-w-3xl">
-              Tri jasna puta.{" "}
+              Dva jasna puta.{" "}
               <span className="text-[color:var(--brand)] font-medium">
                 Bez skrivenih stavki.
               </span>
@@ -210,20 +210,77 @@ function PackagesPreview() {
           <PackageCard pkg={PACKAGES[1]} index={1} emphasis="balanced" compact />
         </div>
 
+        <div className="mt-20 grid gap-10 md:grid-cols-2">
+          <PackageFitCard
+            title="Kada paket Održavano vrijedi"
+            chips={[
+              "Mobilna optimizacija",
+              "Kontakt forma",
+              "Osnovni SEO setup",
+              "SSL i hosting",
+              "Domena na vaše ime",
+              "WhatsApp i Google karta",
+              "Redovito održavanje",
+              "Podrška bez brige",
+            ]}
+          />
+          <PackageFitCard
+            title="Kada paket Vlasništvo vrijedi"
+            chips={[
+              "Jednokratna izrada",
+              "Uredna predaja pristupa",
+              "Veći opseg podstranica",
+              "Mobilna optimizacija",
+              "Kontakt forma",
+              "Osnovni SEO setup",
+              "Domena na vaše ime",
+              "Opcionalno održavanje",
+            ]}
+          />
+        </div>
+
         <Reveal className="mt-16 border-t border-[color:var(--line)] pt-8 max-w-3xl">
           <div className="eyebrow text-[color:var(--muted-text)] mb-4">
             Napomena o cijeni
           </div>
           <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
-            Na tržištu postoje vrlo jeftine web stranice. Sator Digital nije
-            najjeftinija opcija. Razlika je u procesu, jasnoći, vlasništvu,
-            podršci i odgovornosti nakon objave. Cilj nije samo da stranica
-            postoji, nego da izgleda ozbiljno, radi na mobitelu i vodi
-            posjetitelja prema pozivu, WhatsAppu ili upitu.
+            Sator Digital nije najjeftinija opcija na tržištu. Razlika je u
+            procesu, jasnoći, vlasništvu, podršci i odgovornosti nakon objave.
+            Cilj nije samo da stranica postoji, nego da izgleda ozbiljno, radi
+            na mobitelu i vodi posjetitelja prema pozivu, WhatsAppu ili upitu.
+            Za složenije projekte radi se posebna ponuda.
           </p>
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function PackageFitCard({
+  title,
+  chips,
+}: {
+  title: string;
+  chips: string[];
+}) {
+  return (
+    <Reveal>
+      <div className="border border-[color:var(--line)] p-8 bg-[color:var(--bone)] h-full">
+        <div className="eyebrow text-[color:var(--muted-text)] mb-6">
+          {title}
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {chips.map((c) => (
+            <span
+              key={c}
+              className="text-[12px] tracking-[0.02em] px-3 py-1.5 border border-[color:var(--line)] text-[color:var(--ink)]/85"
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Reveal>
   );
 }
 

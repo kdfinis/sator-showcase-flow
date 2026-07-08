@@ -52,9 +52,9 @@ export function Hero() {
           <div className="md:col-span-4 md:pt-6 flex flex-col justify-between gap-10">
             <Reveal delay={0.15}>
               <p className="text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
-                Prvi pregled najčešće u roku od tjedan dana, a završena
-                stranica najčešće kroz oko mjesec dana. Radimo za obrte i male
-                firme u Hrvatskoj.
+                Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna
+                izrada od 2.490 EUR. Početna cijena za standardnu stranicu s
+                jasnim opsegom. Radimo za obrte i male firme u Hrvatskoj.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
