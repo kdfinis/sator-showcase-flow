@@ -13,16 +13,16 @@ import { PACKAGES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sator Digital, web stranice za obrte u Hrvatskoj" },
+      { title: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
       {
         name: "description",
         content:
-          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi pregled za tjedan dana.",
+          "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
       },
-      { property: "og:title", content: "Sator Digital, web stranice za obrte u Hrvatskoj" },
+      { property: "og:title", content: "Izrada web stranica za obrte i male firme — Sator Digital" },
       {
         property: "og:description",
-        content: "Web stranice za lokalne firme koje žele više upita s Googlea.",
+        content: "Standardna web stranica s jasnim opsegom i vidljivom cijenom. Za obrte i male firme u Hrvatskoj.",
       },
       { property: "og:type", content: "website" },
     ],
