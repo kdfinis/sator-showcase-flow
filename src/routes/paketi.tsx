@@ -48,7 +48,7 @@ function PageHero() {
     <section className="pt-14 md:pt-24 pb-20 bg-[color:var(--bone)]">
       <div className="container-wide">
         <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-          <span>Paketi — Ed. 01</span>
+          <span>Paketi — Izdanje 01</span>
           <span className="num">Cijene</span>
         </div>
         <Reveal>
