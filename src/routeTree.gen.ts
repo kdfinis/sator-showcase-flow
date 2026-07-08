@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PaketiRouteImport } from './routes/paketi'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as HvalaRouteImport } from './routes/hvala'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const PaketiRoute = PaketiRouteImport.update({
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HvalaRoute = HvalaRouteImport.update({
+  id: '/hvala',
+  path: '/hvala',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/faq': typeof FaqRoute
+  '/hvala': typeof HvalaRoute
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/faq': typeof FaqRoute
+  '/hvala': typeof HvalaRoute
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/faq': typeof FaqRoute
+  '/hvala': typeof HvalaRoute
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/faq' | '/kontakt' | '/paketi'
+  fullPaths: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/faq' | '/kontakt' | '/paketi'
-  id: '__root__' | '/' | '/faq' | '/kontakt' | '/paketi'
+  to: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi'
+  id: '__root__' | '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FaqRoute: typeof FaqRoute
+  HvalaRoute: typeof HvalaRoute
   KontaktRoute: typeof KontaktRoute
   PaketiRoute: typeof PaketiRoute
 }
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hvala': {
+      id: '/hvala'
+      path: '/hvala'
+      fullPath: '/hvala'
+      preLoaderRoute: typeof HvalaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -105,6 +122,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FaqRoute: FaqRoute,
+  HvalaRoute: HvalaRoute,
   KontaktRoute: KontaktRoute,
   PaketiRoute: PaketiRoute,
 }
