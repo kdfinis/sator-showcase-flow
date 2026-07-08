@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AlertTriangle, Check, X, PackageOpen } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
-import { TiltCard } from "@/components/site/TiltCard";
 import { CTAButton, CTAGroup } from "@/components/site/CTA";
+import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
 import {
   PACKAGES,
   ALL_INCLUDE,
@@ -46,36 +45,36 @@ function Paketi() {
 
 function PageHero() {
   return (
-    <section
-      className="relative pt-16 md:pt-24 pb-14 overflow-hidden"
-      style={{ background: "linear-gradient(180deg,#ffffff,#fff3f8)" }}
-    >
-      <div className="blob w-[400px] h-[400px] -top-24 -left-24 bg-[color:var(--pale-pink)]" />
-      <div className="container-x relative">
+    <section className="pt-14 md:pt-24 pb-20 bg-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
+          <span>Paketi — Ed. 01</span>
+          <span className="num">§ Cijene</span>
+        </div>
         <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border-blush)] bg-white px-3 py-1.5 text-xs font-semibold text-[color:var(--plum)]/80">
-            <PackageOpen className="h-3.5 w-3.5 text-[color:var(--pink)]" />
-            Paketi
-          </div>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight text-[color:var(--plum)]">
-            Paketi i <span className="text-gradient-pink">cijene</span>
+          <h1 className="mt-14 text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
+            Paketi &{" "}
+            <span className="italic text-[color:var(--brand)] font-light">
+              cijene
+            </span>
           </h1>
         </Reveal>
-        <Reveal delay={0.15}>
-          <p className="mt-5 max-w-2xl text-lg text-[color:var(--plum)]/75">
-            Tri jasna puta. Bez skrivenih stavki. Domena na vaše ime.
-          </p>
-        </Reveal>
-        <Reveal delay={0.25}>
-          <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-[color:var(--plum)]/80">
-            Ako vam je cilj dobiti više upita i izgledati ozbiljnije na
-            Googleu, najvažnije je da web bude jasan, brz i da ima jednostavan
-            put do poziva ili poruke. Paketi su složeni tako da odmah znate što
-            dobivate, što je dodatno i koji je sljedeći korak.
-          </p>
-        </Reveal>
+        <div className="mt-16 grid gap-10 md:grid-cols-12">
+          <Reveal delay={0.1} className="md:col-span-7">
+            <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.01em] text-[color:var(--ink)]/85 font-light">
+              Tri jasna puta. Bez skrivenih stavki. Domena na vaše ime.
+            </p>
+            <p className="mt-8 text-[16px] leading-relaxed text-[color:var(--ink)]/75 max-w-2xl">
+              Ako vam je cilj dobiti više upita i izgledati ozbiljnije na
+              Googleu, najvažnije je da web bude jasan, brz i da ima jednostavan
+              put do poziva ili poruke. Paketi su složeni tako da odmah znate
+              što dobivate, što je dodatno i koji je sljedeći korak.
+            </p>
+          </Reveal>
+          <div className="md:col-span-5">
+            <ImagePlaceholder ratio="4/3" index="01" label="Cijenovnik · korice" tone="ink" />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -83,10 +82,13 @@ function PageHero() {
 
 function PositioningNote() {
   return (
-    <section className="py-12 bg-white">
-      <div className="container-x">
-        <Reveal className="rounded-[20px] border border-[color:var(--border-blush)] bg-[color:var(--card-tint)] p-6 md:p-8">
-          <p className="text-[15px] leading-relaxed text-[color:var(--plum)]/85">
+    <section className="py-16 bg-[color:var(--paper)]">
+      <div className="container-wide">
+        <Reveal className="max-w-3xl">
+          <div className="eyebrow text-[color:var(--muted-text)] mb-6">
+            Napomena o poziciji
+          </div>
+          <p className="text-[17px] leading-relaxed text-[color:var(--ink)]/85">
             Sator Digital nije najjeftinija opcija na tržištu. Jeftina web
             stranica može izgledati privlačno na početku, ali problem nastaje
             kod strukture, sadržaja, vlasništva, podrške i odgovornosti nakon
@@ -101,49 +103,53 @@ function PositioningNote() {
 
 function AllPackagesInclude() {
   return (
-    <section
-      className="py-16 md:py-20"
-      style={{ background: "linear-gradient(180deg,#ffffff,#fff8fb)" }}
-    >
-      <div className="container-x">
-        <Reveal className="max-w-2xl mb-8">
-          <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)]">
-            Svi paketi uključuju
+    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
+            Zajednički standard
+          </span>
+          <span className="num text-xs text-[color:var(--muted-text)]">§ 01</span>
+        </div>
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Osnove koje{" "}
+                <span className="italic text-[color:var(--brand)] font-light">
+                  uvijek dobivate
+                </span>
+                .
+              </h2>
+            </Reveal>
           </div>
-          <h2 className="mt-3 text-2xl md:text-4xl font-extrabold tracking-tight text-[color:var(--plum)]">
-            Osnove koje{" "}
-            <span className="text-gradient-pink">uvijek dobivate</span>
-          </h2>
-        </Reveal>
-        <div className="grid md:grid-cols-2 gap-10">
-          <RevealGroup className="grid sm:grid-cols-2 gap-2.5">
-            {ALL_INCLUDE.map((i) => (
-              <RevealItem key={i}>
-                <div className="flex gap-2.5 rounded-xl bg-white border border-[color:var(--border-blush)] px-4 py-3">
-                  <Check className="h-4 w-4 mt-0.5 flex-none text-[color:var(--pink)]" />
-                  <span className="text-sm text-[color:var(--plum)]/90">
-                    {i}
-                  </span>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-          <div>
-            <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--mauve)] mb-3">
-              Nije uključeno osim ako je navedeno
-            </div>
-            <RevealGroup className="space-y-2">
-              {NOT_INCLUDED_GLOBAL.map((i) => (
+          <div className="md:col-span-7 grid gap-12 md:grid-cols-2">
+            <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
+              {ALL_INCLUDE.map((i, idx) => (
                 <RevealItem key={i}>
-                  <div className="flex gap-2.5 items-start">
-                    <X className="h-4 w-4 mt-0.5 flex-none text-[color:var(--mauve)]" />
-                    <span className="text-sm text-[color:var(--plum)]/70">
-                      {i}
+                  <div className="grid grid-cols-[auto_1fr] gap-4 py-3.5">
+                    <span className="num text-[10px] tracking-widest text-[color:var(--muted-text)] pt-1.5">
+                      {String(idx + 1).padStart(2, "0")}
                     </span>
+                    <span className="text-[14px] leading-relaxed">{i}</span>
                   </div>
                 </RevealItem>
               ))}
             </RevealGroup>
+            <div>
+              <div className="eyebrow text-[color:var(--muted-text)] mb-4">
+                Nije uključeno osim ako je navedeno
+              </div>
+              <RevealGroup className="space-y-2">
+                {NOT_INCLUDED_GLOBAL.map((i) => (
+                  <RevealItem key={i}>
+                    <div className="text-[14px] leading-relaxed text-[color:var(--ink)]/60 line-through decoration-[color:var(--line)]">
+                      {i}
+                    </div>
+                  </RevealItem>
+                ))}
+              </RevealGroup>
+            </div>
           </div>
         </div>
       </div>
@@ -153,75 +159,102 @@ function AllPackagesInclude() {
 
 function PackagesList() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container-x space-y-16">
-        {PACKAGES.map((p, i) => (
-          <PackageBlock key={p.id} pkg={p} index={i} />
-        ))}
-      </div>
+    <section className="bg-[color:var(--bone)]">
+      {PACKAGES.map((p, i) => (
+        <PackageBlock key={p.id} pkg={p} index={i} />
+      ))}
     </section>
   );
 }
 
 function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
-  const isBalanced = pkg.id === "owner";
+  const isDark = index % 2 === 1;
   return (
-    <div id={pkg.id}>
-      <Reveal>
-        <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <div>
-            <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)]">
-              Paket {String(index + 1).padStart(2, "0")}
-            </div>
-            <h2 className="mt-2 text-3xl md:text-5xl font-extrabold tracking-tight text-[color:var(--plum)]">
-              {pkg.name}
-              {isBalanced && (
-                <span className="ml-3 align-middle inline-flex items-center rounded-full bg-[color:var(--pink)] text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">
-                  Balansirano
-                </span>
-              )}
-            </h2>
-          </div>
-          <div className="text-[color:var(--pink)] text-lg font-bold">
-            {pkg.priceHome}
-          </div>
+    <div
+      id={pkg.id}
+      className={
+        isDark
+          ? "bg-[color:var(--ink)] text-[color:var(--bone)]"
+          : "bg-[color:var(--paper)] text-[color:var(--ink)]"
+      }
+    >
+      <div className="container-wide py-24 md:py-36">
+        <div
+          className={`flex items-baseline justify-between border-b pb-4 mb-14 ${isDark ? "border-[color:var(--bone)]/25" : "border-[color:var(--line)]"}`}
+        >
+          <span className={`eyebrow ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
+            Paket · {String(index + 1).padStart(2, "0")} / 03
+          </span>
+          <span className={`num text-xs ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
+            {pkg.priceShort}
+          </span>
         </div>
-        <p className="mt-3 max-w-3xl text-[color:var(--plum)]/80">
-          {pkg.bestFor}
-        </p>
-      </Reveal>
 
-      <div className="mt-8 grid lg:grid-cols-[1.4fr_1fr] gap-6">
-        <TiltCard>
-          <div className="h-full rounded-[20px] border border-[color:var(--border-blush)] bg-white p-6 md:p-8">
-            <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)] mb-4">
+        <div className="grid gap-14 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-6xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.95]">
+                {pkg.name}
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p
+                className={`mt-8 text-lg font-medium ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"}`}
+              >
+                {pkg.priceHome}
+              </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p
+                className={`mt-6 text-[16px] leading-relaxed max-w-md ${isDark ? "text-[color:var(--bone)]/75" : "text-[color:var(--ink)]/80"}`}
+              >
+                {pkg.bestFor}
+              </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <ImagePlaceholder
+                className="mt-10"
+                ratio="3/2"
+                index={String(index + 1).padStart(2, "0")}
+                label={pkg.name}
+                tone={isDark ? "bone" : "ink"}
+              />
+            </Reveal>
+          </div>
+
+          <div className="md:col-span-7">
+            <div className={`eyebrow mb-6 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
               Uključeno
             </div>
-            <ul className="grid sm:grid-cols-2 gap-2.5">
-              {pkg.includes.map((i) => (
-                <li
-                  key={i}
-                  className="flex gap-2.5 text-[15px] text-[color:var(--plum)]/90"
-                >
-                  <Check className="h-4 w-4 mt-0.5 flex-none text-[color:var(--pink)]" />
-                  {i}
+            <ul
+              className={`border-y ${isDark ? "border-[color:var(--bone)]/20 divide-[color:var(--bone)]/15" : "border-[color:var(--line)] divide-[color:var(--line)]"} divide-y`}
+            >
+              {pkg.includes.map((i, idx) => (
+                <li key={i} className="grid grid-cols-[auto_1fr] gap-6 py-3.5">
+                  <span
+                    className={`num text-[10px] tracking-widest pt-1.5 ${isDark ? "opacity-60" : "text-[color:var(--muted-text)]"}`}
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[15px] leading-relaxed">{i}</span>
                 </li>
               ))}
             </ul>
 
             {pkg.extras?.map((ex) => (
-              <div key={ex.label} className="mt-6">
-                <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)] mb-3">
+              <div key={ex.label} className="mt-10">
+                <div className={`eyebrow mb-4 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
                   {ex.label}
                 </div>
-                <ul className="grid sm:grid-cols-2 gap-2.5">
-                  {ex.items.map((it) => (
-                    <li
-                      key={it}
-                      className="flex gap-2.5 text-[15px] text-[color:var(--plum)]/90"
-                    >
-                      <Check className="h-4 w-4 mt-0.5 flex-none text-[color:var(--pink)]" />
-                      {it}
+                <ul
+                  className={`border-y ${isDark ? "border-[color:var(--bone)]/20 divide-[color:var(--bone)]/15" : "border-[color:var(--line)] divide-[color:var(--line)]"} divide-y`}
+                >
+                  {ex.items.map((it, idx) => (
+                    <li key={it} className="grid grid-cols-[auto_1fr] gap-6 py-3.5">
+                      <span className={`num text-[10px] tracking-widest pt-1.5 ${isDark ? "opacity-60" : "text-[color:var(--muted-text)]"}`}>
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[15px]">{it}</span>
                     </li>
                   ))}
                 </ul>
@@ -229,57 +262,55 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
             ))}
 
             {pkg.notIncluded && (
-              <div className="mt-6">
-                <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--mauve)] mb-3">
+              <div className="mt-10">
+                <div className={`eyebrow mb-4 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
                   Nije uključeno
                 </div>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2">
                   {pkg.notIncluded.map((it) => (
                     <li
                       key={it}
-                      className="flex gap-2.5 text-sm text-[color:var(--plum)]/70"
+                      className={`text-[14px] line-through ${isDark ? "text-[color:var(--bone)]/50 decoration-[color:var(--bone)]/20" : "text-[color:var(--ink)]/55 decoration-[color:var(--line)]"}`}
                     >
-                      <X className="h-4 w-4 mt-0.5 flex-none text-[color:var(--mauve)]" />
                       {it}
                     </li>
                   ))}
                 </ul>
               </div>
             )}
-          </div>
-        </TiltCard>
 
-        <div className="space-y-4">
-          {pkg.policy && (
-            <div className="rounded-[20px] border-2 border-[color:var(--pink)]/40 bg-[color:var(--blush)] p-6">
-              <div className="flex items-center gap-2 text-[color:var(--pink)] font-bold text-sm uppercase tracking-widest">
-                <AlertTriangle className="h-4 w-4" /> Pravila plaćanja
+            {pkg.policy && (
+              <div className={`mt-10 border-l-2 border-[color:var(--brand)] pl-6 py-2`}>
+                <div className="eyebrow text-[color:var(--brand)] mb-3">
+                  Pravila plaćanja
+                </div>
+                <p className={`text-[14px] leading-relaxed ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"} max-w-2xl`}>
+                  {pkg.policy}
+                </p>
               </div>
-              <p className="mt-3 text-[14px] leading-relaxed text-[color:var(--plum)]/90">
-                {pkg.policy}
-              </p>
-            </div>
-          )}
-          {pkg.handoff && (
-            <div className="rounded-[20px] border border-[color:var(--border-blush)] bg-[color:var(--card-tint)] p-6">
-              <div className="text-[color:var(--pink)] font-bold text-sm uppercase tracking-widest">
-                Predaja
+            )}
+
+            {pkg.handoff && (
+              <div className={`mt-10 border-l-2 border-[color:var(--brand)] pl-6 py-2`}>
+                <div className="eyebrow text-[color:var(--brand)] mb-3">
+                  Predaja
+                </div>
+                <p className={`text-[14px] leading-relaxed ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"} max-w-2xl`}>
+                  {pkg.handoff}
+                </p>
               </div>
-              <p className="mt-3 text-[14px] leading-relaxed text-[color:var(--plum)]/90">
-                {pkg.handoff}
-              </p>
-            </div>
-          )}
-          <div className="rounded-[20px] bg-[color:var(--plum)] text-white p-6">
-            <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)]">
-              Sljedeći korak
-            </div>
-            <p className="mt-2 text-sm text-white/80">
-              Pošaljite naziv firme i grad. Predložit ćemo najpraktičniji
-              sljedeći korak.
-            </p>
-            <div className="mt-4">
-              <CTAButton to="/kontakt" variant="primary" className="w-full">
+            )}
+
+            <div className="mt-12">
+              <CTAButton
+                to="/kontakt"
+                variant={isDark ? "secondary" : "primary"}
+                className={
+                  isDark
+                    ? "border-[color:var(--bone)] text-[color:var(--bone)] hover:bg-[color:var(--bone)] hover:text-[color:var(--ink)]"
+                    : ""
+                }
+              >
                 Zatraži {pkg.name}
               </CTAButton>
             </div>
@@ -298,26 +329,22 @@ function PaymentTerms() {
     "Rokovi ovise o tome da klijent na vrijeme dostavi materijale i feedback. Ako materijali kasne, pomiče se i rok objave.",
   ];
   return (
-    <section
-      className="py-16 md:py-24"
-      style={{ background: "linear-gradient(180deg,#ffffff,#fff3f8)" }}
-    >
-      <div className="container-x">
-        <Reveal className="max-w-2xl mb-8">
-          <div className="text-xs uppercase tracking-widest font-bold text-[color:var(--pink)]">
+    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
             Uvjeti plaćanja
-          </div>
-          <h2 className="mt-3 text-2xl md:text-4xl font-extrabold tracking-tight text-[color:var(--plum)]">
-            Jasno i <span className="text-gradient-pink">bez iznenađenja</span>
-          </h2>
-        </Reveal>
-        <RevealGroup className="grid md:grid-cols-2 gap-4">
-          {terms.map((t) => (
+          </span>
+          <span className="num text-xs text-[color:var(--muted-text)]">§ 04</span>
+        </div>
+        <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
+          {terms.map((t, i) => (
             <RevealItem key={t}>
-              <div className="rounded-[20px] bg-white border border-[color:var(--border-blush)] p-6 h-full">
-                <p className="text-[15px] leading-relaxed text-[color:var(--plum)]/85">
-                  {t}
-                </p>
+              <div className="grid grid-cols-[auto_1fr] gap-8 py-6">
+                <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-[16px] leading-relaxed max-w-3xl">{t}</p>
               </div>
             </RevealItem>
           ))}
@@ -329,22 +356,20 @@ function PaymentTerms() {
 
 function BottomCTA() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container-x">
-        <div className="rounded-[28px] p-8 md:p-12 bg-[color:var(--pale-pink)] border border-[color:var(--border-blush)] text-center">
-          <Reveal>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[color:var(--plum)]">
-              Niste sigurni koji paket?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-4 max-w-xl mx-auto text-[color:var(--plum)]/75">
-              Nazovite ili pošaljite kratku poruku, javimo se s prijedlogom.
-            </p>
-          </Reveal>
-          <Reveal delay={0.2} className="mt-8 flex justify-center">
-            <CTAGroup />
-          </Reveal>
+    <section className="py-24 md:py-32 bg-[color:var(--ink)] text-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="eyebrow opacity-70 mb-10">Sljedeći korak</div>
+        <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium max-w-3xl">
+          Niste sigurni koji paket?{" "}
+          <span className="italic text-[color:var(--brand)] font-light">
+            Javite se.
+          </span>
+        </h2>
+        <p className="mt-8 max-w-xl text-lg text-[color:var(--bone)]/80">
+          Nazovite ili pošaljite kratku poruku, javimo se s prijedlogom.
+        </p>
+        <div className="mt-10">
+          <CTAGroup />
         </div>
       </div>
     </section>
