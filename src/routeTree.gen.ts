@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PrivatnostRouteImport } from './routes/privatnost'
 import { Route as PaketiRouteImport } from './routes/paketi'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as HvalaRouteImport } from './routes/hvala'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PrivatnostRoute = PrivatnostRouteImport.update({
+  id: '/privatnost',
+  path: '/privatnost',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaketiRoute = PaketiRouteImport.update({
   id: '/paketi',
   path: '/paketi',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/hvala': typeof HvalaRoute
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
+  '/privatnost': typeof PrivatnostRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/hvala': typeof HvalaRoute
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
+  '/privatnost': typeof PrivatnostRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,21 @@ export interface FileRoutesById {
   '/hvala': typeof HvalaRoute
   '/kontakt': typeof KontaktRoute
   '/paketi': typeof PaketiRoute
+  '/privatnost': typeof PrivatnostRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi'
+  fullPaths: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi' | '/privatnost'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi'
-  id: '__root__' | '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi'
+  to: '/' | '/faq' | '/hvala' | '/kontakt' | '/paketi' | '/privatnost'
+  id:
+    | '__root__'
+    | '/'
+    | '/faq'
+    | '/hvala'
+    | '/kontakt'
+    | '/paketi'
+    | '/privatnost'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,10 +93,18 @@ export interface RootRouteChildren {
   HvalaRoute: typeof HvalaRoute
   KontaktRoute: typeof KontaktRoute
   PaketiRoute: typeof PaketiRoute
+  PrivatnostRoute: typeof PrivatnostRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/privatnost': {
+      id: '/privatnost'
+      path: '/privatnost'
+      fullPath: '/privatnost'
+      preLoaderRoute: typeof PrivatnostRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/paketi': {
       id: '/paketi'
       path: '/paketi'
@@ -125,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   HvalaRoute: HvalaRoute,
   KontaktRoute: KontaktRoute,
   PaketiRoute: PaketiRoute,
+  PrivatnostRoute: PrivatnostRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
