@@ -148,9 +148,9 @@ function WhoSection() {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Kome ovo{" "}
+                Za koga je{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  najviše koristi
+                  ovaj format
                 </span>
                 .
               </h2>
