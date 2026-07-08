@@ -1,106 +1,147 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
-import { NAV_LINKS, telHref, waHref } from "@/lib/site";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { NAV_LINKS, telHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+/**
+ * Editorial header that auto-hides on scroll-down and reveals on scroll-up.
+ * No icons. Word-marks and links only.
+ */
 export function Header() {
+  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const lastY = useRef(0);
   const { location } = useRouterState();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY.current;
+      setScrolled(y > 12);
+      if (open) {
+        setHidden(false);
+      } else if (y < 80) {
+        setHidden(false);
+      } else if (delta > 6) {
+        setHidden(true);
+      } else if (delta < -6) {
+        setHidden(false);
+      }
+      lastY.current = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   useEffect(() => setOpen(false), [location.pathname]);
 
   return (
     <motion.header
-      initial={{ y: -12, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+      animate={{ y: hidden ? "-100%" : "0%" }}
+      transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
       className={cn(
-        "sticky top-0 z-40 backdrop-blur-md transition-all",
+        "fixed top-0 inset-x-0 z-50 transition-colors",
         scrolled
-          ? "bg-white/85 border-b border-[color:var(--border-blush)] shadow-[0_6px_20px_-18px_rgba(42,16,35,0.35)]"
-          : "bg-white/60 border-b border-transparent",
+          ? "bg-[color:var(--bone)]/90 backdrop-blur-md border-b border-[color:var(--line)]"
+          : "bg-transparent border-b border-transparent",
       )}
     >
-      <div className="container-x flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-[10px] bg-[color:var(--pink)] text-white font-black text-sm shadow-[0_6px_18px_-6px_rgba(232,62,140,0.7)]">
-            S
-            <span className="absolute inset-0 rounded-[10px] ring-1 ring-white/40" />
+      <div className="container-wide flex items-center justify-between h-14 md:h-16">
+        <Link to="/" className="group inline-flex items-baseline gap-2">
+          <span className="text-[13px] md:text-sm font-semibold tracking-[0.14em] uppercase text-[color:var(--ink)]">
+            Sator
           </span>
-          <span className="text-[15px] font-bold tracking-tight text-[color:var(--plum)]">
-            Sator <span className="text-[color:var(--pink)]">Digital</span>
+          <span className="h-1 w-1 bg-[color:var(--brand)] translate-y-[-2px]" />
+          <span className="text-[13px] md:text-sm font-semibold tracking-[0.14em] uppercase text-[color:var(--muted-text)] group-hover:text-[color:var(--ink)] transition-colors">
+            Digital
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="relative px-3 py-2 text-sm font-medium text-[color:var(--plum)]/80 hover:text-[color:var(--pink)] transition-colors"
-              activeProps={{ className: "text-[color:var(--pink)]" }}
+              className="relative text-[13px] tracking-[0.14em] uppercase font-medium text-[color:var(--ink)]/75 hover:text-[color:var(--ink)] transition-colors"
+              activeProps={{
+                className:
+                  "text-[color:var(--ink)] [&>span]:scale-x-100",
+              }}
             >
               {l.label}
+              <span className="absolute -bottom-1 left-0 right-0 h-px origin-left scale-x-0 bg-[color:var(--ink)] transition-transform duration-300" />
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-6">
           <a
             href={telHref()}
-            className="inline-flex items-center gap-1.5 rounded-[12px] px-3 py-2 text-sm font-semibold border border-[color:var(--border-blush)] text-[color:var(--plum)] hover:bg-[color:var(--blush)] transition"
+            className="text-[13px] tracking-[0.14em] uppercase font-medium text-[color:var(--ink)] hover:text-[color:var(--brand)] transition-colors"
           >
-            <Phone className="h-4 w-4" /> Nazovi
+            Nazovi
           </a>
-          <a
-            href={waHref()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-[12px] px-3 py-2 text-sm font-semibold bg-[color:var(--pink)] text-white hover:bg-[color:var(--pink-hover)] transition shadow-[0_10px_24px_-14px_rgba(232,62,140,0.7)]"
+          <Link
+            to="/kontakt"
+            className="text-[13px] tracking-[0.14em] uppercase font-semibold bg-[color:var(--ink)] text-[color:var(--bone)] px-4 py-2 hover:bg-[color:var(--ink-soft)] transition-colors"
           >
-            <MessageCircle className="h-4 w-4" /> WhatsApp
-          </a>
+            Kontakt →
+          </Link>
         </div>
 
         <button
-          className="md:hidden p-2 rounded-lg hover:bg-[color:var(--blush)]"
-          aria-label="Otvori izbornik"
           onClick={() => setOpen((v) => !v)}
+          aria-label="Otvori izbornik"
+          aria-expanded={open}
+          className="md:hidden relative h-8 w-10 flex flex-col justify-center gap-[5px]"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <span
+            className={cn(
+              "block h-px w-full bg-[color:var(--ink)] transition-transform origin-center",
+              open && "translate-y-[3px] rotate-45",
+            )}
+          />
+          <span
+            className={cn(
+              "block h-px w-full bg-[color:var(--ink)] transition-transform origin-center",
+              open && "-translate-y-[3px] -rotate-45",
+            )}
+          />
         </button>
       </div>
 
-      {open && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          className="md:hidden border-t border-[color:var(--border-blush)] bg-white"
-        >
-          <div className="container-x py-4 flex flex-col gap-1">
-            {NAV_LINKS.map((l) => (
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden overflow-hidden border-t border-[color:var(--line)] bg-[color:var(--bone)]"
+          >
+            <div className="container-wide py-6 flex flex-col">
+              {NAV_LINKS.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="py-3 text-lg font-medium border-b border-[color:var(--line)]/60 last:border-b-0"
+                >
+                  {l.label}
+                </Link>
+              ))}
               <Link
-                key={l.to}
-                to={l.to}
-                className="px-2 py-3 rounded-lg text-[15px] font-medium text-[color:var(--plum)] hover:bg-[color:var(--blush)]"
+                to="/kontakt"
+                className="mt-6 inline-flex items-center justify-between text-sm tracking-[0.14em] uppercase font-semibold bg-[color:var(--ink)] text-[color:var(--bone)] px-4 py-4"
               >
-                {l.label}
+                <span>Zatraži kontakt</span>
+                <span>→</span>
               </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
