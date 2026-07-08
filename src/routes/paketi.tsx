@@ -322,10 +322,9 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
 
 function PaymentTerms() {
   const terms = [
-    "Managed se pokreće nakon uplate setup iznosa. Mjesečna naknada počinje prema dogovorenom datumu i traje najmanje 12 mjeseci.",
-    "Owner se plaća u dvije faze: 50 posto prije početka rada i 50 posto prije objave ili predaje.",
-    "Independence se plaća u tri faze: 50 posto prije početka, 30 posto nakon odobrenog smjera, 20 posto prije finalne predaje.",
-    "Rokovi ovise o tome da klijent na vrijeme dostavi materijale i feedback. Ako materijali kasne, pomiče se i rok objave.",
+    "Paket Održavano pokreće se nakon uplate početne naknade. Mjesečna naknada počinje prema dogovorenom datumu i traje najmanje 12 mjeseci.",
+    "Paket Vlasništvo plaća se u dvije faze: 50 posto prije početka rada i 50 posto prije objave ili predaje.",
+    "Rokovi ovise o tome da klijent na vrijeme dostavi materijale i povratne informacije. Ako materijali kasne, pomiče se i rok objave.",
   ];
   return (
     <section className="py-24 md:py-32 bg-[color:var(--bone)]">
