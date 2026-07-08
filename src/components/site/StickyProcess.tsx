@@ -40,7 +40,7 @@ export function StickyProcess() {
 
           <h2 className="text-4xl md:text-7xl tracking-[-0.04em] font-medium max-w-3xl">
             Tri koraka.{" "}
-            <span className="italic text-[color:var(--brand)] font-light">
+            <span className="text-[color:var(--brand)] font-medium">
               Bez tehničke buke.
             </span>
           </h2>

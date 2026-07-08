@@ -13,13 +13,13 @@ import { PACKAGES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sator Digital, web stranice za obrte u Hrvatskoj i BiH" },
+      { title: "Sator Digital, web stranice za obrte u Hrvatskoj" },
       {
         name: "description",
         content:
           "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime, jasna cijena i prvi preview za tjedan dana.",
       },
-      { property: "og:title", content: "Sator Digital, web stranice za obrte u Hrvatskoj i BiH" },
+      { property: "og:title", content: "Sator Digital, web stranice za obrte u Hrvatskoj" },
       {
         property: "og:description",
         content: "Web stranice za lokalne firme koje žele više upita s Googlea.",
@@ -71,13 +71,13 @@ function ProblemSection() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="§ 01" title="Problem" />
+        <SectionLabel index="01" title="Problem" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
                 Imate Google recenzije, ali nemate{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   stranicu koja pretvara
                 </span>{" "}
                 posjetitelje u upite.
@@ -110,13 +110,13 @@ function OutcomeSection() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--paper)]">
       <div className="container-wide">
-        <SectionLabel index="§ 02" title="Pristup" />
+        <SectionLabel index="02" title="Pristup" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-7">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
                 Ne prodajemo samo web.{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   Gradimo online prisutnost koja donosi upite.
                 </span>
               </h2>
@@ -152,13 +152,13 @@ function WhoSection() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="§ 03" title="Za koga radimo" />
+        <SectionLabel index="03" title="Za koga radimo" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
                 Kome ovo{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   najviše koristi
                 </span>
                 .
@@ -189,12 +189,12 @@ function PackagesPreview() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--paper)]">
       <div className="container-wide">
-        <SectionLabel index="§ 04" title="Paketi" />
+        <SectionLabel index="04" title="Paketi" />
         <div className="flex items-end justify-between mb-14 gap-6">
           <Reveal>
             <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02] max-w-3xl">
               Tri jasna puta.{" "}
-              <span className="italic text-[color:var(--brand)] font-light">
+              <span className="text-[color:var(--brand)] font-medium">
                 Bez skrivenih stavki.
               </span>
             </h2>
@@ -255,7 +255,7 @@ function ProofSection() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="§ 05" title="Odabrani primjeri" />
+        <SectionLabel index="05" title="Odabrani primjeri" />
         <div className="grid gap-14 md:grid-cols-2 md:gap-10">
           {items.map((p) => (
             <a
@@ -295,13 +295,13 @@ function FAQTeaser() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--paper)]">
       <div className="container-wide">
-        <SectionLabel index="§ 06" title="Česta pitanja" />
+        <SectionLabel index="06" title="Česta pitanja" />
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.05]">
                 Kratki odgovori{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   bez tehničke buke.
                 </span>
               </h2>
@@ -338,12 +338,12 @@ function FinalCTA() {
       <div className="container-wide">
         <div className="flex items-baseline justify-between border-b border-[color:var(--bone)]/25 pb-4 mb-16">
           <span className="eyebrow opacity-70">Sljedeći korak</span>
-          <span className="num text-xs opacity-70">§ 07</span>
+          <span className="num text-xs opacity-70">07</span>
         </div>
         <Reveal>
           <h2 className="text-5xl md:text-8xl tracking-[-0.04em] font-medium leading-[0.98] max-w-4xl">
             Želite da vas kupci{" "}
-            <span className="italic text-[color:var(--brand)] font-light">
+            <span className="text-[color:var(--brand)] font-medium">
               lakše pronađu
             </span>{" "}
             i jave se?

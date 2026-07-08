@@ -49,12 +49,12 @@ function PageHero() {
       <div className="container-wide">
         <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
           <span>Paketi — Ed. 01</span>
-          <span className="num">§ Cijene</span>
+          <span className="num">Cijene</span>
         </div>
         <Reveal>
           <h1 className="mt-14 text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
             Paketi &{" "}
-            <span className="italic text-[color:var(--brand)] font-light">
+            <span className="text-[color:var(--brand)] font-medium">
               cijene
             </span>
           </h1>
@@ -109,14 +109,14 @@ function AllPackagesInclude() {
           <span className="eyebrow text-[color:var(--muted-text)]">
             Zajednički standard
           </span>
-          <span className="num text-xs text-[color:var(--muted-text)]">§ 01</span>
+          <span className="num text-xs text-[color:var(--muted-text)]">01</span>
         </div>
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
                 Osnove koje{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   uvijek dobivate
                 </span>
                 .
@@ -335,7 +335,7 @@ function PaymentTerms() {
           <span className="eyebrow text-[color:var(--muted-text)]">
             Uvjeti plaćanja
           </span>
-          <span className="num text-xs text-[color:var(--muted-text)]">§ 04</span>
+          <span className="num text-xs text-[color:var(--muted-text)]">04</span>
         </div>
         <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
           {terms.map((t, i) => (
@@ -361,7 +361,7 @@ function BottomCTA() {
         <div className="eyebrow opacity-70 mb-10">Sljedeći korak</div>
         <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium max-w-3xl">
           Niste sigurni koji paket?{" "}
-          <span className="italic text-[color:var(--brand)] font-light">
+          <span className="text-[color:var(--brand)] font-medium">
             Javite se.
           </span>
         </h2>

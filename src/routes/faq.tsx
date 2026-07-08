@@ -32,13 +32,13 @@ function FAQ() {
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
             <span>FAQ — Ed. 01</span>
-            <span className="num">§ Pitanja</span>
+            <span className="num">Pitanja</span>
           </div>
           <div className="mt-14 grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-7">
               <h1 className="text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
                 Česta{" "}
-                <span className="italic text-[color:var(--brand)] font-light">
+                <span className="text-[color:var(--brand)] font-medium">
                   pitanja
                 </span>
               </h1>
