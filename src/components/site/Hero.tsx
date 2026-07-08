@@ -104,7 +104,7 @@ export function Hero() {
           className="mt-16 grid grid-cols-4 gap-4 md:gap-8 border-t border-[color:var(--line)] pt-8"
         >
           {[
-            { k: "Preview", v: "~ 7 dana" },
+            { k: "Pregled", v: "~ 7 dana" },
             { k: "Isporuka", v: "~ 30 dana" },
             { k: "Vlasništvo", v: "Domena vaša" },
             { k: "Cijena", v: "Prije početka" },
