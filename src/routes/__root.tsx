@@ -77,16 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sator Digital, web stranice za obrte u Hrvatskoj" },
+      { title: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
       {
         name: "description",
         content:
-          "Web stranice za lokalne firme koje žele više upita s Googlea. Demo smjera prije finalne odluke, domena na vaše ime i jasna cijena.",
+          "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
       },
       { name: "author", content: "Sator Digital" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Sator Digital" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
+      { name: "twitter:title", content: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
+      { property: "og:description", content: "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime." },
+      { name: "twitter:description", content: "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a228d1e9-7b10-4363-8d94-4d62d215be33/id-preview-1a89d7e4--f907bba5-c945-435a-a093-471fef461bce.lovable.app-1783529845603.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a228d1e9-7b10-4363-8d94-4d62d215be33/id-preview-1a89d7e4--f907bba5-c945-435a-a093-471fef461bce.lovable.app-1783529845603.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

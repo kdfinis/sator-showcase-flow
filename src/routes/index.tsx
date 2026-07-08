@@ -19,10 +19,10 @@ export const Route = createFileRoute("/")({
         content:
           "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
       },
-      { property: "og:title", content: "Izrada web stranica za obrte i male firme — Sator Digital" },
+      { property: "og:title", content: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
       {
         property: "og:description",
-        content: "Standardna web stranica s jasnim opsegom i vidljivom cijenom. Za obrte i male firme u Hrvatskoj.",
+        content: "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
       },
       { property: "og:type", content: "website" },
     ],
