@@ -115,9 +115,9 @@ function AllPackagesInclude() {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
-                Osnove koje{" "}
+                Zajedničke{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  uvijek dobivate
+                  stavke svih paketa
                 </span>
                 .
               </h2>
