@@ -387,17 +387,16 @@ function FinalCTA() {
         </div>
         <Reveal>
           <h2 className="text-5xl md:text-8xl tracking-[-0.04em] font-medium leading-[0.98] max-w-4xl">
-            Želite da vas kupci{" "}
+            Razmatrate izradu ili{" "}
             <span className="text-[color:var(--brand)] font-medium">
-              lakše pronađu
-            </span>{" "}
-            i jave se?
+              redizajn web stranice?
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-10 max-w-xl text-lg text-[color:var(--bone)]/80">
-            Pošaljite naziv firme, grad i recite imate li web stranicu danas.
-            Predložit ćemo najpraktičniji sljedeći korak.
+            Pošaljite naziv firme, grad i informaciju o postojećoj stranici.
+            Vraćamo se s prijedlogom sljedećeg koraka.
           </p>
         </Reveal>
         <Reveal delay={0.2} className="mt-12">
