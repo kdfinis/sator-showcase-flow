@@ -105,11 +105,10 @@ function AllPackagesInclude() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
           <span className="eyebrow text-[color:var(--muted-text)]">
             Zajednički standard
           </span>
-          <span className="num text-xs text-[color:var(--muted-text)]">01</span>
         </div>
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -180,7 +179,7 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
     >
       <div className="container-wide py-24 md:py-36">
         <div
-          className={`flex items-baseline justify-between border-b pb-4 mb-14 ${isDark ? "border-[color:var(--bone)]/25" : "border-[color:var(--line)]"}`}
+          className={`border-b pb-4 mb-14 ${isDark ? "border-[color:var(--bone)]/25" : "border-[color:var(--line)]"}`}
         >
           <span className={`eyebrow ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
             Paket · {String(index + 1).padStart(2, "0")} / 03
@@ -331,11 +330,10 @@ function PaymentTerms() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <div className="flex items-baseline justify-between border-b border-[color:var(--line)] pb-4 mb-14">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
           <span className="eyebrow text-[color:var(--muted-text)]">
             Uvjeti plaćanja
           </span>
-          <span className="num text-xs text-[color:var(--muted-text)]">04</span>
         </div>
         <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
           {terms.map((t, i) => (
