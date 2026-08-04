@@ -34,8 +34,7 @@ export function Footer() {
           <div className="md:col-span-6">
             <div className="eyebrow opacity-60">{SITE_NAME}</div>
             <p className="mt-6 text-2xl md:text-3xl leading-[1.15] tracking-[-0.02em] max-w-xl font-light">
-              {TAGLINE} Sekundarno grafički dizajn i osnovna digitalizacija
-              poslovanja.
+              {TAGLINE}
             </p>
           </div>
 

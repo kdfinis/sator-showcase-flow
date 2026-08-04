@@ -4,8 +4,7 @@
 
 export const SITE_NAME = "Sator Digital";
 export const SENDER_NAME = "Karlo Definis";
-export const TAGLINE =
-  "Web stranice za lokalne firme koje ljudi traže na Googleu.";
+export const TAGLINE = "Dizajn i izrada web stranica.";
 export const PHONE_DISPLAY = "+352 621 815 753";
 export const PHONE_TEL = "+352621815753";
 export const WHATSAPP_URL = "https://wa.me/352621815753";
@@ -14,7 +13,10 @@ export const LEGAL_NAME = "Karlo Definis";
 export const OIB = "TO_BE_FILLED";
 export const ADDRESS = "TO_BE_FILLED";
 export const VAT_STATUS = "TO_BE_FILLED";
-export const BASE_URL = "https://sator-showcase-flow.lovable.app";
+/** Public site on GitHub Pages (not Lovable URL in client-facing copy). */
+export const BASE_URL = "https://kdfinis.github.io/sator-digital";
+/** Visible link label in HTML signatures (hotlink; do not print raw host). */
+export const SITE_LINK_LABEL = "Sator Digital";
 export const SERVICE_AREA = "Hrvatska, s fokusom na Split i lokalne firme";
 export const RESPONSE_TIME_PROMISE = "1 radni dan";
 
