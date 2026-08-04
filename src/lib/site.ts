@@ -2,15 +2,15 @@
 // Values marked TO_BE_FILLED must remain as such until provided.
 
 export const SITE_NAME = "Sator Digital";
-export const PHONE_DISPLAY = "TO_BE_FILLED";
-export const PHONE_TEL = "TO_BE_FILLED";
-export const WHATSAPP_URL = "TO_BE_FILLED";
-export const EMAIL = "TO_BE_FILLED";
-export const LEGAL_NAME = "TO_BE_FILLED";
+export const PHONE_DISPLAY = "+352 621 815 753";
+export const PHONE_TEL = "+352621815753";
+export const WHATSAPP_URL = "https://wa.me/352621815753";
+export const EMAIL = "karlodefinis@gmail.com";
+export const LEGAL_NAME = "Karlo Definis (Sator Digital)";
 export const OIB = "TO_BE_FILLED";
 export const ADDRESS = "TO_BE_FILLED";
 export const VAT_STATUS = "TO_BE_FILLED";
-export const BASE_URL = "TO_BE_FILLED";
+export const BASE_URL = "https://sator-showcase-flow.lovable.app";
 export const SERVICE_AREA = "Hrvatska, s fokusom na Split i lokalne firme";
 export const RESPONSE_TIME_PROMISE = "1 radni dan";
 
