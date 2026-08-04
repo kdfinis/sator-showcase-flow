@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import {
   SITE_NAME,
+  TAGLINE,
   PHONE_DISPLAY,
   EMAIL,
   WHATSAPP_URL,
@@ -31,10 +32,10 @@ export function Footer() {
       <div className="container-wide pt-24 pb-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-6">
-            <div className="eyebrow opacity-60">Sator — Digital</div>
+            <div className="eyebrow opacity-60">{SITE_NAME}</div>
             <p className="mt-6 text-2xl md:text-3xl leading-[1.15] tracking-[-0.02em] max-w-xl font-light">
-              Web stranice za lokalne firme koje ljudi traže na Googleu.
-              Sekundarno grafički dizajn i osnovna digitalizacija poslovanja.
+              {TAGLINE} Sekundarno grafički dizajn i osnovna digitalizacija
+              poslovanja.
             </p>
           </div>
 

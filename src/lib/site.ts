@@ -1,12 +1,16 @@
-// Central constants — do not invent real business data.
-// Values marked TO_BE_FILLED must remain as such until provided.
+// Central public identity for Sator Digital.
+// Sales email signatures and CRM outreach MUST mirror these values.
+// Values marked TO_BE_FILLED stay until provided (legal only).
 
 export const SITE_NAME = "Sator Digital";
+export const SENDER_NAME = "Karlo Definis";
+export const TAGLINE =
+  "Web stranice za lokalne firme koje ljudi traže na Googleu.";
 export const PHONE_DISPLAY = "+352 621 815 753";
 export const PHONE_TEL = "+352621815753";
 export const WHATSAPP_URL = "https://wa.me/352621815753";
 export const EMAIL = "karlodefinis@gmail.com";
-export const LEGAL_NAME = "Karlo Definis (Sator Digital)";
+export const LEGAL_NAME = "Karlo Definis";
 export const OIB = "TO_BE_FILLED";
 export const ADDRESS = "TO_BE_FILLED";
 export const VAT_STATUS = "TO_BE_FILLED";
@@ -22,6 +26,18 @@ export const isPlaceholder = (v: string) => v === PLACEHOLDER;
 export const telHref = () => (isPlaceholder(PHONE_TEL) ? "#" : `tel:${PHONE_TEL}`);
 export const waHref = () => (isPlaceholder(WHATSAPP_URL) ? "#" : WHATSAPP_URL);
 export const mailHref = () => (isPlaceholder(EMAIL) ? "#" : `mailto:${EMAIL}`);
+
+/** Plain-text closer for CRM / outbound emails (append to body only). */
+export const emailSignaturePlain = () =>
+  [
+    "--",
+    SENDER_NAME,
+    SITE_NAME,
+    TAGLINE,
+    BASE_URL,
+    `WhatsApp: ${PHONE_DISPLAY}`,
+    EMAIL,
+  ].join("\n");
 
 export const NAV_LINKS = [
   { to: "/", label: "Početna" },
