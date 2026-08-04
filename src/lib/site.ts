@@ -22,7 +22,7 @@ export const PLACEHOLDER = "TO_BE_FILLED";
 
 export const isPlaceholder = (v: string) => v === PLACEHOLDER;
 
-// Safe href helpers — return "#" when placeholder so links don't 404.
+// Safe href helpers: return "#" when placeholder so links don't 404.
 export const telHref = () => (isPlaceholder(PHONE_TEL) ? "#" : `tel:${PHONE_TEL}`);
 export const waHref = () => (isPlaceholder(WHATSAPP_URL) ? "#" : WHATSAPP_URL);
 export const mailHref = () => (isPlaceholder(EMAIL) ? "#" : `mailto:${EMAIL}`);
