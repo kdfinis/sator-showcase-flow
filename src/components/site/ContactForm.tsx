@@ -5,8 +5,7 @@ import { cn } from "@/lib/utils";
 const inputCls =
   "w-full bg-transparent border-0 border-b border-[color:var(--line)] px-0 py-3 text-[15px] text-[color:var(--ink)] placeholder-[color:var(--muted-text)]/70 transition focus:outline-none focus:border-[color:var(--ink)]";
 
-const labelCls =
-  "block eyebrow text-[color:var(--muted-text)] mb-2";
+const labelCls = "block eyebrow text-[color:var(--muted-text)] mb-2";
 
 const selectCls = cn(inputCls, "appearance-none pr-6 bg-[color:var(--bone)]");
 
@@ -26,22 +25,15 @@ export function ContactForm() {
       navigate({ to: "/hvala" });
     } catch {
       setError(
-        "Nešto nije uspjelo. Pokušajte ponovno ili nas kontaktirajte direktno telefonom ili WhatsAppom.",
+        "Nešto nije uspjelo. Pokušajte ponovno ili nas kontaktirajte direktno telefonom ili emailom.",
       );
       setLoading(false);
     }
   }
 
   return (
-    <form
-      id="kontakt-form"
-      onSubmit={onSubmit}
-      noValidate
-      className="scroll-mt-24"
-    >
-      <div className="eyebrow text-[color:var(--muted-text)] mb-8">
-        Upit
-      </div>
+    <form id="kontakt-form" onSubmit={onSubmit} noValidate className="scroll-mt-24">
+      <div className="eyebrow text-[color:var(--muted-text)] mb-8">Upit</div>
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>
@@ -51,16 +43,22 @@ export function ContactForm() {
           <input id="ime" name="ime" required className={inputCls} />
         </div>
         <div>
-          <label htmlFor="firma" className={labelCls}>
-            Naziv firme *
+          <label htmlFor="organizacija" className={labelCls}>
+            Organizacija *
           </label>
-          <input id="firma" name="firma" required className={inputCls} />
+          <input id="organizacija" name="organizacija" required className={inputCls} />
         </div>
         <div>
-          <label htmlFor="grad" className={labelCls}>
-            Grad *
+          <label htmlFor="uloga" className={labelCls}>
+            Vaša uloga *
           </label>
-          <input id="grad" name="grad" required className={inputCls} />
+          <input
+            id="uloga"
+            name="uloga"
+            required
+            className={inputCls}
+            placeholder="npr. direktor operacija"
+          />
         </div>
         <div>
           <label htmlFor="kontakt" className={labelCls}>
@@ -69,23 +67,19 @@ export function ContactForm() {
           <input id="kontakt" name="kontakt" required className={inputCls} />
         </div>
         <div className="md:col-span-2">
-          <label htmlFor="webStanje" className={labelCls}>
-            Imate li web danas? *
+          <label htmlFor="koci" className={labelCls}>
+            Što danas najviše koči rad? *
           </label>
-          <select
-            id="webStanje"
-            name="webStanje"
-            required
-            defaultValue=""
-            className={selectCls}
-          >
+          <select id="koci" name="koci" required defaultValue="" className={selectCls}>
             <option value="" disabled>
               Odaberite
             </option>
-            <option>Nemam web stranicu</option>
-            <option>Imam Facebook ili Instagram</option>
-            <option>Imam web stranicu, ali je stara</option>
-            <option>Imam web stranicu, treba redesign</option>
+            <option>Procesi nisu mapirani, nitko ne zna tko što vodi</option>
+            <option>Alati ne prate način rada tima</option>
+            <option>Tim se vraća na stare navike nakon promjene</option>
+            <option>Nejasno gdje AI može pomoći, a gdje ne</option>
+            <option>CRM ili izvještavanje ne odgovara stvarnom poslu</option>
+            <option>Nešto drugo (opišite u poruci)</option>
           </select>
         </div>
         <div className="md:col-span-2">
@@ -102,57 +96,19 @@ export function ContactForm() {
         </div>
 
         <div className="md:col-span-2 pt-6 border-t border-[color:var(--line)]">
-          <div className="eyebrow text-[color:var(--muted-text)]">
-            Neobavezno
-          </div>
+          <div className="eyebrow text-[color:var(--muted-text)]">Neobavezno</div>
         </div>
 
         <div>
-          <label htmlFor="maps" className={labelCls}>
-            Link na Google Maps profil
+          <label htmlFor="velicina" className={labelCls}>
+            Veličina tima (približno)
           </label>
-          <input
-            id="maps"
-            name="maps"
-            type="url"
-            placeholder="https://"
-            className={inputCls}
-          />
-        </div>
-        <div>
-          <label htmlFor="soc" className={labelCls}>
-            Link na Facebook ili Instagram
-          </label>
-          <input
-            id="soc"
-            name="soc"
-            type="url"
-            placeholder="https://"
-            className={inputCls}
-          />
-        </div>
-        <div>
-          <label htmlFor="rok" className={labelCls}>
-            Željeni rok
-          </label>
-          <select id="rok" name="rok" defaultValue="" className={selectCls}>
+          <select id="velicina" name="velicina" defaultValue="" className={selectCls}>
             <option value="">Odaberite</option>
-            <option>Što prije</option>
-            <option>U sljedeća 2 tjedna</option>
-            <option>U sljedećih mjesec dana</option>
-            <option>Nije hitno</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="budzet" className={labelCls}>
-            Budžet okvirno
-          </label>
-          <select id="budzet" name="budzet" defaultValue="" className={selectCls}>
-            <option value="">Odaberite</option>
-            <option>Do 1.000 EUR</option>
-            <option>1.000 do 2.500 EUR</option>
-            <option>2.500 do 5.000 EUR</option>
-            <option>5.000 EUR i više</option>
+            <option>Do 10 ljudi</option>
+            <option>11 do 50</option>
+            <option>51 do 250</option>
+            <option>Više od 250</option>
             <option>Nisam siguran</option>
           </select>
         </div>
@@ -166,8 +122,8 @@ export function ContactForm() {
           className="mt-1 h-4 w-4 accent-[color:var(--ink)]"
         />
         <span>
-          Slanjem upita pristajem da me kontaktirate vezano uz ovaj zahtjev. Ne
-          šaljemo spam. Detalji su u Politici privatnosti.
+          Slanjem upita pristajem da me kontaktirate vezano uz ovaj zahtjev. Ne šaljemo spam.
+          Detalji su u Politici privatnosti.
         </span>
       </label>
 

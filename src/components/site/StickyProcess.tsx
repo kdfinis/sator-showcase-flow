@@ -6,17 +6,17 @@ const steps = [
   {
     n: "01",
     t: "Uvodni razgovor",
-    d: "Kratki poziv za razumijevanje djelatnosti, postojeće stranice ako postoji, cilja projekta i odgovarajućeg paketa.",
+    d: "Kratak poziv ili poruka: razumijemo kontekst, tko je uključen i što danas koči rad. Bez obveze nastavka.",
   },
   {
     n: "02",
-    t: "Prijedlog smjera",
-    d: "Priprema smjera strukture i vizualnog rješenja kao kontrolne točke prije početka izrade. Ne predstavlja finalni proizvod.",
+    t: "Snimka ili plan",
+    d: "Snimka mapira postojeće procese u fiksnom opsegu. Za veće promjene slijedimo fazni plan redizajna s jasnim odobrenjima.",
   },
   {
     n: "03",
-    t: "Izrada i objava",
-    d: "Nakon potvrđenog opsega i uplate prema paketu započinje izrada. Prvi pregled uobičajeno je dostupan u roku od sedam dana, s objavom u pravilu unutar mjesec dana ovisno o dostavi materijala.",
+    t: "Uvođenje i enablement",
+    d: "Obučavamo tim na nove rutine, postavljamo kontrolne točke za AI pomoć uz ljudsku provjeru i pratimo usvajanje.",
   },
 ];
 
@@ -34,19 +34,16 @@ export function StickyProcess() {
       <div ref={wrap} className="container-wide" style={{ height: reduced ? "auto" : "260vh" }}>
         <div className="sticky top-0 min-h-screen flex flex-col justify-center py-24">
           <div className="flex items-baseline justify-between border-b border-[color:var(--bone)]/20 pb-6 mb-16">
-            <div className="eyebrow opacity-70">Kako radimo — Proces</div>
+            <div className="eyebrow opacity-70">Kako radimo · Proces</div>
             <div className="num text-xs opacity-70">Etape</div>
           </div>
 
           <h2 className="text-4xl md:text-7xl tracking-[-0.04em] font-medium max-w-3xl">
-            Proces u{" "}
-            <span className="text-[color:var(--brand)] font-medium">
-              tri koraka.
-            </span>
+            Proces u <span className="text-[color:var(--brand)] font-medium">tri koraka.</span>
           </h2>
           <p className="mt-6 max-w-xl text-[color:var(--bone)]/75 text-lg">
-            Ako materijali nisu potpuni, krećemo s minimumom i dopunjavamo
-            tijekom rada prema dogovorenom rasporedu.
+            Prvo razumijevanje, zatim dizajn promjene, na kraju usvajanje u timu. Tempo
+            prilagođavamo vašem kapacitetu.
           </p>
 
           <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-10 perspective-1200">
@@ -86,12 +83,8 @@ function StepCard({
         </span>
         <span className="eyebrow text-[color:var(--bone)]/50">Korak</span>
       </div>
-      <h3 className="mt-6 text-2xl md:text-3xl tracking-[-0.03em] font-medium">
-        {step.t}
-      </h3>
-      <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--bone)]/75">
-        {step.d}
-      </p>
+      <h3 className="mt-6 text-2xl md:text-3xl tracking-[-0.03em] font-medium">{step.t}</h3>
+      <p className="mt-4 text-[15px] leading-relaxed text-[color:var(--bone)]/75">{step.d}</p>
     </motion.div>
   );
 }

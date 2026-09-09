@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TiltCard } from "./TiltCard";
 import { CTAButton } from "./CTA";
-import type { Pkg } from "@/lib/data";
+import type { Service } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export function PackageCard({
@@ -10,7 +10,7 @@ export function PackageCard({
   emphasis = "normal",
   compact = false,
 }: {
-  pkg: Pkg;
+  pkg: Service;
   index: number;
   emphasis?: "normal" | "primary" | "balanced";
   compact?: boolean;
@@ -29,34 +29,57 @@ export function PackageCard({
         )}
       >
         <div className="flex items-baseline justify-between">
-          <span className={cn("num text-xs", isDark ? "text-[color:var(--bone)]/60" : "text-[color:var(--muted-text)]")}>
+          <span
+            className={cn(
+              "num text-xs",
+              isDark ? "text-[color:var(--bone)]/60" : "text-[color:var(--muted-text)]",
+            )}
+          >
             {String(index + 1).padStart(2, "0")} / 03
           </span>
-          {isBalanced && (
-            <span className="eyebrow text-[color:var(--brand)]">Balansirano</span>
+          {(isBalanced || isDark) && (
+            <span className="eyebrow text-[color:var(--brand)]">Program</span>
           )}
         </div>
 
-        <h3 className="mt-8 text-3xl md:text-4xl tracking-[-0.03em] font-medium">
-          {pkg.name}
-        </h3>
+        <h3 className="mt-8 text-3xl md:text-4xl tracking-[-0.03em] font-medium">{pkg.name}</h3>
 
-        <div className={cn("mt-6 text-sm", isDark ? "text-[color:var(--bone)]/75" : "text-[color:var(--muted-text)]")}>
-          {pkg.priceHome}
+        <div
+          className={cn(
+            "mt-6 text-sm",
+            isDark ? "text-[color:var(--bone)]/75" : "text-[color:var(--muted-text)]",
+          )}
+        >
+          {pkg.shapeLong}
         </div>
 
-        <p className={cn("mt-6 text-[15px] leading-relaxed max-w-sm", isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85")}>
+        <p
+          className={cn(
+            "mt-6 text-[15px] leading-relaxed max-w-sm",
+            isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85",
+          )}
+        >
           {pkg.bestFor}
         </p>
 
         {!compact && (
           <>
-            <div className={cn("my-8 h-px", isDark ? "bg-[color:var(--bone)]/20" : "bg-[color:var(--line)]")} />
+            <div
+              className={cn(
+                "my-8 h-px",
+                isDark ? "bg-[color:var(--bone)]/20" : "bg-[color:var(--line)]",
+              )}
+            />
             <ul className="space-y-3 text-[14px]">
               {pkg.includes.map((i) => (
                 <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
-                  <span className={cn("num pt-1 text-[10px]", isDark ? "text-[color:var(--bone)]/50" : "text-[color:var(--muted-text)]")}>
-                    —
+                  <span
+                    className={cn(
+                      "num pt-1 text-[10px]",
+                      isDark ? "text-[color:var(--bone)]/50" : "text-[color:var(--muted-text)]",
+                    )}
+                  >
+                    ·
                   </span>
                   <span>{i}</span>
                 </li>
@@ -72,10 +95,11 @@ export function PackageCard({
             variant={isDark ? "secondary" : "primary"}
             className={cn(
               "w-full justify-between",
-              isDark && "border-[color:var(--bone)] text-[color:var(--bone)] hover:bg-[color:var(--bone)] hover:text-[color:var(--ink)]",
+              isDark &&
+                "border-[color:var(--bone)] text-[color:var(--bone)] hover:bg-[color:var(--bone)] hover:text-[color:var(--ink)]",
             )}
           >
-            Zatraži {pkg.name}
+            Dogovori razgovor
           </CTAButton>
         </div>
       </motion.div>

@@ -1,13 +1,13 @@
 const items = [
-  "Prijedlog smjera prije početka rada",
-  "Domena registrirana na naručitelja",
-  "Cijena i opseg potvrđeni unaprijed",
-  "Prvi pregled u okvirno sedam dana",
-  "Bez skrivenih stavki",
-  "Mobilna optimizacija i osnovni SEO",
+  "Uvodni razgovor prije obveze",
+  "Pisani materijali u vlasništvu klijenta",
+  "Opseg dogovoren prije početka",
+  "Rad na daljinu i na terenu",
+  "AI uz ljudsku provjeru",
+  "Bez izmišljenih ROI brojki",
 ];
 
-/** Endless editorial marquee — no icons, just text and hairlines. */
+/** Endless editorial marquee: no icons, just text and hairlines. */
 export function TrustStrip() {
   const doubled = [...items, ...items];
   return (

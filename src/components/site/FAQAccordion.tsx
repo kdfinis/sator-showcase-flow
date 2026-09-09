@@ -28,7 +28,9 @@ export function FAQAccordion({
                 <span
                   className={cn(
                     "text-[17px] md:text-xl tracking-[-0.02em] font-medium transition-colors",
-                    isOpen ? "text-[color:var(--brand)]" : "text-[color:var(--ink)] group-hover:text-[color:var(--brand)]",
+                    isOpen
+                      ? "text-[color:var(--brand)]"
+                      : "text-[color:var(--ink)] group-hover:text-[color:var(--brand)]",
                   )}
                 >
                   {it.q}

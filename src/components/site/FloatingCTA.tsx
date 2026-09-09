@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
- * Single floating CTA — appears after user scrolls past the fold.
+ * Single floating CTA: appears after user scrolls past the fold.
  * On /kontakt it scrolls to the form; elsewhere it navigates to /kontakt.
  */
 export function FloatingCTA() {
@@ -18,14 +18,12 @@ export function FloatingCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const label = onKontakt ? "Pošalji upit" : "Zatraži kontakt";
+  const label = onKontakt ? "Pošalji upit" : "Uvodni razgovor";
 
   const inner = (
     <>
       <span className="relative z-10">{label}</span>
-      <span className="relative z-10 transition-transform group-hover:translate-x-1">
-        →
-      </span>
+      <span className="relative z-10 transition-transform group-hover:translate-x-1">→</span>
       <span
         aria-hidden
         className="absolute inset-0 bg-[color:var(--brand)] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"

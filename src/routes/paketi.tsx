@@ -3,28 +3,21 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { CTAButton, CTAGroup } from "@/components/site/CTA";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import {
-  PACKAGES,
-  ALL_INCLUDE,
-  EXTENDED_SERVICES,
-  PARTNER_SERVICES,
-  type Pkg,
-} from "@/lib/data";
+import { SERVICES, COMMON_APPROACH, SCOPE_BOUNDARIES, type Service } from "@/lib/data";
 
 export const Route = createFileRoute("/paketi")({
   head: () => ({
     meta: [
-      { title: "Paketi i cijene izrade web stranica — Sator Digital" },
+      { title: "Usluge redizajna procesa i digitalizacije, Sator Digital" },
       {
         name: "description",
         content:
-          "Dva jasna paketa za izradu web stranica za obrte i male firme. Paket Održavano od 79 EUR mjesečno uz početnu naknadu, ili paket Vlasništvo od 2.490 EUR jednokratno. Domena na vaše ime, mobilna optimizacija, osnovni SEO setup.",
+          "Tri programa: Snimka (otkrivanje procesa), Redizajn (operativni model i alati) i Uvođenje (AI prijelaz uz ljudsku provjeru i enablement tima).",
       },
-      { property: "og:title", content: "Paketi i cijene izrade web stranica — Sator Digital" },
+      { property: "og:title", content: "Usluge redizajna procesa i digitalizacije, Sator Digital" },
       {
         property: "og:description",
-        content:
-          "Dva jasna paketa. Vidljiva cijena, jasan opseg, domena na vaše ime.",
+        content: "Snimka, Redizajn i Uvođenje. Jasni programi bez objavljenih cijena na stranici.",
       },
     ],
   }),
@@ -35,13 +28,9 @@ function Paketi() {
   return (
     <SiteLayout>
       <PageHero />
-      <PositioningNote />
-      <AllPackagesInclude />
-      <PackagesList />
-      <PriceDrivers />
-      <ExtendedServicesSection />
-      <PartnerServicesSection />
-      <PaymentTerms />
+      <CommonApproach />
+      <ServicesList />
+      <ScopeBoundariesSection />
       <BottomCTA />
     </SiteLayout>
   );
@@ -52,28 +41,23 @@ function PageHero() {
     <section className="pt-14 md:pt-24 pb-20 bg-[color:var(--bone)]">
       <div className="container-wide">
         <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-          <span>Paketi — Izdanje 01</span>
-          <span className="num">Cijene</span>
+          <span>Usluge · Izdanje 01</span>
+          <span className="num">Programi</span>
         </div>
         <Reveal>
           <h1 className="mt-14 text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
-            Paketi &{" "}
-            <span className="text-[color:var(--brand)] font-medium">
-              cijene
-            </span>
+            Usluge & <span className="text-[color:var(--brand)] font-medium">programi</span>
           </h1>
         </Reveal>
         <div className="mt-16 grid gap-10 md:grid-cols-12">
           <Reveal delay={0.1} className="md:col-span-7">
             <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.01em] text-[color:var(--ink)]/85 font-light">
-              Dva formata suradnje. Definiran opseg, cijena i uvjeti. Domena
-              registrirana na naručitelja.
+              Tri jasna programa. Snimka mapira postojeće stanje. Redizajn preuređuje model rada.
+              Uvođenje podržava tim i AI prijelaz uz ljudsku provjeru.
             </p>
             <p className="mt-8 text-[16px] leading-relaxed text-[color:var(--ink)]/75 max-w-2xl">
-              Paketi su strukturirani tako da su opseg, isporuka i sljedeći
-              korak jasni prije početka rada. Standardni opseg pokriva
-              prezentacijsku stranicu s osnovnim SEO postavkama, mobilnu
-              optimizaciju i kontakt kanale.
+              Svaki program počinje uvodnim razgovorom. Opseg i cijena dogovaramo pisano prije
+              početka rada.
             </p>
           </Reveal>
           <div className="md:col-span-5">
@@ -85,50 +69,25 @@ function PageHero() {
   );
 }
 
-function PositioningNote() {
-  return (
-    <section className="py-16 bg-[color:var(--paper)]">
-      <div className="container-wide">
-        <Reveal className="max-w-3xl">
-          <div className="eyebrow text-[color:var(--muted-text)] mb-6">
-            Napomena o poziciji
-          </div>
-          <p className="text-[17px] leading-relaxed text-[color:var(--ink)]/85">
-            Sator Digital ne pozicionira se kao najjeftinija opcija na
-            tržištu. Cijena obuhvaća definiran proces, dokumentiran opseg,
-            registraciju domene na naručitelja te podršku nakon objave prema
-            odabranom paketu.
-          </p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-function AllPackagesInclude() {
+function CommonApproach() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--bone)]">
       <div className="container-wide">
         <div className="border-b border-[color:var(--line)] pb-4 mb-14">
-          <span className="eyebrow text-[color:var(--muted-text)]">
-            Zajednički standard
-          </span>
+          <span className="eyebrow text-[color:var(--muted-text)]">Zajednički pristup</span>
         </div>
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
-                Zajedničke{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  stavke svih paketa
-                </span>
-                .
+                Što je{" "}
+                <span className="text-[color:var(--brand)] font-medium">uvijek uključeno</span>.
               </h2>
             </Reveal>
           </div>
           <div className="md:col-span-7">
             <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
-              {ALL_INCLUDE.map((i, idx) => (
+              {COMMON_APPROACH.map((i, idx) => (
                 <RevealItem key={i}>
                   <div className="grid grid-cols-[auto_1fr] gap-4 py-3.5">
                     <span className="num text-[10px] tracking-widest text-[color:var(--muted-text)] pt-1.5">
@@ -146,21 +105,21 @@ function AllPackagesInclude() {
   );
 }
 
-function PackagesList() {
+function ServicesList() {
   return (
     <section className="bg-[color:var(--bone)]">
-      {PACKAGES.map((p, i) => (
-        <PackageBlock key={p.id} pkg={p} index={i} />
+      {SERVICES.map((s, i) => (
+        <ServiceBlock key={s.id} service={s} index={i} />
       ))}
     </section>
   );
 }
 
-function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
+function ServiceBlock({ service, index }: { service: Service; index: number }) {
   const isDark = index % 2 === 1;
   return (
     <div
-      id={pkg.id}
+      id={service.id}
       className={
         isDark
           ? "bg-[color:var(--ink)] text-[color:var(--bone)]"
@@ -172,10 +131,12 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
           className={`border-b pb-4 mb-14 ${isDark ? "border-[color:var(--bone)]/25" : "border-[color:var(--line)]"}`}
         >
           <span className={`eyebrow ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
-            Paket · {String(index + 1).padStart(2, "0")} / 02
+            Program · {String(index + 1).padStart(2, "0")} / 03
           </span>
-          <span className={`num text-xs ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
-            {pkg.priceShort}
+          <span
+            className={`num text-xs ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}
+          >
+            {service.shapeShort}
           </span>
         </div>
 
@@ -183,21 +144,21 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-6xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.95]">
-                {pkg.name}
+                {service.name}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p
                 className={`mt-8 text-lg font-medium ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"}`}
               >
-                {pkg.priceHome}
+                {service.shapeLong}
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <p
                 className={`mt-6 text-[16px] leading-relaxed max-w-md ${isDark ? "text-[color:var(--bone)]/75" : "text-[color:var(--ink)]/80"}`}
               >
-                {pkg.bestFor}
+                {service.bestFor}
               </p>
             </Reveal>
             <Reveal delay={0.2}>
@@ -205,20 +166,22 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
                 className="mt-10"
                 ratio="3/2"
                 index={String(index + 1).padStart(2, "0")}
-                label={pkg.name}
+                label={service.name}
                 tone={isDark ? "bone" : "ink"}
               />
             </Reveal>
           </div>
 
           <div className="md:col-span-7">
-            <div className={`eyebrow mb-6 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
+            <div
+              className={`eyebrow mb-6 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}
+            >
               Uključeno
             </div>
             <ul
               className={`border-y ${isDark ? "border-[color:var(--bone)]/20 divide-[color:var(--bone)]/15" : "border-[color:var(--line)] divide-[color:var(--line)]"} divide-y`}
             >
-              {pkg.includes.map((i, idx) => (
+              {service.includes.map((i, idx) => (
                 <li key={i} className="grid grid-cols-[auto_1fr] gap-6 py-3.5">
                   <span
                     className={`num text-[10px] tracking-widest pt-1.5 ${isDark ? "opacity-60" : "text-[color:var(--muted-text)]"}`}
@@ -230,9 +193,11 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
               ))}
             </ul>
 
-            {pkg.extras?.map((ex) => (
+            {service.extras?.map((ex) => (
               <div key={ex.label} className="mt-10">
-                <div className={`eyebrow mb-4 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}>
+                <div
+                  className={`eyebrow mb-4 ${isDark ? "opacity-70" : "text-[color:var(--muted-text)]"}`}
+                >
                   {ex.label}
                 </div>
                 <ul
@@ -240,7 +205,9 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
                 >
                   {ex.items.map((it, idx) => (
                     <li key={it} className="grid grid-cols-[auto_1fr] gap-6 py-3.5">
-                      <span className={`num text-[10px] tracking-widest pt-1.5 ${isDark ? "opacity-60" : "text-[color:var(--muted-text)]"}`}>
+                      <span
+                        className={`num text-[10px] tracking-widest pt-1.5 ${isDark ? "opacity-60" : "text-[color:var(--muted-text)]"}`}
+                      >
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                       <span className="text-[15px]">{it}</span>
@@ -250,25 +217,13 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
               </div>
             ))}
 
-
-            {pkg.policy && (
-              <div className={`mt-10 border-l-2 border-[color:var(--brand)] pl-6 py-2`}>
-                <div className="eyebrow text-[color:var(--brand)] mb-3">
-                  Pravila plaćanja
-                </div>
-                <p className={`text-[14px] leading-relaxed ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"} max-w-2xl`}>
-                  {pkg.policy}
-                </p>
-              </div>
-            )}
-
-            {pkg.handoff && (
-              <div className={`mt-10 border-l-2 border-[color:var(--brand)] pl-6 py-2`}>
-                <div className="eyebrow text-[color:var(--brand)] mb-3">
-                  Predaja
-                </div>
-                <p className={`text-[14px] leading-relaxed ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"} max-w-2xl`}>
-                  {pkg.handoff}
+            {service.boundary && (
+              <div className="mt-10 border-l-2 border-[color:var(--brand)] pl-6 py-2">
+                <div className="eyebrow text-[color:var(--brand)] mb-3">Granica opsega</div>
+                <p
+                  className={`text-[14px] leading-relaxed ${isDark ? "text-[color:var(--bone)]/85" : "text-[color:var(--ink)]/85"} max-w-2xl`}
+                >
+                  {service.boundary}
                 </p>
               </div>
             )}
@@ -283,7 +238,7 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
                     : ""
                 }
               >
-                Zatraži ponudu
+                Dogovori razgovor
               </CTAButton>
             </div>
           </div>
@@ -293,189 +248,32 @@ function PackageBlock({ pkg, index }: { pkg: Pkg; index: number }) {
   );
 }
 
-function PriceDrivers() {
-  const chips = [
-    "Broj podstranica",
-    "Opseg sadržaja",
-    "Struktura ponude",
-    "Broj jezika",
-    "Kontakt forma",
-    "Google karta",
-    "WhatsApp integracija",
-    "Rezervacijski upit",
-    "Galerija radova",
-    "Blog ili novosti",
-    "Napredni SEO setup",
-    "Složenije integracije",
-  ];
+function ScopeBoundariesSection() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--paper)]">
       <div className="container-wide">
         <div className="border-b border-[color:var(--line)] pb-4 mb-14">
-          <span className="eyebrow text-[color:var(--muted-text)]">
-            Što utječe na cijenu
-          </span>
-        </div>
-        <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <Reveal>
-              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
-                Cijena{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  ovisi o opsegu
-                </span>
-                .
-              </h2>
-            </Reveal>
-          </div>
-          <div className="md:col-span-7">
-            <Reveal>
-              <div className="flex flex-wrap gap-2">
-                {chips.map((c) => (
-                  <span
-                    key={c}
-                    className="text-[13px] tracking-[0.02em] px-3 py-2 border border-[color:var(--line)] text-[color:var(--ink)]/85 bg-[color:var(--bone)]"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-2xl">
-                Paketi pokrivaju standardnu web stranicu s jasnim opsegom.
-                Za složenije projekte, portale, rezervacijske sustave i
-                internetske trgovine radi se posebna ponuda prema opsegu.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PaymentTerms() {
-  const terms = [
-    "Paket Održavano pokreće se nakon uplate početne naknade. Mjesečna naknada počinje prema dogovorenom datumu i traje najmanje 12 mjeseci.",
-    "Paket Vlasništvo plaća se u dvije faze: 50 posto prije početka rada i 50 posto prije objave ili predaje.",
-    "Rokovi ovise o tome da klijent na vrijeme dostavi materijale i povratne informacije. Ako materijali kasne, pomiče se i rok objave.",
-  ];
-  return (
-    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
-      <div className="container-wide">
-        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
-          <span className="eyebrow text-[color:var(--muted-text)]">
-            Uvjeti plaćanja
-          </span>
-        </div>
-        <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
-          {terms.map((t, i) => (
-            <RevealItem key={t}>
-              <div className="grid grid-cols-[auto_1fr] gap-8 py-6">
-                <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-[16px] leading-relaxed max-w-3xl">{t}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealGroup>
-      </div>
-    </section>
-  );
-}
-
-function ExtendedServicesSection() {
-  return (
-    <section className="py-24 md:py-32 bg-[color:var(--paper)]">
-      <div className="container-wide">
-        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
-          <span className="eyebrow text-[color:var(--muted-text)]">
-            Prošireni opseg — zasebna ponuda
-          </span>
+          <span className="eyebrow text-[color:var(--muted-text)]">Granice opsega</span>
         </div>
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
-                Dodatne usluge{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  izvan standardnog paketa
-                </span>
-                .
+                Što <span className="text-[color:var(--brand)] font-medium">ne radimo</span>.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-md">
-                Radovi navedeni u nastavku ne ulaze u standardni opseg paketa
-                Održavano i Vlasništvo. Izvode se kao zasebna ponuda prema
-                specifikaciji i procjeni opsega.
-              </p>
-            </Reveal>
-          </div>
-          <div className="md:col-span-7">
-            <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
-              {EXTENDED_SERVICES.map((s, i) => (
-                <RevealItem key={s.title}>
-                  <div className="grid grid-cols-[auto_1fr] gap-8 py-6">
-                    <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <div className="text-[17px] tracking-[-0.01em] font-medium">
-                        {s.title}
-                      </div>
-                      <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--ink)]/75 max-w-xl">
-                        {s.desc}
-                      </p>
-                    </div>
-                  </div>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PartnerServicesSection() {
-  return (
-    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
-      <div className="container-wide">
-        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
-          <span className="eyebrow text-[color:var(--muted-text)]">
-            Suradnja s vanjskim stručnjacima
-          </span>
-        </div>
-        <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <Reveal>
-              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
-                Povezujemo vas s{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  provjerenim izvođačima
-                </span>
-                .
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-md">
-                Za usluge koje ne izvodimo interno, pomažemo u pronalasku
-                stručnjaka i uskladiti isporuku njihova rada s opsegom
-                projekta.
+                Granice su namjerno jasne kako biste znali što možete očekivati i što tražiti
+                drugdje.
               </p>
             </Reveal>
           </div>
           <div className="md:col-span-7 grid gap-4 md:grid-cols-2">
-            {PARTNER_SERVICES.map((s) => (
+            {SCOPE_BOUNDARIES.map((s) => (
               <Reveal key={s.title}>
-                <div className="border border-[color:var(--line)] p-6 bg-[color:var(--paper)] h-full">
-                  <div className="text-[16px] tracking-[-0.01em] font-medium">
-                    {s.title}
-                  </div>
+                <div className="border border-[color:var(--line)] p-6 bg-[color:var(--bone)] h-full">
+                  <div className="text-[16px] tracking-[-0.01em] font-medium">{s.title}</div>
                   <p className="mt-3 text-[14px] leading-relaxed text-[color:var(--ink)]/75">
                     {s.desc}
                   </p>
@@ -495,13 +293,12 @@ function BottomCTA() {
       <div className="container-wide">
         <div className="eyebrow opacity-70 mb-10">Sljedeći korak</div>
         <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium max-w-3xl">
-          Preporuka paketa prema{" "}
-          <span className="text-[color:var(--brand)] font-medium">
-            vašem opsegu.
-          </span>
+          Koji program{" "}
+          <span className="text-[color:var(--brand)] font-medium">ima smisla kod vas?</span>
         </h2>
         <p className="mt-8 max-w-xl text-lg text-[color:var(--bone)]/80">
-          Pošaljite kratak opis projekta ili nazovite. Predlažemo odgovarajući paket i sljedeće korake.
+          Pošaljite kratak opis situacije ili nazovite. Predlažemo uvodni razgovor i sljedeće
+          korake.
         </p>
         <div className="mt-10">
           <CTAGroup />

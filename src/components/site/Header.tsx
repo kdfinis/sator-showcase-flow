@@ -66,8 +66,7 @@ export function Header() {
               to={l.to}
               className="relative text-[13px] tracking-[0.14em] uppercase font-medium text-[color:var(--ink)]/75 hover:text-[color:var(--ink)] transition-colors"
               activeProps={{
-                className:
-                  "text-[color:var(--ink)] [&>span]:scale-x-100",
+                className: "text-[color:var(--ink)] [&>span]:scale-x-100",
               }}
             >
               {l.label}
@@ -135,7 +134,7 @@ export function Header() {
                 to="/kontakt"
                 className="mt-6 inline-flex items-center justify-between text-sm tracking-[0.14em] uppercase font-semibold bg-[color:var(--ink)] text-[color:var(--bone)] px-4 py-4"
               >
-                <span>Zatraži kontakt</span>
+                <span>Dogovori razgovor</span>
                 <span>→</span>
               </Link>
             </div>

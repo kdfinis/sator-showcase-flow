@@ -23,11 +23,7 @@ function sphereGeometry() {
     const phi = (i / rings) * Math.PI;
     for (let j = 0; j < segs; j++) {
       const theta = (j / segs) * Math.PI * 2;
-      pts.push([
-        Math.sin(phi) * Math.cos(theta),
-        Math.cos(phi),
-        Math.sin(phi) * Math.sin(theta),
-      ]);
+      pts.push([Math.sin(phi) * Math.cos(theta), Math.cos(phi), Math.sin(phi) * Math.sin(theta)]);
     }
   }
   pts.push([0, -1, 0]);
@@ -49,20 +45,25 @@ function sphereGeometry() {
 function icosaGeometry() {
   const t = (1 + Math.sqrt(5)) / 2;
   const raw: Vec3[] = [
-    [-1, t, 0], [1, t, 0], [-1, -t, 0], [1, -t, 0],
-    [0, -1, t], [0, 1, t], [0, -1, -t], [0, 1, -t],
-    [t, 0, -1], [t, 0, 1], [-t, 0, -1], [-t, 0, 1],
+    [-1, t, 0],
+    [1, t, 0],
+    [-1, -t, 0],
+    [1, -t, 0],
+    [0, -1, t],
+    [0, 1, t],
+    [0, -1, -t],
+    [0, 1, -t],
+    [t, 0, -1],
+    [t, 0, 1],
+    [-t, 0, -1],
+    [-t, 0, 1],
   ];
   const len = Math.hypot(1, t);
   const pts = raw.map((p) => p.map((v) => v / len) as Vec3);
   const edges: [number, number][] = [];
   for (let i = 0; i < pts.length; i++) {
     for (let j = i + 1; j < pts.length; j++) {
-      const d = Math.hypot(
-        pts[i][0] - pts[j][0],
-        pts[i][1] - pts[j][1],
-        pts[i][2] - pts[j][2],
-      );
+      const d = Math.hypot(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1], pts[i][2] - pts[j][2]);
       if (d < 1.1) edges.push([i, j]);
     }
   }
@@ -72,9 +73,7 @@ function icosaGeometry() {
 function cubeGeometry() {
   const s = 0.72;
   const pts: Vec3[] = [];
-  for (const x of [-s, s])
-    for (const y of [-s, s])
-      for (const z of [-s, s]) pts.push([x, y, z]);
+  for (const x of [-s, s]) for (const y of [-s, s]) for (const z of [-s, s]) pts.push([x, y, z]);
   const edges: [number, number][] = [];
   for (let i = 0; i < 8; i++) {
     for (let j = i + 1; j < 8; j++) {
@@ -86,14 +85,28 @@ function cubeGeometry() {
   // inner octahedron
   const o = 1.0;
   const octa: Vec3[] = [
-    [o, 0, 0], [-o, 0, 0], [0, o, 0], [0, -o, 0], [0, 0, o], [0, 0, -o],
+    [o, 0, 0],
+    [-o, 0, 0],
+    [0, o, 0],
+    [0, -o, 0],
+    [0, 0, o],
+    [0, 0, -o],
   ];
   const base = pts.length;
   pts.push(...octa);
   const octaEdges: [number, number][] = [
-    [0, 2], [0, 3], [0, 4], [0, 5],
-    [1, 2], [1, 3], [1, 4], [1, 5],
-    [2, 4], [2, 5], [3, 4], [3, 5],
+    [0, 2],
+    [0, 3],
+    [0, 4],
+    [0, 5],
+    [1, 2],
+    [1, 3],
+    [1, 4],
+    [1, 5],
+    [2, 4],
+    [2, 5],
+    [3, 4],
+    [3, 5],
   ];
   for (const [a, b] of octaEdges) edges.push([base + a, base + b]);
   return { pts, edges };
@@ -178,8 +191,7 @@ export function WireMorph({
       // burst cycle: assembled ~4s, fly apart ~0.9s, drift, reassemble ~1.1s
       const P = 8;
       const ct = t % P;
-      const explode =
-        smoothstep(4.0, 4.9, ct) * (1 - smoothstep(5.9, 7.0, ct));
+      const explode = smoothstep(4.0, 4.9, ct) * (1 - smoothstep(5.9, 7.0, ct));
 
       const ry = t * speed.y;
       const rx = Math.sin(t * speed.x) * 0.55 + 0.35;
@@ -223,11 +235,7 @@ export function WireMorph({
         const depthK = (proj[i].z + 1) * 0.5;
         const r = 1 + depthK * 1.3 + explode * 0.6;
         const isAccent = i % 6 === 0;
-        const col = isAccent
-          ? i % 12 === 0
-            ? colors.accent2
-            : colors.accent
-          : colors.line;
+        const col = isAccent ? (i % 12 === 0 ? colors.accent2 : colors.accent) : colors.line;
         const alpha = 0.35 + depthK * 0.55;
         ctx.fillStyle = `rgba(${col},${alpha.toFixed(3)})`;
         ctx.beginPath();

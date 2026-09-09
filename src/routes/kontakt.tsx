@@ -3,15 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import {
-  PHONE_DISPLAY,
-  WHATSAPP_URL,
-  EMAIL,
-  telHref,
-  waHref,
-  mailHref,
-  isPlaceholder,
-} from "@/lib/site";
+import { PHONE_DISPLAY, EMAIL, telHref, waHref, mailHref, isPlaceholder } from "@/lib/site";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -20,13 +12,12 @@ export const Route = createFileRoute("/kontakt")({
       {
         name: "description",
         content:
-          "Nazovite, pošaljite WhatsApp ili pošaljite upit za izradu web stranice za lokalnu firmu, obrt ili uslužni posao.",
+          "Nazovite, pošaljite email ili upit za uvodni razgovor o redizajnu procesa i digitalizaciji u vašoj organizaciji.",
       },
       { property: "og:title", content: "Kontakt, Sator Digital" },
       {
         property: "og:description",
-        content:
-          "Nazovite, pošaljite WhatsApp ili pošaljite upit za izradu web stranice.",
+        content: "Nazovite, pošaljite email ili upit za uvodni razgovor o redizajnu procesa.",
       },
     ],
   }),
@@ -52,9 +43,7 @@ function ContactRow({
       className={`group grid grid-cols-[auto_1fr_auto] items-baseline gap-6 py-6 border-t border-[color:var(--line)] last:border-b hover:text-[color:var(--brand)] transition-colors ${disabled ? "pointer-events-none opacity-70" : ""}`}
     >
       <span className="eyebrow text-[color:var(--muted-text)] w-24">{label}</span>
-      <span className="text-xl md:text-2xl tracking-[-0.02em] font-medium break-all">
-        {value}
-      </span>
+      <span className="text-xl md:text-2xl tracking-[-0.02em] font-medium break-all">{value}</span>
       <span className="text-xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
         ↗
       </span>
@@ -68,7 +57,7 @@ function Kontakt() {
       <section className="pt-14 md:pt-24 pb-14 bg-[color:var(--bone)]">
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-            <span>Kontakt — Izdanje 01</span>
+            <span>Kontakt · Izdanje 01</span>
             <span className="num">Kontakt</span>
           </div>
 
@@ -76,15 +65,13 @@ function Kontakt() {
             <div className="md:col-span-7">
               <Reveal>
                 <h1 className="text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
-                  <span className="text-[color:var(--brand)] font-medium">
-                    Kontakt
-                  </span>
+                  <span className="text-[color:var(--brand)] font-medium">Kontakt</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-8 text-xl md:text-2xl leading-relaxed font-light max-w-2xl text-[color:var(--ink)]/85">
-                  Dostupni smo telefonom, e-poštom i WhatsAppom. Za pisani
-                  upit koristite obrazac u nastavku.
+                  Dostupni smo telefonom, e-poštom i WhatsAppom. Za pisani upit koristite obrazac u
+                  nastavku.
                 </p>
               </Reveal>
             </div>
@@ -100,8 +87,8 @@ function Kontakt() {
           <div className="eyebrow text-[color:var(--muted-text)] mb-6">Kanali</div>
           <div>
             <ContactRow label="Telefon" value={PHONE_DISPLAY} href={telHref()} />
-            <ContactRow label="WhatsApp" value={WHATSAPP_URL} href={waHref()} external />
             <ContactRow label="Email" value={EMAIL} href={mailHref()} />
+            <ContactRow label="WhatsApp" value="WhatsApp" href={waHref()} external />
           </div>
         </div>
       </section>
@@ -115,14 +102,12 @@ function Kontakt() {
             <Reveal className="md:col-span-4">
               <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-sm">
                 Postupak nakon{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  primljenog upita.
-                </span>
+                <span className="text-[color:var(--brand)] font-medium">primljenog upita.</span>
               </h2>
               <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
-                Nakon zaprimanja upita slijedi kratka razmjena poruka ili
-                termin za poziv. Cilj razgovora je razumjeti djelatnost,
-                postojeću stranicu ako postoji i odabir prikladnog paketa.
+                Nakon zaprimanja upita slijedi kratka razmjena poruka ili termin za poziv. Cilj je
+                razumjeti kontekst, što koči tim i koji program (Snimka, Redizajn ili Uvođenje) ima
+                smisla.
               </p>
             </Reveal>
             <div className="md:col-span-8">

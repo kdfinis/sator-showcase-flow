@@ -31,15 +31,7 @@ export const mailHref = () => (isPlaceholder(EMAIL) ? "#" : `mailto:${EMAIL}`);
 
 /** Plain-text closer for CRM / outbound emails (append to body only). */
 export const emailSignaturePlain = () =>
-  [
-    "--",
-    SENDER_NAME,
-    SITE_NAME,
-    TAGLINE,
-    BASE_URL,
-    `WhatsApp: ${PHONE_DISPLAY}`,
-    EMAIL,
-  ].join("\n");
+  ["--", SENDER_NAME, SITE_NAME, TAGLINE, BASE_URL, `WhatsApp: ${PHONE_DISPLAY}`, EMAIL].join("\n");
 
 export const NAV_LINKS = [
   { to: "/", label: "Početna" },

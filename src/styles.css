@@ -55,9 +55,9 @@
   --paper: #dfe4ec;
   --line: #b9c2d1;
   --muted-text: #545c6e;
-  --brand: #6e1220;      /* dark crimson — restrained accent */
-  --brand-2: #0f6b7a;    /* deep teal — complementary */
-  --brand-3: #c9a24a;    /* muted brass — tertiary */
+  --brand: #6e1220;      /* dark crimson, restrained accent */
+  --brand-2: #0f6b7a;    /* deep teal, complementary */
+  --brand-3: #c9a24a;    /* muted brass, tertiary */
 
   --background: var(--bone);
   --foreground: var(--ink);
@@ -114,7 +114,7 @@
   a { color: inherit; }
 }
 
-/* Editorial container — deliberately narrow */
+/* Editorial container, deliberately narrow */
 @utility container-x {
   width: 100%;
   max-width: 1040px;

@@ -17,15 +17,10 @@ import {
 } from "@/lib/site";
 
 const P = ({ v }: { v: string }) =>
-  isPlaceholder(v) ? (
-    <span className="opacity-60">{v}</span>
-  ) : (
-    <span>{v}</span>
-  );
+  isPlaceholder(v) ? <span className="opacity-60">{v}</span> : <span>{v}</span>;
 
 export function Footer() {
-  const legalPending =
-    isPlaceholder(LEGAL_NAME) || isPlaceholder(OIB) || isPlaceholder(ADDRESS);
+  const legalPending = isPlaceholder(LEGAL_NAME) || isPlaceholder(OIB) || isPlaceholder(ADDRESS);
 
   return (
     <footer className="mt-32 bg-[color:var(--ink)] text-[color:var(--bone)]">

@@ -8,21 +8,25 @@ import { FAQAccordion } from "@/components/site/FAQAccordion";
 import { CTAGroup } from "@/components/site/CTA";
 import { StickyProcess } from "@/components/site/StickyProcess";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import { PACKAGES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
+import { SERVICES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
+      { title: "Redizajn procesa i digitalizacija poslovanja, Sator Digital" },
       {
         name: "description",
         content:
-          "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
+          "Mapiramo kako posao teče, redizajniramo operativni model i podržavamo uvođenje novih rutina. AI uz ljudsku provjeru. Hrvatski i engleski, na daljinu i na terenu.",
       },
-      { property: "og:title", content: "Izrada web stranica za obrte i male firme, Split i Hrvatska — Sator Digital" },
+      {
+        property: "og:title",
+        content: "Redizajn procesa i digitalizacija poslovanja, Sator Digital",
+      },
       {
         property: "og:description",
-        content: "Izrada web stranica za obrte i male firme. Paketi od 79 EUR mjesečno uz početnu naknadu, ili jednokratna izrada od 2.490 EUR. Mobilna optimizacija, kontakt forma, osnovni SEO setup, SSL, hosting i domena na vaše ime.",
+        content:
+          "Mapiramo kako posao teče, redizajniramo operativni model i podržavamo uvođenje novih rutina. AI uz ljudsku provjeru.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -38,7 +42,7 @@ function Home() {
       <ProblemSection />
       <OutcomeSection />
       <WhoSection />
-      <PackagesPreview />
+      <ServicesPreview />
       <StickyProcess />
       <ProofSection />
       <FAQTeaser />
@@ -57,21 +61,21 @@ function SectionLabel({ title }: { index?: string; title: string }) {
 
 function ProblemSection() {
   const items = [
-    "Klijenti vas pronađu na Google Mapsu, ali nemaju jedno mjesto na kojem mogu pregledati usluge, cijene, radove i način kontakta.",
-    "Društvene mreže pokrivaju dio komunikacije, ali nisu zamjena za web stranicu koju posjedujete i koju Google indeksira.",
-    "Uredna web stranica utječe na dojam ozbiljnosti i može biti razlika između poziva i preskakanja.",
+    "Posao se odvija, ali nitko nema jasnu kartu koraka, vlasnika i alata.",
+    "Vodstvo pokušava AI alate bez preuređenih rutina i kontrolnih točaka.",
+    "Novi CRM ili sustav uveden je brzo, a tim se vraća na stare navike.",
   ];
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="01" title="Kontekst" />
+        <SectionLabel title="Kontekst" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-6">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Google recenzije postoje.{" "}
+                Alati postoje.{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  Web stranica često ne.
+                  Proces često ne prati.
                 </span>
               </h2>
             </Reveal>
@@ -84,9 +88,7 @@ function ProblemSection() {
                     <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
-                      {t}
-                    </p>
+                    <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">{t}</p>
                   </div>
                 </RevealItem>
               ))}
@@ -102,24 +104,23 @@ function OutcomeSection() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--paper)]">
       <div className="container-wide">
-        <SectionLabel index="02" title="Pristup" />
+        <SectionLabel title="Pristup" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-7">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Web stranice s{" "}
+                Operativni model s{" "}
                 <span className="text-[color:var(--brand)] font-medium">
-                  jasnom strukturom i mjerljivim opsegom.
+                  jasnim koracima i vlasnicima.
                 </span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-xl text-[17px] leading-relaxed text-[color:var(--ink)]/85">
-                Izrađujemo brze, čitljive i mobilne web stranice za obrte i
-                male firme. Cilj je da posjetitelj u kratkom vremenu razumije
-                tko ste, što nudite i kako vas može kontaktirati. Uz web,
-                pokrivamo i osnovni grafički dizajn te pripremu materijala kada
-                je to potrebno.
+                Prvo mapiramo kako posao danas teče. Zatim redizajniramo rutine, uskladimo alate i
+                obučimo ljude. AI koristimo kao pomoć u internim radovima, uvijek uz ljudsku
+                provjeru prije vanjskog korištenja. Radimo na hrvatskom i engleskom, na daljinu i na
+                terenu.
               </p>
             </Reveal>
           </div>
@@ -134,25 +135,22 @@ function OutcomeSection() {
 
 function WhoSection() {
   const items = [
-    "Obrti i male firme s aktivnim poslovanjem",
-    "Firme koje imaju Google Maps profil i recenzije, ali nemaju pravu web stranicu",
-    "Vlasnici kojima je stranica stara, spora, nejasna ili ne izgleda ozbiljno",
-    "Ljudi koji žele da netko preuzme proces od početka do objave",
-    "Uslužne djelatnosti, lokalni servisi, turizam, nekretnine, arhitektura i premium usluge",
+    "Profesionalne uslužne firme (pravo, revizija, savjetovanje, inženjering)",
+    "Poslovne škole i pružatelji edukacije s zastarjelim digitalnim modelom",
+    "Udruge i članice organizacije s hibridnim volontersko-staff operacijama",
+    "Srednji operatori (50 do 250 ljudi) koji su narasli brže od procesa",
+    "Vodstvo koje traži siguran smjer za AI, a ne samo novi alat",
   ];
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="03" title="Za koga radimo" />
+        <SectionLabel title="Za koga radimo" />
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02]">
-                Za koga je{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  ovaj format
-                </span>
-                .
+                Za timove koji{" "}
+                <span className="text-[color:var(--brand)] font-medium">trebaju red u poslu</span>.
               </h2>
             </Reveal>
           </div>
@@ -176,17 +174,17 @@ function WhoSection() {
   );
 }
 
-function PackagesPreview() {
+function ServicesPreview() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--paper)]">
       <div className="container-wide">
-        <SectionLabel index="04" title="Paketi" />
+        <SectionLabel title="Usluge" />
         <div className="flex items-end justify-between mb-14 gap-6">
           <Reveal>
             <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02] max-w-3xl">
-              Dva formata suradnje.{" "}
+              Tri programa.{" "}
               <span className="text-[color:var(--brand)] font-medium">
-                Definiran opseg i cijena.
+                Jedan smjer: jasniji posao.
               </span>
             </h2>
           </Reveal>
@@ -195,57 +193,23 @@ function PackagesPreview() {
               to="/paketi"
               className="group inline-flex items-center gap-2 eyebrow text-[color:var(--ink)] whitespace-nowrap"
             >
-              Sve pakete{" "}
-              <span className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
+              Sve usluge <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-          <PackageCard pkg={PACKAGES[0]} index={0} emphasis="primary" compact />
-          <PackageCard pkg={PACKAGES[1]} index={1} emphasis="balanced" compact />
-        </div>
-
-        <div className="mt-20 grid gap-10 md:grid-cols-2">
-          <PackageFitCard
-            title="Kada paket Održavano vrijedi"
-            chips={[
-              "Mobilna optimizacija",
-              "Kontakt forma",
-              "Osnovni SEO setup",
-              "SSL i hosting",
-              "Domena na vaše ime",
-              "WhatsApp i Google karta",
-              "Redovito održavanje",
-              "Podrška bez brige",
-            ]}
-          />
-          <PackageFitCard
-            title="Kada paket Vlasništvo vrijedi"
-            chips={[
-              "Jednokratna izrada",
-              "Uredna predaja pristupa",
-              "Veći opseg podstranica",
-              "Mobilna optimizacija",
-              "Kontakt forma",
-              "Osnovni SEO setup",
-              "Domena na vaše ime",
-              "Opcionalno održavanje",
-            ]}
-          />
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+          <PackageCard pkg={SERVICES[0]} index={0} emphasis="primary" compact />
+          <PackageCard pkg={SERVICES[1]} index={1} emphasis="balanced" compact />
+          <PackageCard pkg={SERVICES[2]} index={2} compact />
         </div>
 
         <Reveal className="mt-16 border-t border-[color:var(--line)] pt-8 max-w-3xl">
-          <div className="eyebrow text-[color:var(--muted-text)] mb-4">
-            Napomena o cijeni
-          </div>
+          <div className="eyebrow text-[color:var(--muted-text)] mb-4">Napomena o opsegu</div>
           <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
-            Sator Digital ne pozicionira se kao najjeftinija opcija na
-            tržištu. Razlika se očituje u procesu, dokumentaciji, vlasništvu
-            nad domenom te podršci nakon objave. Za opsežnije projekte
-            izrađuje se posebna ponuda prema specifikaciji.
+            Svaki program počinje uvodnim razgovorom. Opseg i sljedeći korak dogovaramo pisano prije
+            početka rada. Cijene ne objavljujemo na stranici jer ovise o veličini tima i dubini
+            promjene.
           </p>
         </Reveal>
       </div>
@@ -253,84 +217,44 @@ function PackagesPreview() {
   );
 }
 
-function PackageFitCard({
-  title,
-  chips,
-}: {
-  title: string;
-  chips: string[];
-}) {
-  return (
-    <Reveal>
-      <div className="border border-[color:var(--line)] p-8 bg-[color:var(--bone)] h-full">
-        <div className="eyebrow text-[color:var(--muted-text)] mb-6">
-          {title}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {chips.map((c) => (
-            <span
-              key={c}
-              className="text-[12px] tracking-[0.02em] px-3 py-1.5 border border-[color:var(--line)] text-[color:var(--ink)]/85"
-            >
-              {c}
-            </span>
-          ))}
-        </div>
-      </div>
-    </Reveal>
-  );
-}
-
 function ProofSection() {
   const items = [
     {
-      d: "tenet.hr",
-      t: "Web prisutnost za arhitektonski i projektni kontekst. Primjer prezentacije usluge, strukture i ozbiljnijeg vizualnog dojma.",
-      href: "https://tenet.hr",
+      t: "Institucionalni digitalni prijelaz",
+      d: "Vođenje organizacijskog redizajna pri prelasku na online isporuku: mapiranje CRM-a, koordinacije s predavačima, operacija s polaznicima i izvještavanja. Obuka tima i podrška klijentima pri usvajanju novih rutina.",
       idx: "04",
-      label: "Arhitektura · Studio",
+      label: "Obrazovanje · Operacije",
     },
     {
-      d: "rotasestate.com",
-      t: "Web prezentacija za nekretninski i turistički projekt. Primjer premium vizualnog smjera i prodajne prezentacije imovine.",
-      href: "https://rotasestate.com",
+      t: "Operativna strategija i automatizacija",
+      d: "Dizajn radnih tokova, praktična automatizacija i AI pomoć u internim izvještajima uz ljudsku provjeru. Remapiranje procesa istraživanja, edukacije i administracije u institucionalnom okruženju.",
       idx: "05",
-      label: "Nekretnine · Turizam",
+      label: "Institucija · Digitalizacija",
     },
   ];
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
       <div className="container-wide">
-        <SectionLabel index="05" title="Odabrani primjeri" />
+        <SectionLabel title="Iskustvo pristupa" />
         <div className="grid gap-14 md:grid-cols-2 md:gap-10">
           {items.map((p) => (
-            <a
-              key={p.d}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block"
-            >
-              <ImagePlaceholder
-                ratio="4/3"
-                index={p.idx}
-                label={p.label}
-                tone="ink"
-              />
-              <div className="mt-6 flex items-baseline justify-between">
-                <h3 className="text-2xl md:text-3xl tracking-[-0.03em] font-medium group-hover:text-[color:var(--brand)] transition-colors">
-                  {p.d}
-                </h3>
-                <span className="text-xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
-                  ↗
-                </span>
+            <div key={p.t} className="block">
+              <ImagePlaceholder ratio="4/3" index={p.idx} label={p.label} tone="ink" />
+              <div className="mt-6">
+                <h3 className="text-2xl md:text-3xl tracking-[-0.03em] font-medium">{p.t}</h3>
               </div>
               <p className="mt-4 max-w-md text-[15px] leading-relaxed text-[color:var(--ink)]/75">
-                {p.t}
+                {p.d}
               </p>
-            </a>
+            </div>
           ))}
         </div>
+        <Reveal className="mt-12 max-w-2xl">
+          <p className="text-[14px] leading-relaxed text-[color:var(--muted-text)]">
+            Gornje opisuje pristup i interno iskustvo, ne klijentske studije slučaja niti jamstvo
+            rezultata kod vas.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -341,15 +265,13 @@ function FAQTeaser() {
   return (
     <section className="py-24 md:py-36 bg-[color:var(--paper)]">
       <div className="container-wide">
-        <SectionLabel index="06" title="Česta pitanja" />
+        <SectionLabel title="Česta pitanja" />
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
             <Reveal>
               <h2 className="text-4xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.05]">
                 Odgovori na{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  najčešća pitanja.
-                </span>
+                <span className="text-[color:var(--brand)] font-medium">najčešća pitanja.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
@@ -358,14 +280,9 @@ function FAQTeaser() {
               </p>
             </Reveal>
             <Reveal delay={0.2} className="mt-8">
-              <Link
-                to="/faq"
-                className="group inline-flex items-center gap-2 eyebrow"
-              >
+              <Link to="/faq" className="group inline-flex items-center gap-2 eyebrow">
                 Sva pitanja{" "}
-                <span className="transition-transform group-hover:translate-x-1">
-                  →
-                </span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
             </Reveal>
           </div>
@@ -387,16 +304,14 @@ function FinalCTA() {
         </div>
         <Reveal>
           <h2 className="text-5xl md:text-8xl tracking-[-0.04em] font-medium leading-[0.98] max-w-4xl">
-            Razmatrate izradu ili{" "}
-            <span className="text-[color:var(--brand)] font-medium">
-              redizajn web stranice?
-            </span>
+            Spremni posložiti{" "}
+            <span className="text-[color:var(--brand)] font-medium">kako se radi?</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-10 max-w-xl text-lg text-[color:var(--bone)]/80">
-            Pošaljite naziv firme, grad i informaciju o postojećoj stranici.
-            Vraćamo se s prijedlogom sljedećeg koraka.
+            Pošaljite naziv organizacije, ulogu i što danas koči tim. Vraćamo se s prijedlogom
+            uvodnog razgovora.
           </p>
         </Reveal>
         <Reveal delay={0.2} className="mt-12">
@@ -405,10 +320,13 @@ function FinalCTA() {
               href="/kontakt"
               className="group inline-flex items-center gap-3 bg-[color:var(--bone)] text-[color:var(--ink)] px-6 py-4 text-[13px] tracking-[0.14em] uppercase font-semibold hover:bg-[color:var(--brand)] hover:text-[color:var(--bone)] transition-colors"
             >
-              <span>Pošalji upit</span>
+              <span>Dogovori uvodni razgovor</span>
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
-            <CTAGroup showForm={false} />
+            <CTAGroup
+              showPrimary={false}
+              className="[&_a]:text-[color:var(--bone)] [&_a]:border-[color:var(--bone)]"
+            />
           </div>
         </Reveal>
       </div>

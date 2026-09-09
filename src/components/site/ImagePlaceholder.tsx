@@ -41,18 +41,13 @@ export function ImagePlaceholder({
         transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
         whileHover={reduced ? undefined : { scale: 1.005 }}
         style={{ aspectRatio: ratio.replace("/", " / ") }}
-        className={cn(
-          "relative w-full overflow-hidden border border-[color:var(--line)]",
-          bg,
-        )}
+        className={cn("relative w-full overflow-hidden border border-[color:var(--line)]", bg)}
       >
         {variant && <WireMorph variant={variant} tone={tone} />}
 
         {label && (
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-end p-4">
-            <span className="eyebrow opacity-50 text-right max-w-[70%] truncate">
-              {label}
-            </span>
+            <span className="eyebrow opacity-50 text-right max-w-[70%] truncate">{label}</span>
           </div>
         )}
         {typeof index !== "undefined" && (
@@ -67,9 +62,7 @@ export function ImagePlaceholder({
         <span className="pointer-events-none absolute bottom-2 right-2 z-10 h-3 w-3 border-r border-b border-current opacity-40" />
       </motion.div>
       {caption && (
-        <figcaption className="mt-3 text-xs text-[color:var(--muted-text)]">
-          {caption}
-        </figcaption>
+        <figcaption className="mt-3 text-xs text-[color:var(--muted-text)]">{caption}</figcaption>
       )}
     </figure>
   );

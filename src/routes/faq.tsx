@@ -12,13 +12,12 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Odgovori na pitanja o izradi web stranice, domeni, plaćanju, održavanju, materijalima, rokovima i paketu Održavano.",
+          "Odgovori na pitanja o Snimci, Redizajnu, Uvođenju, AI pristupu, radu na daljinu i granicama opsega.",
       },
       { property: "og:title", content: "Česta pitanja, Sator Digital" },
       {
         property: "og:description",
-        content:
-          "Odgovori na pitanja o izradi web stranice, domeni, plaćanju i održavanju.",
+        content: "Odgovori na pitanja o programima redizajna procesa i digitalizacije.",
       },
     ],
   }),
@@ -31,22 +30,19 @@ function FAQ() {
       <section className="pt-14 md:pt-24 pb-14 bg-[color:var(--bone)]">
         <div className="container-wide">
           <div className="flex items-baseline justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--muted-text)] pb-8 border-b border-[color:var(--line)]">
-            <span>FAQ — Izdanje 01</span>
+            <span>Pitanja · Izdanje 01</span>
             <span className="num">Pitanja</span>
           </div>
           <div className="mt-14 grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-7">
               <h1 className="text-5xl md:text-8xl tracking-[-0.045em] font-medium leading-[0.96]">
-                Česta{" "}
-                <span className="text-[color:var(--brand)] font-medium">
-                  pitanja
-                </span>
+                Česta <span className="text-[color:var(--brand)] font-medium">pitanja</span>
               </h1>
             </Reveal>
             <Reveal delay={0.1} className="md:col-span-5 md:pt-4">
               <p className="text-lg leading-relaxed text-[color:var(--ink)]/80 max-w-md">
-                Popis najčešćih pitanja prije početka suradnje. Za pitanja
-                izvan popisa dostupni smo telefonom, e-poštom i WhatsAppom.
+                Popis najčešćih pitanja prije početka suradnje. Za pitanja izvan popisa dostupni smo
+                telefonom, e-poštom i WhatsAppom.
               </p>
               <div className="mt-8">
                 <CTAGroup />
