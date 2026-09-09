@@ -124,7 +124,7 @@ function OutcomeSection() {
             </Reveal>
           </div>
           <div className="md:col-span-5">
-            <ImagePlaceholder ratio="3/4" index="03" label="Detalj · dizajn" tone="ink" />
+            <ImagePlaceholder ratio="3/4" index="03" tone="ink" />
           </div>
         </div>
       </div>

@@ -23,12 +23,7 @@ export function Hero() {
     >
       <div className="container-wide relative">
         {/* Wide image placeholder replaces the meta strip */}
-        <ImagePlaceholder
-          ratio="21/9"
-          label="Naslovni vizual"
-          tone="ink"
-          className="mb-4"
-        />
+        <ImagePlaceholder ratio="21/9" tone="ink" variant="sphere" className="mb-4" />
 
         <div className="pt-14 md:pt-20 grid gap-14 md:grid-cols-12 md:gap-x-8">
           <div className="md:col-span-8">
@@ -69,20 +64,10 @@ export function Hero() {
             style={reduced ? undefined : { y: imgY }}
             className="md:col-span-8"
           >
-            <ImagePlaceholder
-              ratio="16/9"
-              index="01"
-              label="Studio · portret rada"
-              tone="ink"
-            />
+            <ImagePlaceholder ratio="16/9" index="01" tone="ink" variant="icosa" />
           </motion.div>
           <div className="md:col-span-4 flex flex-col gap-4 md:gap-6">
-            <ImagePlaceholder
-              ratio="4/3"
-              index="02"
-              label="Detalj · tipografija"
-              tone="paper"
-            />
+            <ImagePlaceholder ratio="4/3" index="02" tone="paper" variant="cube" />
             <div className="border border-[color:var(--line)] p-6 flex-1 flex flex-col justify-between bg-[color:var(--paper)]">
               <div className="eyebrow text-[color:var(--muted-text)]">
                 Napomena
@@ -92,7 +77,7 @@ export function Hero() {
                 naručitelja. Cijena i opseg potvrđeni prije početka.
               </p>
               <div className="mt-6 eyebrow text-[color:var(--muted-text)]">
-                Kontakt — Telefon · WhatsApp
+                Kontakt · Telefon · WhatsApp
               </div>
             </div>
           </div>

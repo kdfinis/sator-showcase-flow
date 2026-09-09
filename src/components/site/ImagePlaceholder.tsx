@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
+import { WireMorph, type WireVariant } from "@/components/site/WireMorph";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Editorial image placeholder. No stock photos, no icons.
- * Renders a labeled frame with a warm grain fill so real photography
- * can slot in later without layout shift.
+ * Editorial visual frame. Plain by default; pass `variant` to fill it
+ * with a rotating wireframe animation (hero only).
  */
 export function ImagePlaceholder({
   ratio = "4/3",
@@ -14,6 +14,7 @@ export function ImagePlaceholder({
   tone = "ink",
   className,
   caption,
+  variant,
 }: {
   ratio?: "4/3" | "3/4" | "16/9" | "1/1" | "3/2" | "2/3" | "21/9";
   label?: string;
@@ -21,6 +22,7 @@ export function ImagePlaceholder({
   tone?: "ink" | "bone" | "paper";
   className?: string;
   caption?: string;
+  variant?: WireVariant;
 }) {
   const reduced = useReducedMotion();
   const bg =
@@ -44,18 +46,25 @@ export function ImagePlaceholder({
           bg,
         )}
       >
+        {variant && <WireMorph variant={variant} tone={tone} />}
+
         {label && (
-          <div className="absolute inset-x-0 bottom-0 flex justify-end p-4">
-            <span className="eyebrow opacity-70 text-right max-w-[70%] truncate">
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-end p-4">
+            <span className="eyebrow opacity-50 text-right max-w-[70%] truncate">
               {label}
             </span>
           </div>
         )}
+        {typeof index !== "undefined" && (
+          <span className="pointer-events-none absolute top-3 left-3 z-10 eyebrow opacity-40">
+            {String(index).padStart(2, "0")}
+          </span>
+        )}
         {/* corner ticks */}
-        <span className="absolute top-2 left-2 h-3 w-3 border-l border-t border-current opacity-40" />
-        <span className="absolute top-2 right-2 h-3 w-3 border-r border-t border-current opacity-40" />
-        <span className="absolute bottom-2 left-2 h-3 w-3 border-l border-b border-current opacity-40" />
-        <span className="absolute bottom-2 right-2 h-3 w-3 border-r border-b border-current opacity-40" />
+        <span className="pointer-events-none absolute top-2 left-2 z-10 h-3 w-3 border-l border-t border-current opacity-40" />
+        <span className="pointer-events-none absolute top-2 right-2 z-10 h-3 w-3 border-r border-t border-current opacity-40" />
+        <span className="pointer-events-none absolute bottom-2 left-2 z-10 h-3 w-3 border-l border-b border-current opacity-40" />
+        <span className="pointer-events-none absolute bottom-2 right-2 z-10 h-3 w-3 border-r border-b border-current opacity-40" />
       </motion.div>
       {caption && (
         <figcaption className="mt-3 text-xs text-[color:var(--muted-text)]">

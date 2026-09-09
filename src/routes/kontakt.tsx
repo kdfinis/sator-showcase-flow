@@ -89,7 +89,7 @@ function Kontakt() {
               </Reveal>
             </div>
             <div className="md:col-span-5">
-              <ImagePlaceholder ratio="4/3" index="01" label="Studio · kontakt" tone="ink" />
+              <ImagePlaceholder ratio="4/3" index="01" tone="ink" />
             </div>
           </div>
         </div>
