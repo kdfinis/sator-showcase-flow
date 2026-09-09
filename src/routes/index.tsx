@@ -118,9 +118,10 @@ function OutcomeSection() {
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-xl text-[17px] leading-relaxed text-[color:var(--ink)]/85">
                 Prvo mapiramo kako posao danas teče. Zatim redizajniramo rutine, uskladimo alate i
-                obučimo ljude. AI koristimo kao pomoć u internim radovima, uvijek uz ljudsku
-                provjeru prije vanjskog korištenja. Radimo na hrvatskom i engleskom, na daljinu i na
-                terenu.
+                digitalne kanale, uključujući izradu ili obnovu web stranice kad to podržava novi
+                način rada, i obučimo ljude. AI koristimo kao pomoć u internim radovima, uvijek uz
+                ljudsku provjeru prije vanjskog korištenja. Radimo na hrvatskom i engleskom, na
+                daljinu i na terenu.
               </p>
             </Reveal>
           </div>

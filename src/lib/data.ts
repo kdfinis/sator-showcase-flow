@@ -38,6 +38,7 @@ export const SERVICES: Service[] = [
       "Redizajn operativnog modela i uloga po koracima",
       "Procjena i usporedba tehnologija prema stvarnim potrebama procesa",
       "Ponovno mapiranje CRM polja, prodajnih tokova i izvještaja",
+      "Izrada ili obnova web stranice kad je dio digitalizacije (kontakt, upiti, usluge na webu)",
       "Fazni plan uvođenja s jasnim odobrenjima",
       "Priručnici i dokumentacija koje tim može održavati",
     ],
@@ -47,12 +48,13 @@ export const SERVICES: Service[] = [
         items: [
           "Snimka kao ulazna točka",
           "Dizajn ciljanog modela rada i odluka o alatima",
+          "Web i drugi kanali kad potkrepljuju novi način rada",
           "Podrška pri uvođenju i usvajanju novih rutina",
         ],
       },
     ],
     boundary:
-      "Redizajn ne uključuje arhitektonsko projektiranje, izradu web stranica za obrte niti licencirani porezni, pravni ili revizijski savjet.",
+      "Redizajn ne uključuje arhitektonsko projektiranje niti licencirani porezni, pravni ili revizijski savjet. Web stranica ulazi u opseg kad podržava dogovoreni proces, ne kao izolirani marketinški paket.",
   },
   {
     id: "uvodjenje",
@@ -97,6 +99,10 @@ export const SCOPE_DRIVERS: string[] = [
 /** Prošireni opseg izvan tri glavna programa, kao zasebna ponuda. */
 export const EXTENDED_SERVICES: { title: string; desc: string }[] = [
   {
+    title: "Web stranica u sklopu digitalizacije",
+    desc: "Izrada ili obnova poslovne web stranice (usluge, kontakt, upiti) kad je to dio dogovorenog procesa, ne izolirani paket bez konteksta.",
+  },
+  {
     title: "Privremeno operativno vodstvo",
     desc: "Ograničeno razdoblje vođenja digitalnih operacija uz dogovoreni opseg i jasne granice.",
   },
@@ -123,10 +129,6 @@ export const SCOPE_BOUNDARIES: { title: string; desc: string }[] = [
   {
     title: "Arhitektura i građevina",
     desc: "Projektiranje, dozvole, BIM i izvođenje ostaju izvan opsega (TENET Arhitektura).",
-  },
-  {
-    title: "Web stranice za obrte i male firme",
-    desc: "Brošurne stranice, lokalni SEO paketi i hosting za hrvatske obrte nisu dio ovog programa.",
   },
   {
     title: "Akademije i akreditirani programi",
@@ -185,8 +187,12 @@ export const FAQ_ITEMS: { q: string; a: string }[] = [
     a: "Za profesionalne usluge, udruge, poslovne škole i srednje operatore koji su narasli brže od svojih procesa. Tipično kad timovi rade u zasebnim rutinama, alati ne prate posao ili vodstvo traži siguran AI smjer uz ljudsku provjeru.",
   },
   {
+    q: "Radite li i web stranice?",
+    a: "Da, kad je web dio digitalizacije: kontakt, upiti, prikaz usluga, usklađen s dogovorenim procesom. Ne prodajemo izolirane brošurne pakete bez konteksta rada u organizaciji. Web ulazi u Redizajn ili kao prošireni opseg nakon razgovora.",
+  },
+  {
     q: "Što ne radite?",
-    a: "Ne radimo arhitekturu, web stranice za obrte, akreditirane akademije, AI proizvode, licencirani porezni ili pravni savjet niti svakodnevnu IT podršku. Granice su namjerno jasne kako biste znali što možete očekivati.",
+    a: "Ne radimo arhitekturu i građevinu, akreditirane akademije, AI proizvode, licencirani porezni ili pravni savjet niti svakodnevnu IT podršku. Granice su namjerno jasne kako biste znali što možete očekivati.",
   },
   {
     q: "Imate li klijentske studije slučaja s postotcima?",

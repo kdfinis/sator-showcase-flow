@@ -89,8 +89,9 @@ function PositioningNote() {
           <div className="eyebrow text-[color:var(--muted-text)] mb-6">Napomena o poziciji</div>
           <p className="text-[17px] leading-relaxed text-[color:var(--ink)]/85">
             Sator Digital ne pozicionira se kao prodavač alata niti jeftina IT opcija. Radimo kao
-            praktični savjetnici za redizajn procesa: prvo mapiramo posao, zatim uskladimo alate i
-            obučimo ljude. AI koristimo uz ljudsku provjeru prije vanjskog korištenja.
+            praktični savjetnici za redizajn procesa: prvo mapiramo posao, zatim uskladimo alate,
+            digitalne kanale (uključujući web stranicu kad treba) i obučimo ljude. AI koristimo uz
+            ljudsku provjeru prije vanjskog korištenja.
           </p>
         </Reveal>
       </div>
