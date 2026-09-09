@@ -7,16 +7,19 @@ import { cn } from "@/lib/utils";
 export function PackageCard({
   pkg,
   index,
+  total = 3,
   emphasis = "normal",
   compact = false,
 }: {
   pkg: Service;
   index: number;
+  total?: number;
   emphasis?: "normal" | "primary" | "balanced";
   compact?: boolean;
 }) {
   const isDark = emphasis === "primary";
   const isBalanced = emphasis === "balanced";
+  const chip = pkg.category === "web" ? "Web" : "Program";
 
   return (
     <TiltCard className="h-full">
@@ -35,10 +38,10 @@ export function PackageCard({
               isDark ? "text-[color:var(--bone)]/60" : "text-[color:var(--muted-text)]",
             )}
           >
-            {String(index + 1).padStart(2, "0")} / 03
+            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </span>
-          {(isBalanced || isDark) && (
-            <span className="eyebrow text-[color:var(--brand)]">Program</span>
+          {(isBalanced || isDark || pkg.category === "web") && (
+            <span className="eyebrow text-[color:var(--brand)]">{chip}</span>
           )}
         </div>
 

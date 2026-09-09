@@ -106,8 +106,8 @@ function Kontakt() {
               </h2>
               <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
                 Nakon zaprimanja upita slijedi kratka razmjena poruka ili termin za poziv. Cilj je
-                razumjeti kontekst, što koči tim i koji program (Snimka, Redizajn ili Uvođenje) ima
-                smisla.
+                razumjeti kontekst, što koči tim i koja usluga ima smisla: Snimka, Redizajn,
+                Uvođenje, ili web paket Održavano / Vlasništvo.
               </p>
             </Reveal>
             <div className="md:col-span-8">

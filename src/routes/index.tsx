@@ -8,25 +8,25 @@ import { FAQAccordion } from "@/components/site/FAQAccordion";
 import { CTAGroup } from "@/components/site/CTA";
 import { StickyProcess } from "@/components/site/StickyProcess";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import { SERVICES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
+import { PROCESS_SERVICES, WEB_SERVICES, FAQ_ITEMS, FAQ_TEASER_KEYS } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Redizajn procesa i digitalizacija poslovanja, Sator Digital" },
+      { title: "Procesi, digitalizacija i web stranice, Sator Digital" },
       {
         name: "description",
         content:
-          "Mapiramo kako posao teče, redizajniramo operativni model i podržavamo uvođenje novih rutina. AI uz ljudsku provjeru. Hrvatski i engleski, na daljinu i na terenu.",
+          "Redizajn procesa i digitalizacija (Snimka, Redizajn, Uvođenje) te izrada web stranica (Održavano, Vlasništvo). AI uz ljudsku provjeru. Hrvatski i engleski.",
       },
       {
         property: "og:title",
-        content: "Redizajn procesa i digitalizacija poslovanja, Sator Digital",
+        content: "Procesi, digitalizacija i web stranice, Sator Digital",
       },
       {
         property: "og:description",
         content:
-          "Mapiramo kako posao teče, redizajniramo operativni model i podržavamo uvođenje novih rutina. AI uz ljudsku provjeru.",
+          "Procesni programi i web paketi. Mapiramo rad, uvodimo rutine i gradimo stranice s jasnim opsegom.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -183,9 +183,9 @@ function ServicesPreview() {
         <div className="flex items-end justify-between mb-14 gap-6">
           <Reveal>
             <h2 className="text-4xl md:text-6xl tracking-[-0.04em] font-medium leading-[1.02] max-w-3xl">
-              Tri programa.{" "}
+              Procesi i web.{" "}
               <span className="text-[color:var(--brand)] font-medium">
-                Jedan smjer: jasniji posao.
+                Dvije linije, jedan studio.
               </span>
             </h2>
           </Reveal>
@@ -199,10 +199,45 @@ function ServicesPreview() {
           </Reveal>
         </div>
 
+        <Reveal>
+          <div className="eyebrow text-[color:var(--muted-text)] mb-6">Procesi i digitalizacija</div>
+        </Reveal>
         <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-          <PackageCard pkg={SERVICES[0]} index={0} emphasis="primary" compact />
-          <PackageCard pkg={SERVICES[1]} index={1} emphasis="balanced" compact />
-          <PackageCard pkg={SERVICES[2]} index={2} compact />
+          <PackageCard
+            pkg={PROCESS_SERVICES[0]}
+            index={0}
+            total={PROCESS_SERVICES.length}
+            emphasis="primary"
+            compact
+          />
+          <PackageCard
+            pkg={PROCESS_SERVICES[1]}
+            index={1}
+            total={PROCESS_SERVICES.length}
+            emphasis="balanced"
+            compact
+          />
+          <PackageCard pkg={PROCESS_SERVICES[2]} index={2} total={PROCESS_SERVICES.length} compact />
+        </div>
+
+        <Reveal className="mt-20">
+          <div className="eyebrow text-[color:var(--muted-text)] mb-6">Web stranice</div>
+        </Reveal>
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          <PackageCard
+            pkg={WEB_SERVICES[0]}
+            index={0}
+            total={WEB_SERVICES.length}
+            emphasis="primary"
+            compact
+          />
+          <PackageCard
+            pkg={WEB_SERVICES[1]}
+            index={1}
+            total={WEB_SERVICES.length}
+            emphasis="balanced"
+            compact
+          />
         </div>
 
         <div className="mt-20 grid gap-10 md:grid-cols-2">
@@ -217,14 +252,13 @@ function ServicesPreview() {
             ]}
           />
           <ServiceFitCard
-            title="Kada Redizajn ima smisla"
+            title="Kada web usluga ima smisla"
             chips={[
-              "Nakon Snimke ili s jasnim procesima",
-              "CRM ne odgovara stvarnom poslu",
-              "Web stranica treba pratiti novi način rada",
-              "Tim je spreman na veće promjene",
-              "Višefazni plan s odobrenjima",
-              "Operativni model treba preuređenje",
+              "Stranica je stara, spora ili nejasna",
+              "Treba uredan kontakt s mobitela",
+              "Održavano: mi vodimo tehnički dio",
+              "Vlasništvo: jednokratna isporuka i predaja",
+              "Domena na vaše ime",
             ]}
           />
         </div>
@@ -232,9 +266,9 @@ function ServicesPreview() {
         <Reveal className="mt-16 border-t border-[color:var(--line)] pt-8 max-w-3xl">
           <div className="eyebrow text-[color:var(--muted-text)] mb-4">Napomena o opsegu</div>
           <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
-            Svaki program počinje uvodnim razgovorom. Opseg i sljedeći korak dogovaramo pisano prije
-            početka rada. Cijene ne objavljujemo na stranici jer ovise o veličini tima i dubini
-            promjene.
+            Procesni programi i web usluge mogu ići zasebno ili zajedno. Opseg dogovaramo pisano prije
+            početka. Za Održavano i Vlasništvo cijene su vidljive; za Snimku, Redizajn i Uvođenje
+            cijenu dogovaramo nakon razgovora.
           </p>
         </Reveal>
       </div>

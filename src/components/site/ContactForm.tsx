@@ -79,6 +79,7 @@ export function ContactForm() {
             <option>Tim se vraća na stare navike nakon promjene</option>
             <option>Nejasno gdje AI može pomoći uz ljudsku provjeru, a gdje ne</option>
             <option>CRM ili izvještavanje ne odgovara stvarnom poslu</option>
+            <option>Treba nam nova ili obnovljena web stranica</option>
             <option>Nešto drugo (opišite u poruci)</option>
           </select>
         </div>

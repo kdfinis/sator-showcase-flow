@@ -28,7 +28,7 @@ export function Hero() {
           <div className="md:col-span-8">
             <Reveal>
               <div className="eyebrow text-[color:var(--muted-text)] mb-8">
-                Redizajn procesa i digitalizacija
+                Procesi, digitalizacija i web
               </div>
             </Reveal>
 
@@ -46,9 +46,9 @@ export function Hero() {
           <div className="md:col-span-4 md:pt-6 flex flex-col justify-between gap-10">
             <Reveal delay={0.15}>
               <p className="text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-sm">
-                Mapiramo kako posao danas teče, razdvajamo korake i vlasnike, obučavamo ljude na
-                nove rutine. AI koristimo uz ljudsku provjeru prije svega vanjskog. Radimo na
-                hrvatskom i engleskom, na daljinu i na terenu.
+                Mapiramo kako posao danas teče, redizajniramo rutine i uvodimo digitalne alate uz
+                ljudsku provjeru. Izrada web stranice je zasebna usluga (Održavano / Vlasništvo).
+                Hrvatski i engleski, na daljinu i na terenu.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
