@@ -4,7 +4,7 @@ const items = [
   "Opseg dogovoren prije početka",
   "Rad na daljinu i na terenu",
   "AI uz ljudsku provjeru",
-  "Bez izmišljenih ROI brojki",
+  "Bez izmišljenih postotaka uštede",
 ];
 
 /** Endless editorial marquee: no icons, just text and hairlines. */

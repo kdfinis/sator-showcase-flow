@@ -15,8 +15,8 @@ const steps = [
   },
   {
     n: "03",
-    t: "Uvođenje i enablement",
-    d: "Obučavamo tim na nove rutine, postavljamo kontrolne točke za AI pomoć uz ljudsku provjeru i pratimo usvajanje.",
+    t: "Uvođenje i usvajanje",
+    d: "Obučavamo tim na nove rutine, postavljamo kontrolne točke za AI pomoć uz ljudsku provjeru prije vanjskog korištenja i pratimo usvajanje.",
   },
 ];
 

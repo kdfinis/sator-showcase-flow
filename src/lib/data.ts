@@ -19,8 +19,8 @@ export const SERVICES: Service[] = [
       "Za organizacije koje žele razumjeti kako posao danas stvarno teče prije bilo kakve promjene alata ili rutina.",
     includes: [
       "Vođeni intervjui s ključnim ljudima (na daljinu ili na terenu)",
-      "Karta postojećeg toka rada (as-is) s vlasnicima koraka",
-      "Registar bolne točke i uskih grla",
+      "Karta postojećeg toka rada s vlasnicima koraka",
+      "Popis mjesta gdje se gubi vrijeme i uska grla",
       "Prijedlog sljedećeg koraka i okvira suradnje",
       "Pisani materijali koje zadržavate u vlasništvu organizacije",
     ],
@@ -37,16 +37,16 @@ export const SERVICES: Service[] = [
     includes: [
       "Redizajn operativnog modela i uloga po koracima",
       "Procjena i usporedba tehnologija prema stvarnim potrebama procesa",
-      "Ponovno mapiranje CRM polja, pipelinea i izvještaja",
+      "Ponovno mapiranje CRM polja, prodajnih tokova i izvještaja",
       "Fazni plan uvođenja s jasnim odobrenjima",
-      "Runbookovi i dokumentacija koje tim može održavati",
+      "Priručnici i dokumentacija koje tim može održavati",
     ],
     extras: [
       {
         label: "Tipičan slijed",
         items: [
           "Snimka kao ulazna točka",
-          "Dizajn to-be modela i odluka o alatima",
+          "Dizajn ciljanog modela rada i odluka o alatima",
           "Podrška pri uvođenju i usvajanju novih rutina",
         ],
       },
@@ -58,18 +58,17 @@ export const SERVICES: Service[] = [
     id: "uvodjenje",
     name: "Uvođenje",
     shapeShort: "Uz redizajn ili zasebno",
-    shapeLong: "AI prijelaz s kontrolnim točkama i podrškom timu",
+    shapeLong: "AI prijelaz uz ljudsku provjeru, kontrolne točke i podršku timu",
     bestFor:
       "Za organizacije koje žele praktičnu AI pomoć u internim radovima, uz ljudsku provjeru prije svega što ide vani, i obuku tima na novim rutinama.",
     includes: [
-      "Identifikacija gdje AI može pomoći u nacrtima, izvještajima ili internim operacijama",
-      "Dizajn kontrolnih točaka i imenovanih odobravatelja",
-      "Obuka i enablement tima (radionice, upute, office hours)",
+      "Identifikacija gdje AI može pomoći u nacrtima, izvještajima ili internim operacijama, uz ljudsku provjeru prije vanjskog korištenja",
+      "Pisani dijagram kontrolnih točaka i imenovanih odobravatelja prije vanjskog korištenja",
+      "Obuka tima (radionice, upute, konzultacije u dogovorenim terminima)",
       "Podrška pri usvajanju novih digitalnih navika",
-      "AI spominjemo uz ljudsku provjeru u istom koraku",
     ],
     boundary:
-      "Ne gradimo vlastiti AI proizvod, ne prodajemo agentne platforme niti šaljemo neprovjerene AI izlaze klijentima ili regulatorima.",
+      "Ne gradimo vlastiti AI proizvod, ne prodajemo agentne platforme niti šaljemo neprovjerene AI izlaze klijentima ili regulatorima. Sve vani ide uz ljudsku provjeru.",
   },
 ];
 
@@ -80,7 +79,43 @@ export const COMMON_APPROACH = [
   "Rad na daljinu s posjetima na terenu kada ima smisla",
   "Hrvatski i engleski jezik prema potrebi klijenta",
   "AI uz ljudsku provjeru prije vanjskog korištenja",
-  "Bez izmišljenih ROI brojki ili jamstava uštede",
+  "Bez izmišljenih postotaka uštede ili jamstava rezultata",
+];
+
+/** Što utječe na opseg i trajanje suradnje. */
+export const SCOPE_DRIVERS: string[] = [
+  "Broj dionika u intervjuima",
+  "Broj procesnih domena",
+  "Dubina mapiranja",
+  "Složenost CRM-a i izvještavanja",
+  "Broj kontrolnih točaka i odobravatelja za AI",
+  "Obuhvat obuke tima",
+  "Rad na daljinu ili na terenu",
+  "Broj jezika dokumentacije",
+];
+
+/** Prošireni opseg izvan tri glavna programa, kao zasebna ponuda. */
+export const EXTENDED_SERVICES: { title: string; desc: string }[] = [
+  {
+    title: "Privremeno operativno vodstvo",
+    desc: "Ograničeno razdoblje vođenja digitalnih operacija uz dogovoreni opseg i jasne granice.",
+  },
+  {
+    title: "Radionice po domenama",
+    desc: "Jednodnevne ili višednevne radionice za jedan procesni segment, bez cjelovitog redizajna.",
+  },
+  {
+    title: "Mjesečni savjetodavni sati",
+    desc: "Kontinuirana podrška vodstvu oko procesa i AI prijelaza, uz ljudsku provjeru prije vanjskih odluka.",
+  },
+  {
+    title: "Dodatni jezici dokumentacije",
+    desc: "Priprema materijala na engleskom uz hrvatski, prema dogovorenom opsegu.",
+  },
+  {
+    title: "Dublja analiza jednog sustava",
+    desc: "CRM, LMS ili izvještavanje izvan standardnog opsega Redizajna, kao zaseban zadatak.",
+  },
 ];
 
 /** Granice opsega i što ne radimo. */
@@ -95,26 +130,35 @@ export const SCOPE_BOUNDARIES: { title: string; desc: string }[] = [
   },
   {
     title: "Akademije i akreditirani programi",
-    desc: "Ne prodajemo formalne edukacijske programe ni katalog tečajeva. Radimo enablement u okviru vaših procesa.",
+    desc: "Ne prodajemo formalne edukacijske programe ni katalog tečajeva. Podržavamo usvajanje u okviru vaših procesa.",
   },
   {
     title: "AI proizvodi i agentne platforme",
-    desc: "Ne razvijamo vlastiti AI softver niti prodajemo agentne alate. Savjetujemo i podržavamo uvođenje uz provjere.",
+    desc: "Ne razvijamo vlastiti AI softver niti prodajemo agentne alate. Savjetujemo i podržavamo uvođenje uz ljudsku provjeru.",
   },
   {
     title: "Licencirani porez, pravni i revizijski savjet",
     desc: "Za regulirana pitanja uključujemo vaše licencirane savjetnike; mi ne potpisujemo takve nalaze.",
   },
   {
-    title: "IT helpdesk i hardver",
-    desc: "Čisti helpdesk, nabava opreme i neupravljani hosting nisu fokus advisory programa.",
+    title: "IT podrška i hardver",
+    desc: "Svakodnevna IT podrška, nabava opreme i neupravljani hosting nisu fokus savjetodavnog programa.",
   },
+];
+
+/** Kako se dogovara suradnja (bez objavljenih cijena). */
+export const ENGAGEMENT_TERMS: string[] = [
+  "Uvodni razgovor bez obveze nastavka",
+  "Pisani prijedlog opsega nakon razgovora ili Snimke",
+  "Fazno plaćanje prema dogovorenim isporukama",
+  "Rokovi ovise o dostupnosti dionika i brzini povratnih informacija",
+  "Cijena se ne objavljuje na stranici; dogovara se individualno",
 ];
 
 export const FAQ_ITEMS: { q: string; a: string }[] = [
   {
     q: "Što je Snimka i koliko traje?",
-    a: "Snimka je fiksni program otkrivanja od 2 do 4 tjedna. Uključuje intervjue, kartu postojećeg toka rada, registar bolne točke i prijedlog sljedećeg koraka. Bez implementacije i bez prodaje softvera.",
+    a: "Snimka je fiksni program otkrivanja od 2 do 4 tjedna. Uključuje intervjue, kartu postojećeg toka rada, popis mjesta gdje se gubi vrijeme i prijedlog sljedećeg koraka. Bez implementacije i bez prodaje softvera.",
   },
   {
     q: "Moram li proći Snimku prije Redizajna?",
@@ -138,15 +182,15 @@ export const FAQ_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: "Za koga je ovaj program?",
-    a: "Za profesionalne usluuge, udruge, poslovne škole i srednje operatore koji su narasli brže od svojih procesa. Tipično kad timovi rade u silosima, alati ne prate rutine ili vodstvo traži siguran AI smjer.",
+    a: "Za profesionalne usluge, udruge, poslovne škole i srednje operatore koji su narasli brže od svojih procesa. Tipično kad timovi rade u zasebnim rutinama, alati ne prate posao ili vodstvo traži siguran AI smjer uz ljudsku provjeru.",
   },
   {
     q: "Što ne radite?",
-    a: "Ne radimo arhitekturu, web stranice za obrte, akreditirane akademije, AI proizvode, licencirani porezni ili pravni savjet niti IT helpdesk. Granice su namjerno jasne kako biste znali što možete očekivati.",
+    a: "Ne radimo arhitekturu, web stranice za obrte, akreditirane akademije, AI proizvode, licencirani porezni ili pravni savjet niti svakodnevnu IT podršku. Granice su namjerno jasne kako biste znali što možete očekivati.",
   },
   {
     q: "Imate li klijentske studije slučaja s postotcima?",
-    a: "Ne. Ne objavljujemo izmišljene ROI brojke niti testimoniale. Iskustvo temeljimo na internom radu u institucijama i korporativnom okruženju, opisano kao pristup, ne kao jamstvo rezultata kod vas.",
+    a: "Ne. Ne objavljujemo izmišljene postotke uštede niti preporuke klijenata bez dopuštenja. Iskustvo temeljimo na internom radu u institucijama i korporativnom okruženju, opisano kao pristup, ne kao jamstvo rezultata kod vas.",
   },
   {
     q: "Kako izgleda prvi korak?",
@@ -158,7 +202,7 @@ export const FAQ_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: "Možete li preuzeti privremeno operativno vodstvo?",
-    a: "U ograničenom opsegu, za definirano razdoblje, ako kapacitet dopušta. To nije standardni paket na stranici; dogovara se individualno nakon Snimke ili uvodnog razgovora.",
+    a: "U ograničenom opsegu, za definirano razdoblje, ako kapacitet dopušta. To nije standardni program na stranici; dogovara se individualno nakon Snimke ili uvodnog razgovora.",
   },
   {
     q: "Kako vas kontaktirati?",

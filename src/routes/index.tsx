@@ -62,7 +62,7 @@ function SectionLabel({ title }: { index?: string; title: string }) {
 function ProblemSection() {
   const items = [
     "Posao se odvija, ali nitko nema jasnu kartu koraka, vlasnika i alata.",
-    "Vodstvo pokušava AI alate bez preuređenih rutina i kontrolnih točaka.",
+    "Vodstvo pokušava AI alate bez preuređenih rutina, kontrolnih točaka i ljudske provjere prije vanjskog korištenja.",
     "Novi CRM ili sustav uveden je brzo, a tim se vraća na stare navike.",
   ];
   return (
@@ -137,9 +137,9 @@ function WhoSection() {
   const items = [
     "Profesionalne uslužne firme (pravo, revizija, savjetovanje, inženjering)",
     "Poslovne škole i pružatelji edukacije s zastarjelim digitalnim modelom",
-    "Udruge i članice organizacije s hibridnim volontersko-staff operacijama",
+    "Udruge i članice organizacije u kojima volonteri i zaposlenici dijele iste operacije",
     "Srednji operatori (50 do 250 ljudi) koji su narasli brže od procesa",
-    "Vodstvo koje traži siguran smjer za AI, a ne samo novi alat",
+    "Vodstvo koje traži siguran smjer za AI uz ljudsku provjeru, a ne samo novi alat",
   ];
   return (
     <section className="py-24 md:py-36 bg-[color:var(--bone)]">
@@ -204,6 +204,29 @@ function ServicesPreview() {
           <PackageCard pkg={SERVICES[2]} index={2} compact />
         </div>
 
+        <div className="mt-20 grid gap-10 md:grid-cols-2">
+          <ServiceFitCard
+            title="Kada Snimka ima smisla"
+            chips={[
+              "Procesi nisu dokumentirani",
+              "Vodstvo traži jasnu sliku prije promjene",
+              "Fiksni opseg 2 do 4 tjedna",
+              "Prije odabira alata",
+              "Uvod u suradnju bez obveze",
+            ]}
+          />
+          <ServiceFitCard
+            title="Kada Redizajn ima smisla"
+            chips={[
+              "Nakon Snimke ili s jasnim procesima",
+              "CRM ne odgovara stvarnom poslu",
+              "Tim je spreman na veće promjene",
+              "Višefazni plan s odobrenjima",
+              "Operativni model treba preuređenje",
+            ]}
+          />
+        </div>
+
         <Reveal className="mt-16 border-t border-[color:var(--line)] pt-8 max-w-3xl">
           <div className="eyebrow text-[color:var(--muted-text)] mb-4">Napomena o opsegu</div>
           <p className="text-[16px] leading-relaxed text-[color:var(--ink)]/85">
@@ -217,6 +240,26 @@ function ServicesPreview() {
   );
 }
 
+function ServiceFitCard({ title, chips }: { title: string; chips: string[] }) {
+  return (
+    <Reveal>
+      <div className="border border-[color:var(--line)] p-8 bg-[color:var(--bone)] h-full">
+        <div className="eyebrow text-[color:var(--muted-text)] mb-6">{title}</div>
+        <div className="flex flex-wrap gap-2">
+          {chips.map((c) => (
+            <span
+              key={c}
+              className="text-[12px] tracking-[0.02em] px-3 py-1.5 border border-[color:var(--line)] text-[color:var(--ink)]/85"
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
 function ProofSection() {
   const items = [
     {
@@ -227,7 +270,7 @@ function ProofSection() {
     },
     {
       t: "Operativna strategija i automatizacija",
-      d: "Dizajn radnih tokova, praktična automatizacija i AI pomoć u internim izvještajima uz ljudsku provjeru. Remapiranje procesa istraživanja, edukacije i administracije u institucionalnom okruženju.",
+      d: "Dizajn radnih tokova, praktična automatizacija i AI pomoć u internim izvještajima uz ljudsku provjeru. Ponovno slaganje procesa istraživanja, edukacije i administracije u institucionalnom okruženju.",
       idx: "05",
       label: "Institucija · Digitalizacija",
     },
@@ -316,13 +359,13 @@ function FinalCTA() {
         </Reveal>
         <Reveal delay={0.2} className="mt-12">
           <div className="flex flex-wrap gap-3 items-center">
-            <a
-              href="/kontakt"
+            <Link
+              to="/kontakt"
               className="group inline-flex items-center gap-3 bg-[color:var(--bone)] text-[color:var(--ink)] px-6 py-4 text-[13px] tracking-[0.14em] uppercase font-semibold hover:bg-[color:var(--brand)] hover:text-[color:var(--bone)] transition-colors"
             >
               <span>Dogovori uvodni razgovor</span>
               <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
+            </Link>
             <CTAGroup
               showPrimary={false}
               className="[&_a]:text-[color:var(--bone)] [&_a]:border-[color:var(--bone)]"

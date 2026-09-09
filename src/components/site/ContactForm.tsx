@@ -77,7 +77,7 @@ export function ContactForm() {
             <option>Procesi nisu mapirani, nitko ne zna tko što vodi</option>
             <option>Alati ne prate način rada tima</option>
             <option>Tim se vraća na stare navike nakon promjene</option>
-            <option>Nejasno gdje AI može pomoći, a gdje ne</option>
+            <option>Nejasno gdje AI može pomoći uz ljudsku provjeru, a gdje ne</option>
             <option>CRM ili izvještavanje ne odgovara stvarnom poslu</option>
             <option>Nešto drugo (opišite u poruci)</option>
           </select>

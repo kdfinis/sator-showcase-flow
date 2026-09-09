@@ -3,7 +3,15 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { CTAButton, CTAGroup } from "@/components/site/CTA";
 import { ImagePlaceholder } from "@/components/site/ImagePlaceholder";
-import { SERVICES, COMMON_APPROACH, SCOPE_BOUNDARIES, type Service } from "@/lib/data";
+import {
+  SERVICES,
+  COMMON_APPROACH,
+  SCOPE_DRIVERS,
+  EXTENDED_SERVICES,
+  SCOPE_BOUNDARIES,
+  ENGAGEMENT_TERMS,
+  type Service,
+} from "@/lib/data";
 
 export const Route = createFileRoute("/paketi")({
   head: () => ({
@@ -12,7 +20,7 @@ export const Route = createFileRoute("/paketi")({
       {
         name: "description",
         content:
-          "Tri programa: Snimka (otkrivanje procesa), Redizajn (operativni model i alati) i Uvođenje (AI prijelaz uz ljudsku provjeru i enablement tima).",
+          "Tri programa: Snimka (otkrivanje procesa), Redizajn (operativni model i alati) i Uvođenje (AI prijelaz uz ljudsku provjeru i podršku timu).",
       },
       { property: "og:title", content: "Usluge redizajna procesa i digitalizacije, Sator Digital" },
       {
@@ -28,9 +36,13 @@ function Paketi() {
   return (
     <SiteLayout>
       <PageHero />
+      <PositioningNote />
       <CommonApproach />
       <ServicesList />
+      <ScopeDrivers />
+      <ExtendedServicesSection />
       <ScopeBoundariesSection />
+      <EngagementTerms />
       <BottomCTA />
     </SiteLayout>
   );
@@ -69,12 +81,29 @@ function PageHero() {
   );
 }
 
+function PositioningNote() {
+  return (
+    <section className="py-16 bg-[color:var(--paper)]">
+      <div className="container-wide">
+        <Reveal className="max-w-3xl">
+          <div className="eyebrow text-[color:var(--muted-text)] mb-6">Napomena o poziciji</div>
+          <p className="text-[17px] leading-relaxed text-[color:var(--ink)]/85">
+            Sator Digital ne pozicionira se kao prodavač alata niti jeftina IT opcija. Radimo kao
+            praktični savjetnici za redizajn procesa: prvo mapiramo posao, zatim uskladimo alate i
+            obučimo ljude. AI koristimo uz ljudsku provjeru prije vanjskog korištenja.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function CommonApproach() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--bone)]">
       <div className="container-wide">
         <div className="border-b border-[color:var(--line)] pb-4 mb-14">
-          <span className="eyebrow text-[color:var(--muted-text)]">Zajednički pristup</span>
+          <span className="eyebrow text-[color:var(--muted-text)]">Zajednički standard</span>
         </div>
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -248,6 +277,97 @@ function ServiceBlock({ service, index }: { service: Service; index: number }) {
   );
 }
 
+function ScopeDrivers() {
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--paper)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">Što utječe na opseg</span>
+        </div>
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Opseg{" "}
+                <span className="text-[color:var(--brand)] font-medium">ovisi o situaciji</span>.
+              </h2>
+            </Reveal>
+          </div>
+          <div className="md:col-span-7">
+            <Reveal>
+              <div className="flex flex-wrap gap-2">
+                {SCOPE_DRIVERS.map((c) => (
+                  <span
+                    key={c}
+                    className="text-[13px] tracking-[0.02em] px-3 py-2 border border-[color:var(--line)] text-[color:var(--ink)]/85 bg-[color:var(--bone)]"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-2xl">
+                Tri glavna programa pokrivaju tipičan put od snimke do uvođenja. Za širi opseg
+                dogovaramo proširene stavke ili zasebnu ponudu bez objavljenih cijena na stranici.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ExtendedServicesSection() {
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">
+            Prošireni opseg · zasebna ponuda
+          </span>
+        </div>
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <h2 className="text-3xl md:text-5xl tracking-[-0.04em] font-medium leading-[1.02] max-w-md">
+                Dodatne usluge{" "}
+                <span className="text-[color:var(--brand)] font-medium">izvan tri programa</span>.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-[15px] leading-relaxed text-[color:var(--ink)]/80 max-w-md">
+                Radovi u nastavku ne ulaze u standardni opseg Snimke, Redizajna i Uvođenja. Izvode
+                se kao zasebna ponuda prema specifikaciji.
+              </p>
+            </Reveal>
+          </div>
+          <div className="md:col-span-7">
+            <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
+              {EXTENDED_SERVICES.map((s, i) => (
+                <RevealItem key={s.title}>
+                  <div className="grid grid-cols-[auto_1fr] gap-8 py-6">
+                    <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="text-[17px] tracking-[-0.01em] font-medium">{s.title}</div>
+                      <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--ink)]/75 max-w-xl">
+                        {s.desc}
+                      </p>
+                    </div>
+                  </div>
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ScopeBoundariesSection() {
   return (
     <section className="py-24 md:py-32 bg-[color:var(--paper)]">
@@ -282,6 +402,30 @@ function ScopeBoundariesSection() {
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function EngagementTerms() {
+  return (
+    <section className="py-24 md:py-32 bg-[color:var(--bone)]">
+      <div className="container-wide">
+        <div className="border-b border-[color:var(--line)] pb-4 mb-14">
+          <span className="eyebrow text-[color:var(--muted-text)]">Kako se ugovara</span>
+        </div>
+        <RevealGroup className="border-y border-[color:var(--line)] divide-y divide-[color:var(--line)]">
+          {ENGAGEMENT_TERMS.map((t, i) => (
+            <RevealItem key={t}>
+              <div className="grid grid-cols-[auto_1fr] gap-8 py-6">
+                <span className="num text-xs tracking-widest text-[color:var(--muted-text)] pt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-[16px] leading-relaxed max-w-3xl">{t}</p>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
       </div>
     </section>
   );

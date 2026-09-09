@@ -12,7 +12,7 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Odgovori na pitanja o Snimci, Redizajnu, Uvođenju, AI pristupu, radu na daljinu i granicama opsega.",
+          "Odgovori na pitanja o Snimci, Redizajnu, Uvođenju, AI pristupu uz ljudsku provjeru, radu na daljinu i granicama opsega.",
       },
       { property: "og:title", content: "Česta pitanja, Sator Digital" },
       {
