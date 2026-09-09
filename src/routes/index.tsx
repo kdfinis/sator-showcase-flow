@@ -221,6 +221,7 @@ function ServicesPreview() {
             chips={[
               "Nakon Snimke ili s jasnim procesima",
               "CRM ne odgovara stvarnom poslu",
+              "Web stranica treba pratiti novi način rada",
               "Tim je spreman na veće promjene",
               "Višefazni plan s odobrenjima",
               "Operativni model treba preuređenje",
